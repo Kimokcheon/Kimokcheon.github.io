@@ -1,0 +1,1500 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>Python | Yuchuan&#39;s Blog</title>
+
+<link rel="shortcut icon" href="https://kimokcheon.github.io//favicon.ico?v=1695778991029">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://kimokcheon.github.io//styles/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            Yuchuan&#39;s Blog
+        </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+                <div class="nav-item">
+                    
+                        <a href="/" class="menu gt-a-link">
+                            首页
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/archives" class="menu gt-a-link">
+                            归档
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/tags" class="menu gt-a-link">
+                            标签
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="https://kimokcheon.github.io/post/about-me" class="menu gt-a-link">
+                            关于
+                        </a>
+                    
+                </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1695778991029" action="/search/index.html">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    Python
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2023-06-27 ·
+                    </time>
+                    
+                </div>
+                <div class="post-content">
+                    <h1 id="第1章-变量和简单数据类型">第1章 变量和简单数据类型</h1>
+<p>第一个Python程序：</p>
+<pre><code class="language-python">print(&quot;Hello world!&quot;)
+</code></pre>
+<p>只有一行，作用是打印输出“Hello world!”，语句末尾不要用分号。值得注意的是，print()函数打印完毕后自动换行，如果不想换行请使用<code>end=&quot;&quot;</code>编写：</p>
+<pre><code class="language-python">print(&quot;Hello world!&quot;, end=&quot;&quot;)
+</code></pre>
+<h2 id="11-变量">1.1 变量</h2>
+<p>变量定义格式：变量名 = 变量内容，如<code>massage = 12</code>。（注意，不需要指定数据类型）</p>
+<h2 id="12-数据类型">1.2 数据类型</h2>
+<ul>
+<li><strong>字符串</strong></li>
+</ul>
+<p>字符串用引号括起来，引号可以是单引号也可以是双引号。字符串之间可以使用<code>+</code>拼接。</p>
+<p>方法调用格式：变量名.方法名(参数列表)。字符串常用方法如下：</p>
+<p>title()：使字符串中各单词首字母大写</p>
+<p>upper()：使字符串字母全部大写</p>
+<p>lower()：使字符串字母全部小写</p>
+<p>rstrip()：删除字符串尾部的空白</p>
+<p>lstrip()：删除字符串头部的空白</p>
+<p>strip()：删除字符串首尾的空白</p>
+<ul>
+<li><strong>数字</strong></li>
+</ul>
+<p>除常见的加、减、乘、除、模运算外，Python还使用两个乘号<code>**</code>表示乘方运算，<code>a ** b</code>即为a的b次方。</p>
+<p>使用str()方法避免类型错误：</p>
+<pre><code class="language-python">age = 23
+# message = 'Happy' + age + 'rd birthday!'  
+# 上面报错，因为Python不知道这里的age是想处理为数值还是字符。
+message = 'Happy' + str(age) + 'rd birthday'
+</code></pre>
+<h1 id="第2章-列表">第2章 列表</h1>
+<h2 id="21-列表是什么">2.1 列表是什么</h2>
+<p>列表和C语言中的数组比较相似。请见下例：</p>
+<pre><code class="language-python"># 定义列表
+bicycles = ['trek', 'cannondale', 'redline', 'specialized']
+# 打印列表
+print(bicycles)
+# 访问列表元素
+print(bicycles[0])
+print(bicycles[-1].title())
+</code></pre>
+<p>运行结果：</p>
+<pre><code>['trek', 'cannondale', 'redline', 'specialized']
+trek
+Speciaized
+</code></pre>
+<p>列表的<strong>索引</strong>从0开始，比较特殊的是列表倒数第一个元素可以用-1来访问（如上例所示），倒数第二个用-2来访问，依次类推。</p>
+<h2 id="22-元素的修改-添加和删除">2.2 元素的修改、添加和删除</h2>
+<ul>
+<li>修改</li>
+</ul>
+<p>直接修改即可，如</p>
+<pre><code class="language-python">motorcycles = ['honda', 'yamaha', 'suzuki']
+motorcycles[0] = 'ducati'
+print(motorcycles)
+</code></pre>
+<p>运行结果：</p>
+<pre><code>['honda', 'yamaha', 'suzuki']
+['ducati', 'yamaha', 'suzuki']
+</code></pre>
+<ul>
+<li>添加</li>
+</ul>
+<p>append(str)方法：将变量str添加到列表的最后。</p>
+<p>insert(i, str)方法：将变量str添加到列表的索引i处。</p>
+<ul>
+<li>删除</li>
+</ul>
+<p>del语句：“del list[i]”可以删除列表list中索引i处的元素。</p>
+<p>pop()方法：弹出列表中的最后一个元素，可以用一个变量来接收。</p>
+<p>remove(str)：将第一次出现的值为str的元素删除。</p>
+<h2 id="23-组织列表">2.3 组织列表</h2>
+<ul>
+<li><strong>用sort()方法永久排序</strong></li>
+</ul>
+<p>sort()方法可以改变列表中元素的原始排列顺序，按字母序由a到z排列。添加参数<code>reverse=True</code>可改为倒序由z至a排列。</p>
+<pre><code class="language-python">cars = ['bmw', 'audi', 'toyota', 'subaru']
+cars.sort()
+print(cars)
+
+cars.sort(reverse=True)
+print(cars)
+</code></pre>
+<p>运行结果：</p>
+<pre><code>['audi', 'bmw', 'subaru', 'toyota']
+['toyota', 'subaru', 'bmw', 'audi']
+</code></pre>
+<ul>
+<li><strong>用sorted()方法临时排序</strong></li>
+</ul>
+<p>sorted()方法可返回排好序的列表，但不影响列表原始排列顺序。使用该方法时，要传入的参数是列表。</p>
+<pre><code class="language-python">cars = ['bmw', 'audi', 'toyota', 'subaru']
+print(&quot;Here is the original list:&quot;)
+print(cars)
+print(&quot;\nHere is the sorted list:&quot;)
+print(sorted(cars)) 
+print(&quot;\nHere is the original list again:&quot;)
+print(cars)
+</code></pre>
+<p>运行结果：</p>
+<pre><code>Here is the original list:
+['bmw', 'audi', 'toyota', 'subaru']
+
+Here is the sorted list:
+['audi', 'bmw', 'subaru', 'toyota']
+
+Here is the original list again:
+['bmw', 'audi', 'toyota', 'subaru']
+</code></pre>
+<ul>
+<li><strong>用reverse()方法逆序打印列表</strong></li>
+</ul>
+<p>这个逆序打印是从后往前打印列表，而不是按照字母顺序倒序打印。它会永久改变列表元素的排列顺序。</p>
+<pre><code class="language-python">cars = ['bmw', 'audi', 'toyota', 'subaru']
+cars.reverse()
+print(cars)
+</code></pre>
+<p>运行结果：</p>
+<pre><code>['subaru', 'toyota', 'audi', 'bmw']
+</code></pre>
+<ul>
+<li><strong>用len()方法确定列表的长度</strong></li>
+</ul>
+<p>对于上例中的列表cars，<code>len(cars)</code>为4。</p>
+<h2 id="24-遍历列表">2.4 遍历列表</h2>
+<p>用for循环遍历列表：</p>
+<pre><code class="language-python">magicians = ['alice', 'david', 'carolina']
+for magician in magicians:
+    print(magician.title()+ &quot;, that was a great trick!&quot;)
+    print(&quot;I can't wait to see your next trick, &quot;+ magician.title() +&quot;.\n&quot;)
+print('Thank you, everyone. That was a great magic show!')
+</code></pre>
+<p>运行结果：</p>
+<pre><code>Alice, that was a great trick!
+I can't wait to see your next trick, Alice.
+
+David, that was a great trick!
+I can't wait to see your next trick, David.
+
+Carolina, that was a great trick!
+I can't wait to see your next trick, Carolina.
+
+Thank you, everyone. That was a great magic show!
+</code></pre>
+<p>注意，Python<strong>对缩进有很严格的要求</strong>。for循环<code>:</code>后指示循环体，循环体必须另起一行且缩进，循环体结束的标志是下一行不缩进（即与for循环首行对齐）。</p>
+<h2 id="25-创建数值列表">2.5 创建数值列表</h2>
+<h3 id="251-range函数">2.5.1 range()函数</h3>
+<p>Python函数range()可以生成一系列的数字，如：</p>
+<pre><code class="language-python">for value in range(1, 5):
+    print(value)
+</code></pre>
+<p>运行结果：</p>
+<pre><code>1
+2
+3
+4
+</code></pre>
+<p>注意到上面没有打印数字5，range打印的参数范围是左闭右开的，是常见的差一行为。</p>
+<p>可以用range()函数来创建一个列表：</p>
+<pre><code class="language-python">numbers = list(range(1, 5))
+print(numbers)
+</code></pre>
+<p>运行结果：</p>
+<pre><code>[1, 2, 3, 4]
+</code></pre>
+<p>使用range()时还可以在最后一个参数指定步长。如下例：</p>
+<pre><code class="language-python">numbers = list(range(2, 11, 2))
+print(numbers)
+</code></pre>
+<p>运行结果：</p>
+<pre><code>[2, 4, 6, 8, 10]
+</code></pre>
+<h3 id="252-简单的统计计算">2.5.2 简单的统计计算</h3>
+<p>min(list)：返回列表list的最小元素的值。</p>
+<p>max(list)：返回列表list的最大元素的值。</p>
+<p>sum(list)：返回列表list的各元素值的和。</p>
+<h3 id="253-列表解析">2.5.3 列表解析</h3>
+<p>将for循环和创建新元素的代码合并成一行，并自动附加新元素：</p>
+<pre><code class="language-python">square = [value**2 for value in range(1, 11)]
+print(square)
+</code></pre>
+<p>运行结果：</p>
+<pre><code>[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+</code></pre>
+<h2 id="26-使用列表的一部分切片">2.6 使用列表的一部分：切片</h2>
+<h3 id="261-切片的使用">2.6.1 切片的使用</h3>
+<p>切片使用示例：</p>
+<pre><code class="language-python">players = ['charles', 'martina', 'michael', 'florence', 'eli']
+print(players[0:3])
+print(players[1:4])
+print(players[:4])
+print(players[2:])
+print(players[-3:])
+</code></pre>
+<p>运行结果：</p>
+<pre><code>['charles', 'martina', 'michael']
+['martina', 'michael', 'florence']
+['charles', 'martina', 'michael', 'florence']
+['michael', 'florence', 'eli']
+['michael', 'florence', 'eli']
+</code></pre>
+<p>注意依然是左闭右开，与range()一样，除非右边没有写数。</p>
+<h3 id="262-切片的遍历">2.6.2 切片的遍历</h3>
+<pre><code class="language-python">players = ['charles', 'martina', 'michael', 'florence', 'eli']
+for player in players[:3]:
+    print(player.title())
+</code></pre>
+<p>运行结果：</p>
+<pre><code>Charles
+Martina
+Michael
+</code></pre>
+<h3 id="263-用切片实现列表的复制">2.6.3 用切片实现列表的复制</h3>
+<p>现有列表a，想把它的内容原封不动复制给列表b，可以这样写：<code>b = a[:]</code>。因为切片创建的是列表的副本，所以b和a是两个不同的列表。倘若这样写：<code>b = a</code>，那么b和a是同一个列表，对这个列表的操作会同时影响a和b的内容。请见下例：</p>
+<pre><code class="language-python">my_foods = ['pizza', 'falafel', 'carrot cake']
+friend_foods = my_foods 
+# 事实上是让Python将新变量friend_foods关联到包含在my_foods中的列表
+# 因此这两个变量都指向同一个列表
+my_foods.append('cannoli')
+friend_foods.append('ice cream')
+
+print(&quot;My favorite foods are:&quot;)
+print(my_foods)
+
+print(&quot;\nMy friend's favorite foods are:&quot;)
+print(friend_foods)
+</code></pre>
+<p>运行结果：</p>
+<pre><code>My favorite foods are:
+['pizza', 'falafel', 'carrot cake', 'cannoli', 'ice cream']
+
+My friend's favorite foods are:
+['pizza', 'falafel', 'carrot cake', 'cannoli', 'ice cream']
+</code></pre>
+<h2 id="27-元组">2.7 元组</h2>
+<p>元组就是不可变的列表，列表中的元素的值不可修改。元组用圆括号来定义：<code>dimensions = (200, 50)</code>，除值不可变外其余操作与列表用法一致。</p>
+<p>值得注意的是，虽然元组中某个元素的值不可修改，但是整个元组可重新定义：</p>
+<pre><code class="language-python">dimensions = (200, 50)
+print('Original dimensions:')
+for dimension in dimensions:
+    print(dimension)
+
+dimensions = (400, 100)
+print('\nModified dimensions:')
+for dimension in dimensions:
+    print(dimension)
+</code></pre>
+<p>运行结果：</p>
+<pre><code>Original dimensions:
+200
+50
+
+Modified dimensions:
+400
+100
+</code></pre>
+<h1 id="第3章-if语句">第3章 if语句</h1>
+<h2 id="31-条件测试">3.1 条件测试</h2>
+<p>一个普通的含有if的程序：</p>
+<pre><code class="language-python">cars=['audi', 'bmw', 'subaru', 'toyota']
+
+for car in cars:
+    if car == 'bmw':
+        print(car.upper())
+    else:
+        print(car.title())
+</code></pre>
+<p>运行结果：</p>
+<pre><code>Audi
+BMW
+Subaru
+Toyota
+</code></pre>
+<p>if后面跟的条件表达式被称为<strong>条件测试</strong>。注意逻辑关系“与”和“或”分别用and和or表示，其余的逻辑表达式编写都与C语言相同。</p>
+<p>另外，in和not in用于检查某元素是否在特定列表中，请见下例：</p>
+<pre><code class="language-python">requested_toppings = ['mushrooms', 'onions', 'pineapple']
+print('mushrooms' in requested_toppings)
+print('pineapple' not in requested_toppings)
+</code></pre>
+<p>运行结果：</p>
+<pre><code>True
+False
+</code></pre>
+<h2 id="32-if语句的结构">3.2 if语句的结构</h2>
+<p>常用的是if-elif-else结构，其中可以不写else分支。</p>
+<pre><code class="language-python">age = 12
+if age &lt; 4:
+    price = 0
+elif age &lt; 18:
+    price = 5
+else:
+    price = 10
+print(&quot;Your admission cost is $&quot;+str(price)+&quot;.&quot;)
+</code></pre>
+<p>运行结果：</p>
+<pre><code>Your admission cost is $5.
+</code></pre>
+<h1 id="第4章-字典">第4章 字典</h1>
+<h2 id="41-字典的定义">4.1 字典的定义</h2>
+<p>字典是一系列键值对的集合，可以使用键来访问其对应的值。字典用大括号定义：</p>
+<pre><code class="language-python">alien_0 = {'color': 'green', 'points': 5}
+print(alien_0['color'])
+print(alien_0['points'])
+</code></pre>
+<p>运行结果：</p>
+<pre><code>green
+5
+</code></pre>
+<p>字典也可以用多行定义：</p>
+<pre><code class="language-python">favorite_languages = {
+    'jen': 'python',
+    'sarah': 'c',
+    'edward': 'ruby',
+    'phil': 'python', 
+    # 这里可以加逗号也可以不加，但是为以后添加键值对方便，最好加一个逗号
+}
+
+print(&quot;Sarah's favorite language is &quot;+ favorite_languages['sarah'].title()+'.')
+</code></pre>
+<p>运行结果：</p>
+<pre><code>Sarah's favorite language is C.
+</code></pre>
+<h2 id="42-键值对的添加-修改和删除">4.2 键值对的添加、修改和删除</h2>
+<ul>
+<li><strong>添加、修改键值对</strong>：直接添加、修改即可。</li>
+</ul>
+<pre><code class="language-python">alien_0 = {'color': 'green', 'points': 5}
+print(alien_0)
+# 添加键值对
+alien_0['x_position']=0
+alien_0['y_position']=25
+print(alien_0)
+# 修改键值对
+alien_0['color']='yellow'
+print(alien_0)
+</code></pre>
+<p>运行结果：</p>
+<pre><code>{'color': 'green', 'points': 5}
+{'color': 'green', 'points': 5, 'x_position': 0, 'y_position': 25}
+{'color': 'yellow', 'points': 5, 'x_position': 0, 'y_position': 25}
+</code></pre>
+<ul>
+<li><strong>删除键值对</strong>：del语句</li>
+</ul>
+<pre><code class="language-python">alien_0 = {'color': 'green', 'points': 5}
+print(alien_0)
+# 删除键值对
+del alien_0['points']
+print(alien_0)
+</code></pre>
+<p>运行结果：</p>
+<pre><code>{'color': 'green', 'points': 5}
+{'color': 'green'}
+</code></pre>
+<h2 id="43-遍历字典">4.3 遍历字典</h2>
+<p>字典中的items()方法代表键值对，keys()方法代表键，values()方法代表值。</p>
+<pre><code class="language-python">favorite_languages = {
+    'jen': 'python',
+    'sarah': 'c',
+    'edward': 'ruby',
+    'phil': 'python', 
+}
+# 遍历键值对
+for name, language in favorite_languages.items():
+    print(name.title() + &quot;'s favorite language is &quot; +
+          language.title() + &quot;.&quot;)
+# 遍历键
+print('--------------------')
+for name in favorite_languages.keys():
+    print(name.title())
+# 遍历值
+print('--------------------')
+for language in favorite_languages.values():
+    print(language.title())
+</code></pre>
+<p>运行结果：</p>
+<pre><code>Jen's favorite language is Python.
+Sarah's favorite language is C.
+Edward's favorite language is Ruby.
+Phil's favorite language is Python.
+--------------------
+Jen
+Sarah
+Edward
+Phil
+--------------------
+Python
+C
+Ruby
+Python
+</code></pre>
+<p>有时候我们希望按一定顺序遍历键，sorted()方法可按字母顺序遍历所有键。</p>
+<p>有时候我们希望遍历值的时候剔除重复的值，set()方法可以剔除重复值。</p>
+<p>下面的例子用到了sorted()和set()方法：</p>
+<pre><code class="language-python">favorite_languages = {
+    'jen': 'python',
+    'sarah': 'c',
+    'edward': 'ruby',
+    'phil': 'python', 
+}
+
+for name in sorted(favorite_languages.keys()):
+    print(name.title()+&quot;, thank you for taking the poll.&quot;)
+
+print('--------------------')
+for language in set(favorite_languages.values()):
+    print(language.title())
+</code></pre>
+<p>运行结果：</p>
+<pre><code>Edward, thank you for taking the poll.
+Jen, thank you for taking the poll.
+Phil, thank you for taking the poll.
+Sarah, thank you for taking the poll.
+--------------------
+Python
+Ruby
+C
+</code></pre>
+<h2 id="44-嵌套">4.4 嵌套</h2>
+<h3 id="441-字典列表">4.4.1 字典列表</h3>
+<p>字典可以作为列表的元素，如：</p>
+<pre><code class="language-python">aliens = [alien_0, alien_1, alien_2]
+</code></pre>
+<p>这里alien_0, alien_1, alien_2都是字典。</p>
+<p>我们也可以使用range()来创建包含多个字典的列表：</p>
+<pre><code class="language-python">aliens = []
+
+for alien_number in range(30):
+    new_alien = {'color': 'green', 'points': 5, 'speed': 'slow', 'num': alien_number}
+    aliens.append(new_alien)
+</code></pre>
+<h3 id="442-在字典中存储列表">4.4.2 在字典中存储列表</h3>
+<pre><code class="language-python">pizza = {
+    'crust': 'thick',
+    'toppings': ['mushrooms', 'extra cheese'],
+}
+
+print(&quot;You ordered a &quot; + pizza['crust'] + &quot;-crust pizza &quot; +
+      &quot;with the following toppings:&quot;)
+for topping in pizza['toppings']:
+    print('\t' + topping)
+</code></pre>
+<p>运行结果：</p>
+<pre><code>You ordered a thick-crust pizza with the following toppings:
+    mushrooms
+    extra cheese
+</code></pre>
+<h3 id="443-在字典中存储字典">4.4.3 在字典中存储字典</h3>
+<pre><code class="language-python">users = {
+    'aeinstein': {
+        'first': 'albert',
+        'last': 'einstein',
+        'location': 'princeton',
+    },
+
+    'mcurie': {
+        'first': 'marie',
+        'last': 'curie',
+        'location': 'paris',
+    },
+    # 一般要求这些字典格式一致
+}
+
+for username, user_info in users.items():
+    print(&quot;\nUsername: &quot; + username)
+    full_name = user_info['first'] + &quot; &quot; + user_info['last']
+    location = user_info['location']
+
+    print('\tFull name: ' + full_name.title())
+    print('\tLocation: ' + location.title())
+</code></pre>
+<p>运行结果：</p>
+<pre><code>Username: aeinstein
+    Full name: Albert Einstein
+    Location: Princeton
+
+Username: mcurie
+    Full name: Marie Curie
+    Location: Paris
+</code></pre>
+<h1 id="第5章-用户输入和while循环">第5章 用户输入和while循环</h1>
+<h2 id="51-用户输入input">5.1 用户输入input()</h2>
+<p>函数input(str)会在屏幕上打印字符串str，然后等待用户输入。用户输入的内容被看作字符串，作为其返回值。</p>
+<pre><code class="language-python">prompt = &quot;If you tell us who you are, we can personalize the messages you see.&quot;
+prompt += &quot;\nWhat is your first name? &quot;
+
+name = input(prompt)
+print(&quot;Hello, &quot; + name + &quot;!&quot;)
+</code></pre>
+<p>运行结果（反引号``内为键盘输入内容）：</p>
+<pre><code>If you tell us who you are, we can personalize the messages you see.
+What is your first name? `Eric`
+Hello, Eric!
+</code></pre>
+<p>注意，用户输入内容会被解读成字符串，想要作为其它数据类型使用则需要进行类型转换：</p>
+<pre><code class="language-python">age = input (&quot;How old are you? &quot;)
+age = int(age)
+print(age &gt;= 18)
+</code></pre>
+<p>运行结果：</p>
+<pre><code>How old are you? `12`
+False
+</code></pre>
+<h2 id="52-while循环">5.2 while循环</h2>
+<p>while循环和多数高级语言思想是一样的，我们来看一个使用while循环在列表之间移动元素的例子：</p>
+<pre><code class="language-python">unconfirmed_users = ['alice', 'brian', 'candace']
+confirmed_users = []
+
+while unconfirmed_users:
+    current_user = unconfirmed_users.pop()
+    print(&quot;Verifying user: &quot; + current_user.title())
+    confirmed_users.append(current_user)
+
+print(&quot;\nThe following users have been confirmed:&quot;)
+for confirmed_user in confirmed_users:
+    print(confirmed_user.title())
+</code></pre>
+<p>运行结果：</p>
+<pre><code>Verifying user: Candace
+Verifying user: Brian
+Verifying user: Alice
+
+The following users have been confirmed:
+Candace
+Brian
+Alice
+</code></pre>
+<p>Python中也有break语句和continue语句，其用法与C语言是一致的。</p>
+<h1 id="第6章-函数">第6章 函数</h1>
+<h2 id="61-函数的定义">6.1 函数的定义</h2>
+<pre><code class="language-python">def greet_user(username):
+    &quot;&quot;&quot;显示简单的问候语&quot;&quot;&quot;
+    print(&quot;Hello, &quot; + username.title() + &quot;!&quot;)
+
+greet_user('jesse')
+</code></pre>
+<p>运行结果：</p>
+<pre><code>Hello, Jesse!
+</code></pre>
+<p>这里三引号中的内容被称为文档字符串，描述了函数是做什么的。Python使用它们来生成有关程序中函数的文档。</p>
+<h2 id="62-函数的参数">6.2 函数的参数</h2>
+<p>我们首先定义一个函数describe_pet：</p>
+<pre><code class="language-python">def describe_pet(animal_type, pet_name):
+    &quot;&quot;&quot;显示宠物的信息&quot;&quot;&quot;
+    print(&quot;\nI have a &quot; + animal_type + &quot;.&quot;)
+    print(&quot;My &quot; + animal_type + &quot;'s name is &quot; + pet_name.title() + &quot;.&quot;)
+</code></pre>
+<p>调用函数时，需要传递参数。传参有两种方式，分别是<strong>位置实参</strong>和<strong>关键字实参</strong>：</p>
+<pre><code class="language-python"># 位置实参
+describe_pet('hamster', 'harry')
+describe_pet('dog', 'willie')
+
+# 关键字实参
+print('-----------------')
+describe_pet(animal_type='hamster', pet_name='harry')
+describe_pet(pet_name='willie', animal_type='dog')
+</code></pre>
+<p>运行结果：</p>
+<pre><code>I have a hamster.
+My hamster's name is Harry.
+
+I have a dog.
+My dog's name is Willie.
+-----------------
+
+I have a hamster.
+My hamster's name is Harry.
+
+I have a dog.
+My dog's name is Willie.
+</code></pre>
+<p>看代码就知道这两种传参方式的异同了，注意关键字实参就不需要实参与形参的位置一一对应了。</p>
+<p>有时候，一个函数中某个参数常常是某值，我们就可以把它设为<strong>默认值</strong>，这样当不给这个参数传参时，这个参数就取默认值。具体请见下例：</p>
+<pre><code class="language-python">def describe_pet(pet_name, animal_type='dog'):     
+    # 这里最后一个参数的默认值为'dog'，如果主程序中没有给animal_type传参，就默认它的值为'dog'
+    &quot;&quot;&quot;显示宠物的信息&quot;&quot;&quot;
+    print(&quot;\nI have a &quot; + animal_type + &quot;.&quot;)
+    print(&quot;My &quot; + animal_type + &quot;'s name is &quot; + pet_name.title() + &quot;.&quot;)
+
+describe_pet('willie') # 这里使用位置实参，因此pet_name置于前部
+describe_pet('willie', 'cat')
+describe_pet(pet_name='harry', animal_type='hamster')
+</code></pre>
+<p>运行结果：</p>
+<pre><code> 
+I have a dog.
+My dog's name is Willie.
+
+I have a cat.
+My cat's name is Willie.
+
+I have a hamster.
+My hamster's name is Harry.
+</code></pre>
+<p>列表也可以作为参数进行传递。</p>
+<p>可以<strong>传递任意数量的参数</strong>，仅需在参数前面加上*即可：</p>
+<pre><code class="language-python">def make_pizza(*toppings):
+    &quot;&quot;&quot;概述要制作的比萨&quot;&quot;&quot;
+    print(&quot;\nMaking a pizza with the following toppings:&quot;)
+    for topping in toppings:
+        print(&quot;- &quot; + topping)
+
+make_pizza('pepperoni')
+make_pizza('mushrooms', 'green peppers', 'extra cheese')
+</code></pre>
+<p>运行结果：</p>
+<pre><code> 
+Making a pizza with the following toppings:
+- pepperoni
+
+Making a pizza with the following toppings:
+- mushrooms
+- green peppers
+- extra cheese
+</code></pre>
+<p>*toppings中的*让Python<u>创建一个名为toppings的空元组</u>，并将收到的所有值都封装到这个元组中，这样可以传入任意多数量的参数。</p>
+<p>有时候，需要接受任意数量的实参，但预先不知道传递给参数的会是什么样的信息。这时可将函数编写成能够接受任意数量的键值对，调用语句提供多少就接受多少，用两个星号即可：</p>
+<pre><code class="language-python">def build_profile(first, last, **user_info):
+    &quot;&quot;&quot;创建一个字典，其中包含我们知道的有关用户的一切&quot;&quot;&quot;
+    profile = {}
+    profile['first_name'] = first
+    profile['last_name'] = last
+    for key, value in user_info.items():
+        profile[key] = value
+    return profile
+
+
+user_profile = build_profile('albert', 'einstein', location='princeton', field='physics')
+print(user_profile)
+</code></pre>
+<p>运行结果：</p>
+<pre><code>{'first_name': 'albert', 'last_name': 'einstein', 'location': 'princeton', 'field': 'physics'}
+</code></pre>
+<h2 id="63-函数的返回值">6.3 函数的返回值</h2>
+<p>用return来返回函数的返回值。主程序中一般应有变量接收返回值。</p>
+<pre><code class="language-python">def add(a, b):
+    &quot;&quot;&quot;对a和b求和&quot;&quot;&quot;
+    return a+b
+
+sum = add(1, 2)
+print(sum)
+</code></pre>
+<p>运行结果：</p>
+<pre><code>3
+</code></pre>
+<h2 id="64-将函数保存到模块中">6.4 将函数保存到模块中</h2>
+<p>假设模块pizza.py中编写了如下的代码：</p>
+<pre><code class="language-python"># pizza.py
+
+def make_pizza(size, *toppings):
+    &quot;&quot;&quot;概述要制作的比萨&quot;&quot;&quot;
+    print(&quot;\nMaking a &quot; + str(size) + &quot;-inch pizza with the following toppings:&quot;)
+    for topping in toppings:
+        print(&quot;- &quot; + topping)
+</code></pre>
+<p>我们在<u>pizza.py所在的目录</u>中另建一个文件，不妨取名为making_pizza.py。这个文件要导入模块pizza.py并使用其中的函数。</p>
+<p>下面几个代码的运行结果均为</p>
+<pre><code> 
+Making a 16-inch pizza with the following toppings:
+- pepperoni
+
+Making a 12-inch pizza with the following toppings:
+- mushrooms
+- green peppers
+- extra cheese
+</code></pre>
+<p>（1）<strong>导入整个模块</strong></p>
+<p><code>import 模块名</code></p>
+<pre><code class="language-python"># making_pizza.py
+
+import pizza
+
+pizza.make_pizza(16, 'pepperoni')
+pizza.make_pizza(12,'mushrooms', 'green peppers', 'extra cheese')
+</code></pre>
+<p>（2）<strong>导入模块中的特定函数</strong></p>
+<p><code>from 模块名 import 函数名1, 函数名2, ...</code></p>
+<pre><code class="language-python"># making_pizza.py
+
+from pizza import make_pizza
+
+make_pizza(16, 'pepperoni')
+make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
+</code></pre>
+<blockquote>
+<p>注：使用*可以导入模块中的全部函数，如<code>from pizza import *</code>，但不建议这样做。</p>
+</blockquote>
+<p>（3）<strong>使用as可以为函数指定别名</strong></p>
+<p><code>from 模块名 import 函数名 as 别名</code></p>
+<pre><code class="language-python"># making_pizza.py
+
+from pizza import make_pizza as mp
+
+mp(16, 'pepperoni')
+mp(12,'mushrooms', 'green peppers', 'extra cheese')
+</code></pre>
+<h1 id="第7章-类">第7章 类</h1>
+<h2 id="71-创建和使用类">7.1 创建和使用类</h2>
+<h3 id="711-创建类">7.1.1 创建类</h3>
+<p>下面创建一个名为Dog的类：</p>
+<pre><code class="language-python">class Dog():
+    &quot;&quot;&quot;一次模拟小狗的简单尝试&quot;&quot;&quot;
+
+    def __init__(self, name, age):
+        &quot;&quot;&quot;初始化属性name和age&quot;&quot;&quot;
+        self.name=name
+        self.age=age
+
+    def sit(self):
+        &quot;&quot;&quot;模拟小狗被命令时坐下&quot;&quot;&quot;
+        print(self.name.title() + &quot; is now sitting.&quot;)
+
+    def roll_over(self):
+        &quot;&quot;&quot;模拟小狗被命令时打滚&quot;&quot;&quot;
+        print(self.name.title() + &quot; rolled over!&quot;)
+</code></pre>
+<p>注意两点：</p>
+<ul>
+<li>
+<p><strong>self前缀</strong>：类似于java中的this关键字。以self为前缀的变量可以供类中的所有方法使用，也可以通过类的任何实例来访问这些变量，它们被称为类的<strong>属性</strong>。<u>编写方法时，应当传入self参数，类中的方法通过<code>self.属性名</code>来访问和修改属性。</u></p>
+</li>
+<li>
+<p><strong>__init__ 方法</strong>：相当于java中的构造方法，用来对属性进行初始化。后面创建实例时会用到。</p>
+</li>
+</ul>
+<h3 id="712-创建实例">7.1.2 创建实例</h3>
+<p>类由属性和方法构成。类编写好后，大部分时间都将花在使用根据类创建的实例上。下面的语句将由Dog类创建两个实例my_dog和your_dog：</p>
+<pre><code class="language-python">my_dog = Dog('willie', 6)
+your_dog = Dog('lucy', 3)
+</code></pre>
+<p>创建实例时，传入的参数是__init__方法中的参数列表（除self外）。</p>
+<h3 id="713-调用方法">7.1.3 调用方法</h3>
+<p>类由属性和方法构成。因此实例也主要涉及对属性和方法的操作。调用方法的方式为：<code>实例名.方法名(参数)</code>。下面的语句将调用Dog类中的sit()和roll()方法。</p>
+<pre><code class="language-python">my_dog.sit()
+your_dog.roll()
+</code></pre>
+<p>运行结果:</p>
+<pre><code>Willie is now sitting.
+Lucy rolled over!
+</code></pre>
+<h3 id="714-访问和修改属性">7.1.4 访问和修改属性</h3>
+<ul>
+<li><strong>访问属性</strong></li>
+</ul>
+<p>想知道类的属性的值，可以用<code>实例名.属性</code>来访问属性的值。</p>
+<pre><code class="language-python">print(&quot;My dog's name is &quot; + my_dog.name.title() + &quot;.&quot;)
+print(&quot;Your dog is &quot; + str(your_dog.age) + &quot; years old.&quot;)
+</code></pre>
+<p>运行结果：</p>
+<pre><code>My dog's name is Willie.
+Your dog is 3 years old.
+</code></pre>
+<ul>
+<li><strong>给属性指定默认值</strong></li>
+</ul>
+<p>我们新建一个名为Car的类，并为其中的odometer_reading属性指定默认值：</p>
+<pre><code class="language-python">class Car():
+    &quot;&quot;&quot;一次模拟汽车的简单尝试&quot;&quot;&quot;
+
+    def __init__(self, make, model, year):
+        &quot;&quot;&quot;初始化描述汽车的属性&quot;&quot;&quot;
+        self.make = make
+        self.model = model
+        self.year = year
+        # 为属性odometer_reading指定默认值（这样便无需传入包含初始值的形参）
+        self.odometer_reading = 0
+
+    def get_descriptive_name(self):
+        &quot;&quot;&quot;返回整洁的描述性信息&quot;&quot;&quot;
+        long_name = str(self.year) + &quot; &quot; + self.make + &quot; &quot; + self.model
+        return long_name.title()
+
+    def read_odometer(self):
+        &quot;&quot;&quot;打印一条指出汽车里程的信息&quot;&quot;&quot;
+        print(&quot;This car has &quot; + str(self.odometer_reading) + &quot; mile(s) on it.&quot;)
+</code></pre>
+<p>它有四个属性，三个方法（含__init__()方法）。其中odometer_reading属性默认值为0。</p>
+<ul>
+<li><strong>修改属性</strong></li>
+</ul>
+<p>我们将修改odometer_reading属性，这可以直接在实例中修改，也可以创建一个方法专门用来修改。</p>
+<p>（1）直接修改</p>
+<pre><code class="language-python">my_new_car = Car('audi', 'a4', 2016)    # 创建实例my_new_car
+my_new_car.odometer_reading = 23        # 直接修改属性
+my_new_car.read_odometer()              # 打印指出汽车里程的信息
+</code></pre>
+<p>（2）创建方法用来修改属性</p>
+<p>我们在类中创建一个方法update_odometer()：</p>
+<pre><code class="language-python">def update_odometer(self, mileage):
+    &quot;&quot;&quot;
+    将里程表读数设置为指定的值
+    禁止将里程表读数往回调
+    &quot;&quot;&quot;
+    if mileage &gt;= self.odometer_reading:
+        self.odometer_reading = mileage
+    else:
+        print(&quot;You can't roll back an odometer!&quot;)
+</code></pre>
+<p>可以通过这个方法来修改属性的值：</p>
+<pre><code class="language-python">my_new_car.update_odometer(200)
+my_new_car.read_odometer()
+</code></pre>
+<h2 id="72-继承">7.2 继承</h2>
+<h3 id="721-继承">7.2.1 继承</h3>
+<p>一个类<strong>继承</strong>另一个类时，它会获得另一个类的所有属性和方法。原有的类被称为<strong>父类</strong>，新的类被称为<strong>子类</strong>。</p>
+<p>继承的语法：<code>class 子类名(父类名):</code>。继承的类调用父类中的方法时，用<code>super()</code>来指代父类。例如，对于上面的Car类，我们想写一个ElectricCar类来继承它，同时为它添加特有的属性battery_size和特有的方法describe_battery()：</p>
+<pre><code class="language-python">class ElectricCar(Car):
+    &quot;&quot;&quot;电动汽车的独特之处&quot;&quot;&quot;
+
+    def __init__(self, make, model, year):
+        &quot;&quot;&quot;
+        电动汽车的独特之处
+        初始化父类的属性，再初始化电动汽车特有的属性
+        &quot;&quot;&quot;
+        super().__init__(make, model, year)
+        self.battery_size = 70
+
+    def describe_battery(self):
+        &quot;&quot;&quot;打印一条描述电瓶容量的消息&quot;&quot;&quot;
+        print(&quot;This car has a &quot; + str(self.battery_size) + &quot;-kWh battery.&quot;)
+</code></pre>
+<h3 id="722-方法重写">7.2.2 方法重写</h3>
+<p>继承的一大目的就是重写父类中的某些方法。例如，假设父类中有方法fill_gas_tank()：</p>
+<pre><code class="language-python"># 在Car类中
+
+def fill_gas_tank(self):
+    &quot;&quot;&quot;为油箱加油&quot;&quot;&quot;
+    print(&quot;The gas tank has been filled up!&quot;)
+</code></pre>
+<p>而电动汽车不需要加油，因此可以在ElectricCar类中重写这个方法：</p>
+<pre><code class="language-python"># 在ElectricCar类中
+
+def fill_gas_tank(self):
+    &quot;&quot;&quot;电动汽车没有邮箱&quot;&quot;&quot;
+    print(&quot;This car doesn't need a gas tank!&quot;)
+</code></pre>
+<h3 id="723-将实例用作属性">7.2.3 将实例用作属性</h3>
+<p>有时候类的细节很多，可以将类的一部分提取出来，作为一个独立的类，然后将在原有的大类中写一个新的小类的实例，作为大类的一个属性。本质上还是新定义一个属性，只不过这个属性的数据类型是原有的类。</p>
+<p>例如，我们可以给ElectricCar类中添加一个Battery类的实例：</p>
+<pre><code class="language-python">class Car():
+    ...
+
+class Battery():
+    &quot;&quot;&quot;一次模拟电动汽车电瓶的简单尝试&quot;&quot;&quot;
+
+    def __init__(self, battery_size=70):
+        &quot;&quot;&quot;初始化电瓶的属性&quot;&quot;&quot;
+        self.battery_size = battery_size
+
+    def describe_battery(self):
+        &quot;&quot;&quot;打印一条描述电瓶容量的信息&quot;&quot;&quot;
+        print(&quot;This car has a &quot; + str(self.battery_size) + &quot;-kWh battery.&quot;)
+
+class ElectricCar(Car):
+    &quot;&quot;&quot;电动汽车的独特之处&quot;&quot;&quot;
+
+    def __init__(self, make, model, year):
+        &quot;&quot;&quot;
+        电动汽车的独特之处
+        初始化父类的属性，再初始化电动汽车特有的属性
+        &quot;&quot;&quot;
+        super().__init__(make, model, year)
+        self.battery = Battery()
+</code></pre>
+<p>编写如下代码：</p>
+<pre><code class="language-python">my_tesla = ElectricCar('tesla', 'model s', 2016)
+print(my_tesla.get_descriptive_name())
+my_tesla.battery.describe_battery()
+</code></pre>
+<p>运行结果为：</p>
+<pre><code>2016 Tesla Model S
+This car has a 70-kWh battery.
+</code></pre>
+<h2 id="73-将类保存到模块中">7.3 将类保存到模块中</h2>
+<h3 id="731-创建包含多个类的模块">7.3.1 创建包含多个类的模块</h3>
+<p>建立一个名为car.py的模块，其中保存多个类：</p>
+<pre><code class="language-python"># car.py
+
+&quot;&quot;&quot;一组用于表示燃油汽车和电动汽车的类&quot;&quot;&quot;  # 模块级文档字符串，简述模块内容
+
+class Car():
+    &quot;&quot;&quot;一次模拟汽车的简单尝试&quot;&quot;&quot;
+
+    def __init__(self, make, model, year):
+        &quot;&quot;&quot;初始化描述汽车的属性&quot;&quot;&quot;
+        self.make = make
+        self.model = model
+        self.year = year
+        self.odometer_reading = 0
+
+    def get_descriptive_name(self):
+        &quot;&quot;&quot;返回整洁的描述性名称&quot;&quot;&quot;
+        long_name = str(self.year) + &quot; &quot; + self.make + &quot; &quot; + self.model
+        return long_name.title()
+
+    def read_odometer(self):
+        &quot;&quot;&quot;打印一条消息，指出汽车的里程&quot;&quot;&quot;
+        print(&quot;This car has &quot; + str(self.odometer_reading) + &quot; mile(s) on it.&quot;)
+
+    def update_odometer(self, mileage):
+        &quot;&quot;&quot;
+        将里程表读数设置为指定的值
+        拒绝将里程表往回拨
+        &quot;&quot;&quot;
+        if mileage &gt;= self.odometer_reading:
+            self.odometer_reading = mileage
+        else:
+            print(&quot;You can't roll back an odometer!&quot;)
+
+    def increment_odometer(self, miles):
+        &quot;&quot;&quot;将里程表读数增加指定的量&quot;&quot;&quot;
+        self.odometer_reading += miles
+
+class Battery():
+    &quot;&quot;&quot;一次模拟电动汽车电瓶的简单尝试&quot;&quot;&quot;
+
+    def __init__(self, battery_size=70):
+        &quot;&quot;&quot;初始化电瓶的属性&quot;&quot;&quot;
+        self.battery_size = battery_size
+
+    def describe_battery(self):
+        &quot;&quot;&quot;打印一条描述电瓶容量的消息&quot;&quot;&quot;
+        print(&quot;This car has a &quot; + str(self.battery_size) + &quot;-kWh battery.&quot;)
+
+    def get_range(self):
+        &quot;&quot;&quot;打印一条描述电瓶续航里程的消息&quot;&quot;&quot;
+        if self.battery_size == 70:
+            range = 240
+        elif self.battery_size == 85:
+            range = 270
+
+        message = &quot;This car can go approximately &quot; + str(range)
+        message += &quot; miles on a full range.&quot;
+        print(message)
+
+class ElectricCar(Car):
+    &quot;&quot;&quot;模拟电动汽车的独特之处&quot;&quot;&quot;
+    def __init__(self, make, model, year):
+        &quot;&quot;&quot;
+        初始化父类的属性，再初始化电动汽车特有的属性
+        &quot;&quot;&quot;
+        super().__init__(make, model, year)
+        self.battery = Battery()
+</code></pre>
+<h3 id="732-从模块中导入类">7.3.2 从模块中导入类</h3>
+<p>有两种导入方式：</p>
+<p>（1）从模块中导入特定的类</p>
+<pre><code class="language-python">from 模块名 import 类名1, 类名2, ...
+</code></pre>
+<p>实例化时仅需说明实例属于哪个类即可，例如</p>
+<pre><code class="language-python">from car import Car, ElectricCar
+
+my_beetle = Car('volkswagen', 'beetle', 2016)
+print(my_beetle.get_descriptive_name())
+
+my_tesla = ElectricCar('tesla', 'roadster', 2016)
+print(my_tesla.get_descriptive_name())
+</code></pre>
+<blockquote>
+<p>注：使用*可以导入模块中的全部类，如<code>from car import *</code>，但不建议这样做。</p>
+</blockquote>
+<p>（2）导入整个模块</p>
+<pre><code class="language-python">import 模块名
+</code></pre>
+<p>实例化时需要用<code>模块名.类名(属性值列表)</code>的方式，例如</p>
+<pre><code class="language-python">import car
+
+my_beetle = car.Car('volkswagen', 'beetle', 2016)
+print(my_beetle.get_descriptive_name())
+
+my_tesla = car.ElectricCar('tesla', 'roadster', 2016)
+print(my_tesla.get_descriptive_name())
+</code></pre>
+<p>最后，也可以<strong>在一个模块中导入另一个模块</strong>。导入方式即为上面提到的两种方式。</p>
+<h3 id="733-python标准库">7.3.3 Python标准库</h3>
+<p>Python标准库是一组模块，安装的Python都包含它，只需要在程序的开头包含一条简单的import语句即可使用标准库中的函数和类。</p>
+<h1 id="第8章-文件和异常">第8章 文件和异常</h1>
+<h2 id="81-读取文件">8.1 读取文件</h2>
+<p>这一小节中用到两个文件，一个文件是pi_digits.txt，一个文件是pi_million_digits.txt。它们均保存在与本小节编程文件相同的目录下。可点击下面两个链接下载这两个文件。</p>
+<p><a href="/assets/files/pi_digits.txt" download="pi_digits">pi_digits.txt</a></p>
+<p><a href="/assets/files/pi_million_digits.txt" download="pi_digits">pi_million_digits.txt</a></p>
+<h3 id="811-读取全部文件内容">8.1.1 读取全部文件内容</h3>
+<p>下面的代码会打开并读取pi_digits.txt文件，并将其内容显示到屏幕上。</p>
+<pre><code class="language-python"># file_reader.py
+
+with open('pi_digits.txt') as file_object:  # 打开文件
+    contents = file_object.read()           # 读取文件
+    print(contents.rstrip())                # 打印文件内容
+</code></pre>
+<p>运行结果：</p>
+<pre><code>3.1415926535
+  8979323846
+  2643383279
+</code></pre>
+<p>分析程序代码：</p>
+<ul>
+<li>
+<p><strong>open()函数</strong>：参数为要打开的文件的<u>相对路径</u>或<u>绝对路径</u>，返回一个表示文件的对象。使用as为这个对象指定别名file_object。</p>
+</li>
+<li>
+<p><strong>with关键字</strong>：它可以在不再需要访问文件后将其关闭。关闭时机由Python自动确定。</p>
+</li>
+</ul>
+<blockquote>
+<p>也可以不用with关键字，使用open()和close()函数配合来打开和关闭文件，但这样如果程序出现bug可能会导致close()函数得不到调用，从而造成数据丢失，因此不建议这样做。</p>
+</blockquote>
+<ul>
+<li>
+<p><strong>read()函数</strong>：文件对象的一个方法，读取这个文件的内容，并将内容作为字符串返回。</p>
+</li>
+<li>
+<p><strong>空行处理</strong>：read()函数到达文件末尾时自动返回一个空字符串，打印时作为空行打印，这样输出的结果就比原文件多了一个空行。因此使用rstrip()方法删除字符串末尾的空白符。</p>
+</li>
+</ul>
+<blockquote>
+<p>当使用其它目录下的文件时，注意在windows系统中文件路径使用反斜线(\)，在Linux和OS X中使用斜线(/)。</p>
+</blockquote>
+<h3 id="812-逐行读取文件内容">8.1.2 逐行读取文件内容</h3>
+<p>可对文件对象使用for循环来遍历文件的每一行：</p>
+<pre><code class="language-python"># file_reader.py
+
+filename = 'pi_digits.txt'
+
+with open(filename) as file_object:
+    for line in file_object:
+        print(line.rstrip())
+</code></pre>
+<p>运行结果：</p>
+<pre><code>3.1415926535
+  8979323846
+  2643383279
+</code></pre>
+<p>这里要注意，逐行读取时依然有空行处理，处理的原理和方式与上面相同。</p>
+<h3 id="813-创建包含文件各行内容的列表">8.1.3 创建包含文件各行内容的列表</h3>
+<p>使用with关键字时，open()返回的文件对象只能在with代码块内使用，因此需要有适当的变量来存储文件内容。可使用函数readlines()将文件各行的内容存储在一个列表中：</p>
+<pre><code class="language-python">filename = 'pi_million_digits.txt'
+
+with open(filename) as file_object:
+    lines = file_object.readlines()
+
+pi_string = ''
+for line in lines:
+    pi_string += line.strip()
+    print(pi_string[:52] + &quot;...&quot;)
+    print(len(pi_string))
+</code></pre>
+<p>运行结果：</p>
+<pre><code>3.14159265358979323846264338327950288419716939937510...
+100002
+</code></pre>
+<h2 id="82-写入文件">8.2 写入文件</h2>
+<p>下面的程序将创建名为programming.txt的文件，并在其中写入一句话<code>I love programming.</code>：</p>
+<pre><code class="language-python">filename = 'programming.txt'
+
+with open(filename, 'w') as file_object:
+    file_object.write(&quot;I love programming.&quot;)
+</code></pre>
+<p>我们来看这段代码中的两个函数：</p>
+<ul>
+<li><strong>open()函数</strong>：在open()函数中，第一个参数表示要打开的文件，如果文件不存在，则新建该文件。</li>
+</ul>
+<p>第二个参数表示文件的打开模式，<code>'r'</code>表示以<strong>读取模式</strong>打开，<code>'r'</code>表示以<strong>写入模式</strong>打开，<code>'a'</code>表示以<strong>附加模式</strong>打开。</p>
+<p>值得注意的是，以写入模式打开文件后，文件对象中的内容会被清空，因此后面写入的内容会完全覆盖原文件的内容。如果想要保留原来的内容，承接在原内容之后写入内容，则应当使用附加模式打开。</p>
+<ul>
+<li><strong>write()函数</strong>：<code>文件对象.write(str)</code>会在指定的文件对象中写入字符串str。需要注意两点：① str必须为字符串，如果是数值，请用<code>str()</code>转换数据类型；② write()函数写入字符串后<strong>不会换行</strong>，想换行请手动添加<code>'\n'</code>。</li>
+</ul>
+<h2 id="83-异常">8.3 异常</h2>
+<h3 id="831-使用try-except-else代码块处理异常">8.3.1 使用try-except-else代码块处理异常</h3>
+<p>一个常见的错误是，除数为零。这时程序会抛出ZeroDivisionError，并终止运行。如果我们能在代码中提前告诉Python发生这种异常时应该怎么办，就有备无患了：</p>
+<pre><code class="language-python">try:
+    print(5/0)
+except ZeroDivisionError:
+    print(&quot;You can't divide by zero!&quot;)
+</code></pre>
+<p>运行结果：</p>
+<pre><code>You can't divide by zero!
+</code></pre>
+<p>这时try-except代码块，使用它处理异常的好处：首先，错误提示很友好，不是traceback；其次，如果后面还有代码，程序将继续运行。即，我们可以<strong>使用异常避免崩溃</strong>。</p>
+<p>避免崩溃而出现traceback有两个好处：首先，不懂得技术的用户看到traceback会感到迷惑，而看到友好的错误提示信息；其次，懂得技术的程序员看到traceback中包含了许多与源代码相关的信息，这可以被用来展开攻击，隐藏traceback在避免攻击中显得尤为重要。</p>
+<pre><code class="language-python">print(&quot;Give me two numbers, and I'll divide them.&quot;)
+print(&quot;Enter 'q' to quit.&quot;)
+
+while True:
+    first_number = input(&quot;\nFirst number: &quot;)
+    if first_number == 'q':
+        break
+    second_number = input(&quot;second number: &quot;)
+    if second_number == 'q':
+        break
+    try:
+        answer = int(first_number) / int(second_number)
+    except ZeroDivisionError:
+        print(&quot;You can't divide by zero!&quot;)
+    else:
+        print(answer)
+</code></pre>
+<p>try-except-else大致的原理是，运行try中的代码块，如果出现了except后面提到的异常，执行except代码块中的内容，如果没有抛出异常，执行else代码块中的内容。这段完成后继续执行后面的程序。</p>
+<blockquote>
+<p>如果try中的代码块抛出异常，但不是except后面跟的异常，就会出现traceback并崩溃。</p>
+</blockquote>
+<h3 id="832-处理filenotfounderror异常">8.3.2 处理FileNotFoundError异常</h3>
+<p>上面提到了ZeroDivisionError，还有一种异常是FileNotFoundError，它发生在尝试打开一个文件而该文件不存在时。例如，假设当前目录中不存在alice.txt文件，那么执行下面的代码：</p>
+<pre><code class="language-python">filename = 'alice.txt'
+
+with open(filename) as f_obj:
+    contents = f_obj.read()
+</code></pre>
+<p>会抛出一个含FileNotFoundError异常的trackback。为避免这一点，我们可以将with代码块放入try-except-else语句中。我们下面试图写一个程序，它能计算一个文本中含有多少个单词，为此先介绍split()函数：</p>
+<p>split()函数可以将指定的字符串按空白符分隔成一个个单词，将这些单词保存到一个列表中并返回。例如，</p>
+<pre><code class="language-python">title = &quot;Alice's adventures in wonderland&quot;
+print(title.split())
+</code></pre>
+<p>运行结果：</p>
+<pre><code>[&quot;Alice's&quot;, 'adventures', 'in', 'wonderland']
+</code></pre>
+<p>我们要计算这几本书的单词数（点击链接可下载）：</p>
+<p><a href="/assets/files/alice.txt" download="alice.txt">alice.txt</a> (Alice's Adventures in Wonderland)</p>
+<p><a href="/assets/files/moby_dick.txt" download="moby_dick.txt">moby_dick.txt</a> (Moby Dick)</p>
+<p><a href="/assets/files/little_women.txt" download="little_women.txt">little_women.txt</a> (Little Women)</p>
+<p>还有一本并没有下载的书siddhartha.txt。</p>
+<p>代码如下：</p>
+<pre><code class="language-python">def count_words(filename):
+    &quot;&quot;&quot;计算一个文件大致包含多少个单词&quot;&quot;&quot;
+    try:
+        with open(filename) as f_obj:
+            contents = f_obj.read()
+    except FileNotFoundError:
+        print(&quot;Sorry, the file &quot; + filename + &quot; does not exist.&quot;)
+    else:
+        # 计算文件大致包含多少个单词
+        words = contents.split()
+        num_words = len(words)
+        print(&quot;The file &quot; + filename + &quot; has about &quot; + str(num_words) + &quot; words.&quot;)
+
+filenames  = ['alice.txt', 'siddhartha.txt', 'moby_dick.txt', 'little_women.txt']
+for filename in filenames:
+    count_words(filename)
+</code></pre>
+<p>运行结果：</p>
+<pre><code>The file alice.txt has about 26436 words.
+Sorry, the file siddhartha.txt does not exist.
+The file moby_dick.txt has about 214422 words.
+The file little_women.txt has about 187000 words.
+</code></pre>
+<p>下面介绍<strong>pass语句</strong>。我们将except代码块修改为</p>
+<pre><code class="language-python">...
+except FileNotFoundError:
+    pass
+...
+</code></pre>
+<p>这时遇到FileNotFoundError异常时程序便会“一声不吭”，继续执行，运行结果变为：</p>
+<pre><code>The file alice.txt has about 26436 words.
+The file moby_dick.txt has about 214422 words.
+The file little_women.txt has about 187000 words.
+</code></pre>
+<h2 id="84-存储数据">8.4 存储数据</h2>
+<p>我们使用标准库中的json模块来实现数据的存储。用到其中的两个方法，dump()和load()，前者将内容存储到文件中，后者加载文件内容。</p>
+<p>例如，我们想存一串数字列表到文件numbers.json中，便于另外的进程调用，可以用dump()方法实现：</p>
+<pre><code class="language-python">import json
+
+numbers = [2, 3, 5, 7, 11, 13]
+
+filename = 'numbers.json'
+with open(filename, 'w') as f_obj:
+    json.dump(numbers, f_obj)
+</code></pre>
+<p>该段代码新建了一个名为numbers.json的文件，并将<code>[2, 3, 5, 7, 11, 13]</code>存入其中。</p>
+<p>现在我们想调用储存的数字列表，可以用load()方法实现：</p>
+<pre><code class="language-python">import json
+
+filename = 'numbers.json'
+with open(filename) as f_obj:
+    numbers = json.load(f_obj)
+
+print(numbers)
+</code></pre>
+<p>运行结果：</p>
+<pre><code>[2, 3, 5, 7, 11, 13]
+</code></pre>
+<h1 id="第9章-测试代码">第9章 测试代码</h1>
+<h2 id="91-测试函数">9.1 测试函数</h2>
+<p>假设我们有模块name_function.py：</p>
+<pre><code class="language-python">def get_formatted_name(first, last, middle=''):
+    &quot;&quot;&quot;Generate a neatly formatted full name.&quot;&quot;&quot;
+    if middle:
+        full_name = first + ' ' + middle + ' ' + last
+    else:
+        full_name = first + ' ' + last
+    return full_name.title()
+</code></pre>
+<p>用以下代码测试该模块中给出的函数的正确性：</p>
+<pre><code class="language-python">import unittest
+from name_function import get_formatted_name
+
+class NamesTestCase(unittest.TestCase):
+    &quot;&quot;&quot;测试name_function.py&quot;&quot;&quot;
+
+    def test_first_last_name(self):
+        &quot;&quot;&quot;能够正确地处理像Janis Joplin这样的姓名吗？&quot;&quot;&quot;
+        formatted_name = get_formatted_name('janis', 'joplin')
+        self.assertEqual(formatted_name, 'Janis Joplin')
+
+    def test_first_middle_last_name(self):
+        &quot;&quot;&quot;能够正确地处理像Wolfgang Amadeus Mozart这样的姓名吗？&quot;&quot;&quot;
+        formatted_name = get_formatted_name('wolfgang', 'mozart', 'amadeus')
+        self.assertEqual(formatted_name, 'Wolfgang Amadeus Mozart')
+</code></pre>
+<ul>
+<li>
+<p>导入unittest模块，它能提供代码测试工具。</p>
+</li>
+<li>
+<p>创建一个类NamesTestCase，继承unittest.TestCase类。</p>
+</li>
+<li>
+<p>所有以test_打头的方法都将自动运行。上例中每个test_方法都能用来测试函数get_formatted_name()的一个方面。</p>
+</li>
+<li>
+<p>unittest类最有用的功能：<strong>断言方法</strong>。这里用到的是assertEqual()。它能比较传入的两个字符串是否相同。</p>
+</li>
+</ul>
+<h2 id="92-测试类">9.2 测试类</h2>
+<p>有6个常用的断言方法：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">方法</th>
+<th style="text-align:left">用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">assertEqual(a, b)</td>
+<td style="text-align:left">核实 a == b</td>
+</tr>
+<tr>
+<td style="text-align:left">assertNotEqual(a, b)</td>
+<td style="text-align:left">核实 a != b</td>
+</tr>
+<tr>
+<td style="text-align:left">assertTrue(x)</td>
+<td style="text-align:left">核实x为True</td>
+</tr>
+<tr>
+<td style="text-align:left">assertFalse(x)</td>
+<td style="text-align:left">核实x为False</td>
+</tr>
+<tr>
+<td style="text-align:left">assertIn(item, list)</td>
+<td style="text-align:left">核实item在list中</td>
+</tr>
+<tr>
+<td style="text-align:left">assertNotIn(item, list)</td>
+<td style="text-align:left">核实item不在list中</td>
+</tr>
+</tbody>
+</table>
+<p>测试类与测试函数基本一致，用到上述断言方法测试类的功能。</p>
+<p>unittest.TestCase类还提供了一个setUp()方法，可以用它来提高效率。假设模块survey.py中有类AnonymousSurvey：</p>
+<pre><code class="language-python">class AnonymousSurvey():
+    &quot;&quot;&quot;收集匿名调查问卷的答案&quot;&quot;&quot;
+
+    def __init__(self, question):
+        &quot;&quot;&quot;存储一个问题，并为存储答案做准备&quot;&quot;&quot;
+        self.question = question
+        self.responses = []
+
+    def show_question(self):
+        &quot;&quot;&quot;显示调查问卷&quot;&quot;&quot;
+        print(self.question)
+
+    def store_response(self, new_response):
+        &quot;&quot;&quot;存储单份调查答卷&quot;&quot;&quot;
+        self.responses.append(new_response)
+
+    def show_results(self):
+        &quot;&quot;&quot;显示收集到的所有答卷&quot;&quot;&quot;
+        print(&quot;Survey results:&quot;)
+        for response in self.responses:
+            print('- ' + response)
+</code></pre>
+<p>我们可以用setUp()方法先创建一个问题和一份回答，供后面的测试方法使用。</p>
+<pre><code class="language-python"># test_survey.py
+
+import unittest
+from survey import AnonymousSurvey
+
+class TestAnonymousSurvey(unittest.TestCase):
+    &quot;&quot;&quot;针对AnonymousSurvey类的测试&quot;&quot;&quot;
+
+    def setUp(self):
+        &quot;&quot;&quot;
+        创建一个调查对象和一组答案，供使用的测试方法使用
+        &quot;&quot;&quot;
+        question = &quot;What language did you first learn to speak?&quot;
+        self.my_survey = AnonymousSurvey(question)
+        self.responses = ['English', 'Spanish', 'Mandarin']
+
+    def test_store_single_response(self):
+        &quot;&quot;&quot;测试单个答案会被妥善地存储&quot;&quot;&quot;
+        self.my_survey.store_response(self.responses[0])
+        self.assertIn('English', self.my_survey.responses)
+
+    def test_store_three_responses(self):
+        &quot;&quot;&quot;测试三个答案会被妥善地存储&quot;&quot;&quot;
+        for response in self.responses:
+            self.my_survey.store_response(response)
+        for response in self.responses:
+            self.assertIn(response, self.my_survey.responses)
+</code></pre>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://kimokcheon.github.io/post/shu-ju-jie-gou/" class="post-title gt-a-link">
+                    数据结构
+                </a>
+            </div>
+        
+
+        
+
+        
+
+        
+            <script src='https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+
+<style>
+	div#vcomments{
+		width:100%;
+		max-width: 1000px;
+		padding: 2.5%
+	}
+</style>
+
+
+	<div id="vcomments"></div>
+
+<script>
+	new Valine({
+		el: '#vcomments',
+		appId: '',
+		appKey: '',
+		avatar: '',
+		pageSize: 5,
+		recordIp: false,
+		placeholder: 'Just Go Go',
+		visitor: false,
+	});
+</script>
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">他们都是萤火，聚在一起就成了太阳</div>
+    <div class="social-container">
+        
+            
+                <a href="https://github.com/Kimokcheon" target="_blank">
+                    <i class="fab fa-github gt-c-content-color-first"></i>
+                </a>
+            
+        
+            
+        
+            
+        
+            
+                <a href="https://www.zhihu.com/people/deng-yu-chuan-4" target="_blank">
+                    <i class="fab fa-zhihu gt-c-content-color-first"></i>
+                </a>
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+    </div>
+    <div>
+        Theme by <a href="https://imhanjie.com/" target="_blank">imhanjie</a>, Powered by <a
+                href="https://github.com/getgridea/gridea" target="_blank">Gridea | <a href="https://kimokcheon.github.io//atom.xml" target="_blank">RSS</a></a>
+    </div>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+    </div>
+</div>
+</body>
+</html>

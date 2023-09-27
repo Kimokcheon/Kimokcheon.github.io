@@ -1,0 +1,788 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>CPP17 | Yuchuan&#39;s Blog</title>
+
+<link rel="shortcut icon" href="https://kimokcheon.github.io//favicon.ico?v=1695778991029">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://kimokcheon.github.io//styles/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            Yuchuan&#39;s Blog
+        </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+                <div class="nav-item">
+                    
+                        <a href="/" class="menu gt-a-link">
+                            首页
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/archives" class="menu gt-a-link">
+                            归档
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/tags" class="menu gt-a-link">
+                            标签
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="https://kimokcheon.github.io/post/about-me" class="menu gt-a-link">
+                            关于
+                        </a>
+                    
+                </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1695778991029" action="/search/index.html">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    CPP17
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2023-06-26 ·
+                    </time>
+                    
+                </div>
+                <div class="post-content">
+                    <h2 id="overview">Overview</h2>
+<p>C++17 includes the following new language features:</p>
+<ul>
+<li><a href="#template-argument-deduction-for-class-templates">template argument deduction for class templates</a></li>
+<li><a href="#declaring-non-type-template-parameters-with-auto">declaring non-type template parameters with auto</a></li>
+<li><a href="#folding-expressions">folding expressions</a></li>
+<li><a href="#new-rules-for-auto-deduction-from-braced-init-list">new rules for auto deduction from braced-init-list</a></li>
+<li><a href="#constexpr-lambda">constexpr lambda</a></li>
+<li><a href="#lambda-capture-this-by-value">lambda capture this by value</a></li>
+<li><a href="#inline-variables">inline variables</a></li>
+<li><a href="#nested-namespaces">nested namespaces</a></li>
+<li><a href="#structured-bindings">structured bindings</a></li>
+<li><a href="#selection-statements-with-initializer">selection statements with initializer</a></li>
+<li><a href="#constexpr-if">constexpr if</a></li>
+<li><a href="#utf-8-character-literals">utf-8 character literals</a></li>
+<li><a href="#direct-list-initialization-of-enums">direct-list-initialization of enums</a></li>
+<li><a href="#fallthrough-nodiscard-maybe_unused-attributes">[[fallthrough]], [[nodiscard]], [[maybe_unused]] attributes</a></li>
+<li><a href="#__has_include">__has_include</a></li>
+<li><a href="#class-template-argument-deduction">class template argument deduction</a></li>
+</ul>
+<p>C++17 includes the following new library features:</p>
+<ul>
+<li><a href="#stdvariant">std::variant</a></li>
+<li><a href="#stdoptional">std::optional</a></li>
+<li><a href="#stdany">std::any</a></li>
+<li><a href="#stdstring_view">std::string_view</a></li>
+<li><a href="#stdinvoke">std::invoke</a></li>
+<li><a href="#stdapply">std::apply</a></li>
+<li><a href="#stdfilesystem">std::filesystem</a></li>
+<li><a href="#stdbyte">std::byte</a></li>
+<li><a href="#splicing-for-maps-and-sets">splicing for maps and sets</a></li>
+<li><a href="#parallel-algorithms">parallel algorithms</a></li>
+<li><a href="#stdsample">std::sample</a></li>
+<li><a href="#stdclamp">std::clamp</a></li>
+<li><a href="#stdreduce">std::reduce</a></li>
+<li><a href="#prefix-sum-algorithms">prefix sum algorithms</a></li>
+<li><a href="#gcd-and-lcm">gcd and lcm</a></li>
+<li><a href="#stdnot_fn">std::not_fn</a></li>
+<li><a href="#string-conversion-tofrom-numbers">string conversion to/from numbers</a></li>
+</ul>
+<h2 id="c17-language-features">C++17 Language Features</h2>
+<h3 id="template-argument-deduction-for-class-templates">Template argument deduction for class templates</h3>
+<p>Automatic template argument deduction much like how it's done for functions, but now including class constructors.</p>
+<pre><code class="language-c++">template &lt;typename T = float&gt;
+struct MyContainer {
+  T val;
+  MyContainer() : val{} {}
+  MyContainer(T val) : val{val} {}
+  // ...
+};
+MyContainer c1 {1}; // OK MyContainer&lt;int&gt;
+MyContainer c2; // OK MyContainer&lt;float&gt;
+</code></pre>
+<h3 id="declaring-non-type-template-parameters-with-auto">Declaring non-type template parameters with auto</h3>
+<p>Following the deduction rules of <code>auto</code>, while respecting the non-type template parameter list of allowable types[*], template arguments can be deduced from the types of its arguments:</p>
+<pre><code class="language-c++">template &lt;auto... seq&gt;
+struct my_integer_sequence {
+  // Implementation here ...
+};
+
+// Explicitly pass type `int` as template argument.
+auto seq = std::integer_sequence&lt;int, 0, 1, 2&gt;();
+// Type is deduced to be `int`.
+auto seq2 = my_integer_sequence&lt;0, 1, 2&gt;();
+</code></pre>
+<p>* - For example, you cannot use a <code>double</code> as a template parameter type, which also makes this an invalid deduction using <code>auto</code>.</p>
+<h3 id="folding-expressions">Folding expressions</h3>
+<p>A fold expression performs a fold of a template parameter pack over a binary operator.</p>
+<ul>
+<li>An expression of the form <code>(... op e)</code> or <code>(e op ...)</code>, where <code>op</code> is a fold-operator and <code>e</code> is an unexpanded parameter pack, are called <em>unary folds</em>.</li>
+<li>An expression of the form <code>(e1 op ... op e2)</code>, where <code>op</code> are fold-operators, is called a <em>binary fold</em>. Either <code>e1</code> or <code>e2</code> is an unexpanded parameter pack, but not both.</li>
+</ul>
+<pre><code class="language-c++">template &lt;typename... Args&gt;
+bool logicalAnd(Args... args) {
+    // Binary folding.
+    return (true &amp;&amp; ... &amp;&amp; args);
+}
+bool b = true;
+bool&amp; b2 = b;
+logicalAnd(b, b2, true); // == true
+</code></pre>
+<pre><code class="language-c++">template &lt;typename... Args&gt;
+auto sum(Args... args) {
+    // Unary folding.
+    return (... + args);
+}
+sum(1.0, 2.0f, 3); // == 6.0
+</code></pre>
+<h3 id="new-rules-for-auto-deduction-from-braced-init-list">New rules for auto deduction from braced-init-list</h3>
+<p>Changes to <code>auto</code> deduction when used with the uniform initialization syntax. Previously, <code>auto x {3};</code> deduces a <code>std::initializer_list&lt;int&gt;</code>, which now deduces to <code>int</code>.</p>
+<pre><code class="language-c++">auto x1 {1, 2, 3}; // error: not a single element
+auto x2 = {1, 2, 3}; // x2 is std::initializer_list&lt;int&gt;
+auto x3 {3}; // x3 is int
+auto x4 {3.0}; // x4 is double
+</code></pre>
+<h3 id="constexpr-lambda">constexpr lambda</h3>
+<p>Compile-time lambdas using <code>constexpr</code>.</p>
+<pre><code class="language-c++">auto identity = [](int n) constexpr { return n; };
+static_assert(identity(123) == 123);
+</code></pre>
+<pre><code class="language-c++">constexpr auto add = [](int x, int y) {
+  auto L = [=] { return x; };
+  auto R = [=] { return y; };
+  return [=] { return L() + R(); };
+};
+
+static_assert(add(1, 2)() == 3);
+</code></pre>
+<pre><code class="language-c++">constexpr int addOne(int n) {
+  return [n] { return n + 1; }();
+}
+
+static_assert(addOne(1) == 2);
+</code></pre>
+<h3 id="lambda-capture-this-by-value">Lambda capture <code>this</code> by value</h3>
+<p>Capturing <code>this</code> in a lambda's environment was previously reference-only. An example of where this is problematic is asynchronous code using callbacks that require an object to be available, potentially past its lifetime. <code>*this</code> (C++17) will now make a copy of the current object, while <code>this</code> (C++11) continues to capture by reference.</p>
+<pre><code class="language-c++">struct MyObj {
+  int value {123};
+  auto getValueCopy() {
+    return [*this] { return value; };
+  }
+  auto getValueRef() {
+    return [this] { return value; };
+  }
+};
+MyObj mo;
+auto valueCopy = mo.getValueCopy();
+auto valueRef = mo.getValueRef();
+mo.value = 321;
+valueCopy(); // 123
+valueRef(); // 321
+</code></pre>
+<h3 id="inline-variables">Inline variables</h3>
+<p>The inline specifier can be applied to variables as well as to functions. A variable declared inline has the same semantics as a function declared inline.</p>
+<pre><code class="language-c++">// Disassembly example using compiler explorer.
+struct S { int x; };
+inline S x1 = S{321}; // mov esi, dword ptr [x1]
+                      // x1: .long 321
+
+S x2 = S{123};        // mov eax, dword ptr [.L_ZZ4mainE2x2]
+                      // mov dword ptr [rbp - 8], eax
+                      // .L_ZZ4mainE2x2: .long 123
+</code></pre>
+<p>It can also be used to declare and define a static member variable, such that it does not need to be initialized in the source file.</p>
+<pre><code class="language-c++">struct S {
+  S() : id{count++} {}
+  ~S() { count--; }
+  int id;
+  static inline int count{0}; // declare and initialize count to 0 within the class
+};
+</code></pre>
+<h3 id="nested-namespaces">Nested namespaces</h3>
+<p>Using the namespace resolution operator to create nested namespace definitions.</p>
+<pre><code class="language-c++">namespace A {
+  namespace B {
+    namespace C {
+      int i;
+    }
+  }
+}
+</code></pre>
+<p>The code above can be written like this:</p>
+<pre><code class="language-c++">namespace A::B::C {
+  int i;
+}
+</code></pre>
+<h3 id="structured-bindings">Structured bindings</h3>
+<p>A proposal for de-structuring initialization, that would allow writing <code>auto [ x, y, z ] = expr;</code> where the type of <code>expr</code> was a tuple-like object, whose elements would be bound to the variables <code>x</code>, <code>y</code>, and <code>z</code> (which this construct declares). <em>Tuple-like objects</em> include <a href="README.md#tuples"><code>std::tuple</code></a>, <code>std::pair</code>, <a href="README.md#stdarray"><code>std::array</code></a>, and aggregate structures.</p>
+<pre><code class="language-c++">using Coordinate = std::pair&lt;int, int&gt;;
+Coordinate origin() {
+  return Coordinate{0, 0};
+}
+
+const auto [ x, y ] = origin();
+x; // == 0
+y; // == 0
+</code></pre>
+<pre><code class="language-c++">std::unordered_map&lt;std::string, int&gt; mapping {
+  {&quot;a&quot;, 1},
+  {&quot;b&quot;, 2},
+  {&quot;c&quot;, 3}
+};
+
+// Destructure by reference.
+for (const auto&amp; [key, value] : mapping) {
+  // Do something with key and value
+}
+</code></pre>
+<h3 id="selection-statements-with-initializer">Selection statements with initializer</h3>
+<p>New versions of the <code>if</code> and <code>switch</code> statements which simplify common code patterns and help users keep scopes tight.</p>
+<pre><code class="language-c++">{
+  std::lock_guard&lt;std::mutex&gt; lk(mx);
+  if (v.empty()) v.push_back(val);
+}
+// vs.
+if (std::lock_guard&lt;std::mutex&gt; lk(mx); v.empty()) {
+  v.push_back(val);
+}
+</code></pre>
+<pre><code class="language-c++">Foo gadget(args);
+switch (auto s = gadget.status()) {
+  case OK: gadget.zip(); break;
+  case Bad: throw BadFoo(s.message());
+}
+// vs.
+switch (Foo gadget(args); auto s = gadget.status()) {
+  case OK: gadget.zip(); break;
+  case Bad: throw BadFoo(s.message());
+}
+</code></pre>
+<h3 id="constexpr-if">constexpr if</h3>
+<p>Write code that is instantiated depending on a compile-time condition.</p>
+<pre><code class="language-c++">template &lt;typename T&gt;
+constexpr bool isIntegral() {
+  if constexpr (std::is_integral&lt;T&gt;::value) {
+    return true;
+  } else {
+    return false;
+  }
+}
+static_assert(isIntegral&lt;int&gt;() == true);
+static_assert(isIntegral&lt;char&gt;() == true);
+static_assert(isIntegral&lt;double&gt;() == false);
+struct S {};
+static_assert(isIntegral&lt;S&gt;() == false);
+</code></pre>
+<h3 id="utf-8-character-literals">UTF-8 character literals</h3>
+<p>A character literal that begins with <code>u8</code> is a character literal of type <code>char</code>. The value of a UTF-8 character literal is equal to its ISO 10646 code point value.</p>
+<pre><code class="language-c++">char x = u8'x';
+</code></pre>
+<h3 id="direct-list-initialization-of-enums">Direct list initialization of enums</h3>
+<p>Enums can now be initialized using braced syntax.</p>
+<pre><code class="language-c++">enum byte : unsigned char {};
+byte b {0}; // OK
+byte c {-1}; // ERROR
+byte d = byte{1}; // OK
+byte e = byte{256}; // ERROR
+</code></pre>
+<h3 id="fallthrough-nodiscard-maybe_unused-attributes">[[fallthrough]], [[nodiscard]], [[maybe_unused]] attributes</h3>
+<p>C++17 introduces three new attributes: <code>[[fallthrough]]</code>, <code>[[nodiscard]]</code> and <code>[[maybe_unused]]</code>.</p>
+<ul>
+<li><code>[[fallthrough]]</code> indicates to the compiler that falling through in a switch statement is intended behavior. This attribute may only be used in a switch statement, and must be placed before the next case/default label.</li>
+</ul>
+<pre><code class="language-c++">switch (n) {
+  case 1: 
+    // ...
+    [[fallthrough]];
+  case 2:
+    // ...
+    break;
+  case 3:
+    // ...
+    [[fallthrough]];
+  default:
+    // ...
+}
+</code></pre>
+<ul>
+<li><code>[[nodiscard]]</code> issues a warning when either a function or class has this attribute and its return value is discarded.</li>
+</ul>
+<pre><code class="language-c++">[[nodiscard]] bool do_something() {
+  return is_success; // true for success, false for failure
+}
+
+do_something(); // warning: ignoring return value of 'bool do_something()',
+                // declared with attribute 'nodiscard'
+</code></pre>
+<pre><code class="language-c++">// Only issues a warning when `error_info` is returned by value.
+struct [[nodiscard]] error_info {
+  // ...
+};
+
+error_info do_something() {
+  error_info ei;
+  // ...
+  return ei;
+}
+
+do_something(); // warning: ignoring returned value of type 'error_info',
+                // declared with attribute 'nodiscard'
+</code></pre>
+<ul>
+<li><code>[[maybe_unused]]</code> indicates to the compiler that a variable or parameter might be unused and is intended.</li>
+</ul>
+<pre><code class="language-c++">void my_callback(std::string msg, [[maybe_unused]] bool error) {
+  // Don't care if `msg` is an error message, just log it.
+  log(msg);
+}
+</code></pre>
+<h3 id="__has_include">__has_include</h3>
+<p><code>__has_include (operand)</code> operator may be used in <code>#if</code> and <code>#elif</code> expressions to check whether a header or source file (<code>operand</code>) is available for inclusion or not.</p>
+<p>One use case of this would be using two libraries that work the same way, using the backup/experimental one if the preferred one is not found on the system.</p>
+<pre><code class="language-c++">#ifdef __has_include
+#  if __has_include(&lt;optional&gt;)
+#    include &lt;optional&gt;
+#    define have_optional 1
+#  elif __has_include(&lt;experimental/optional&gt;)
+#    include &lt;experimental/optional&gt;
+#    define have_optional 1
+#    define experimental_optional
+#  else
+#    define have_optional 0
+#  endif
+#endif
+</code></pre>
+<p>It can also be used to include headers existing under different names or locations on various platforms, without knowing which platform the program is running on, OpenGL headers are a good example for this which are located in <code>OpenGL\</code> directory on macOS and <code>GL\</code> on other platforms.</p>
+<pre><code class="language-c++">#ifdef __has_include
+#  if __has_include(&lt;OpenGL/gl.h&gt;)
+#    include &lt;OpenGL/gl.h&gt;
+#    include &lt;OpenGL/glu.h&gt;
+#  elif __has_include(&lt;GL/gl.h&gt;)
+#    include &lt;GL/gl.h&gt;
+#    include &lt;GL/glu.h&gt;
+#  else
+#    error No suitable OpenGL headers found.
+# endif
+#endif
+</code></pre>
+<h3 id="class-template-argument-deduction">Class template argument deduction</h3>
+<p><em>Class template argument deduction</em> (CTAD) allows the compiler to deduce template arguments from constructor arguments.</p>
+<pre><code class="language-c++">std::vector v{ 1, 2, 3 }; // deduces std::vector&lt;int&gt;
+
+std::mutex mtx;
+auto lck = std::lock_guard{ mtx }; // deduces to std::lock_guard&lt;std::mutex&gt;
+
+auto p = new std::pair{ 1.0, 2.0 }; // deduces to std::pair&lt;double, double&gt;
+</code></pre>
+<p>For user-defined types, <em>deduction guides</em> can be used to guide the compiler how to deduce template arguments if applicable:</p>
+<pre><code class="language-c++">template &lt;typename T&gt;
+struct container {
+  container(T t) {}
+
+  template &lt;typename Iter&gt;
+  container(Iter beg, Iter end);
+};
+
+// deduction guide
+template &lt;template Iter&gt;
+container(Iter b, Iter e) -&gt; container&lt;typename std::iterator_traits&lt;Iter&gt;::value_type&gt;;
+
+container a{ 7 }; // OK: deduces container&lt;int&gt;
+
+std::vector&lt;double&gt; v{ 1.0, 2.0, 3.0 };
+auto b = container{ v.begin(), v.end() }; // OK: deduces container&lt;double&gt;
+
+container c{ 5, 6 }; // ERROR: std::iterator_traits&lt;int&gt;::value_type is not a type
+</code></pre>
+<h2 id="c17-library-features">C++17 Library Features</h2>
+<h3 id="stdvariant">std::variant</h3>
+<p>The class template <code>std::variant</code> represents a type-safe <code>union</code>. An instance of <code>std::variant</code> at any given time holds a value of one of its alternative types (it's also possible for it to be valueless).</p>
+<pre><code class="language-c++">std::variant&lt;int, double&gt; v{ 12 };
+std::get&lt;int&gt;(v); // == 12
+std::get&lt;0&gt;(v); // == 12
+v = 12.0;
+std::get&lt;double&gt;(v); // == 12.0
+std::get&lt;1&gt;(v); // == 12.0
+</code></pre>
+<h3 id="stdoptional">std::optional</h3>
+<p>The class template <code>std::optional</code> manages an optional contained value, i.e. a value that may or may not be present. A common use case for optional is the return value of a function that may fail.</p>
+<pre><code class="language-c++">std::optional&lt;std::string&gt; create(bool b) {
+  if (b) {
+    return &quot;Godzilla&quot;;
+  } else {
+    return {};
+  }
+}
+
+create(false).value_or(&quot;empty&quot;); // == &quot;empty&quot;
+create(true).value(); // == &quot;Godzilla&quot;
+// optional-returning factory functions are usable as conditions of while and if
+if (auto str = create(true)) {
+  // ...
+}
+</code></pre>
+<h3 id="stdany">std::any</h3>
+<p>A type-safe container for single values of any type.</p>
+<pre><code class="language-c++">std::any x {5};
+x.has_value() // == true
+std::any_cast&lt;int&gt;(x) // == 5
+std::any_cast&lt;int&amp;&gt;(x) = 10;
+std::any_cast&lt;int&gt;(x) // == 10
+</code></pre>
+<h3 id="stdstring_view">std::string_view</h3>
+<p>A non-owning reference to a string. Useful for providing an abstraction on top of strings (e.g. for parsing).</p>
+<pre><code class="language-c++">// Regular strings.
+std::string_view cppstr {&quot;foo&quot;};
+// Wide strings.
+std::wstring_view wcstr_v {L&quot;baz&quot;};
+// Character arrays.
+char array[3] = {'b', 'a', 'r'};
+std::string_view array_v(array, std::size(array));
+</code></pre>
+<pre><code class="language-c++">std::string str {&quot;   trim me&quot;};
+std::string_view v {str};
+v.remove_prefix(std::min(v.find_first_not_of(&quot; &quot;), v.size()));
+str; //  == &quot;   trim me&quot;
+v; // == &quot;trim me&quot;
+</code></pre>
+<h3 id="stdinvoke">std::invoke</h3>
+<p>Invoke a <code>Callable</code> object with parameters. Examples of <em>callable</em> objects are <code>std::function</code> or lambdas; objects that can be called similarly to a regular function.</p>
+<pre><code class="language-c++">template &lt;typename Callable&gt;
+class Proxy {
+  Callable c_;
+
+public:
+  Proxy(Callable c) : c_{ std::move(c) } {}
+
+  template &lt;typename... Args&gt;
+  decltype(auto) operator()(Args&amp;&amp;... args) {
+    // ...
+    return std::invoke(c_, std::forward&lt;Args&gt;(args)...);
+  }
+};
+
+const auto add = [](int x, int y) { return x + y; };
+Proxy p{ add };
+p(1, 2); // == 3
+</code></pre>
+<h3 id="stdapply">std::apply</h3>
+<p>Invoke a <code>Callable</code> object with a tuple of arguments.</p>
+<pre><code class="language-c++">auto add = [](int x, int y) {
+  return x + y;
+};
+std::apply(add, std::make_tuple(1, 2)); // == 3
+</code></pre>
+<h3 id="stdfilesystem">std::filesystem</h3>
+<p>The new <code>std::filesystem</code> library provides a standard way to manipulate files, directories, and paths in a filesystem.</p>
+<p>Here, a big file is copied to a temporary path if there is available space:</p>
+<pre><code class="language-c++">const auto bigFilePath {&quot;bigFileToCopy&quot;};
+if (std::filesystem::exists(bigFilePath)) {
+  const auto bigFileSize {std::filesystem::file_size(bigFilePath)};
+  std::filesystem::path tmpPath {&quot;/tmp&quot;};
+  if (std::filesystem::space(tmpPath).available &gt; bigFileSize) {
+    std::filesystem::create_directory(tmpPath.append(&quot;example&quot;));
+    std::filesystem::copy_file(bigFilePath, tmpPath.append(&quot;newFile&quot;));
+  }
+}
+</code></pre>
+<h3 id="stdbyte">std::byte</h3>
+<p>The new <code>std::byte</code> type provides a standard way of representing data as a byte. Benefits of using <code>std::byte</code> over <code>char</code> or <code>unsigned char</code> is that it is not a character type, and is also not an arithmetic type; while the only operator overloads available are bitwise operations.</p>
+<pre><code class="language-c++">std::byte a {0};
+std::byte b {0xFF};
+int i = std::to_integer&lt;int&gt;(b); // 0xFF
+std::byte c = a &amp; b;
+int j = std::to_integer&lt;int&gt;(c); // 0
+</code></pre>
+<p>Note that <code>std::byte</code> is simply an enum, and braced initialization of enums become possible thanks to <a href="#direct-list-initialization-of-enums">direct-list-initialization of enums</a>.</p>
+<h3 id="splicing-for-maps-and-sets">Splicing for maps and sets</h3>
+<p>Moving nodes and merging containers without the overhead of expensive copies, moves, or heap allocations/deallocations.</p>
+<p>Moving elements from one map to another:</p>
+<pre><code class="language-c++">std::map&lt;int, string&gt; src {{1, &quot;one&quot;}, {2, &quot;two&quot;}, {3, &quot;buckle my shoe&quot;}};
+std::map&lt;int, string&gt; dst {{3, &quot;three&quot;}};
+dst.insert(src.extract(src.find(1))); // Cheap remove and insert of { 1, &quot;one&quot; } from `src` to `dst`.
+dst.insert(src.extract(2)); // Cheap remove and insert of { 2, &quot;two&quot; } from `src` to `dst`.
+// dst == { { 1, &quot;one&quot; }, { 2, &quot;two&quot; }, { 3, &quot;three&quot; } };
+</code></pre>
+<p>Inserting an entire set:</p>
+<pre><code class="language-c++">std::set&lt;int&gt; src {1, 3, 5};
+std::set&lt;int&gt; dst {2, 4, 5};
+dst.merge(src);
+// src == { 5 }
+// dst == { 1, 2, 3, 4, 5 }
+</code></pre>
+<p>Inserting elements which outlive the container:</p>
+<pre><code class="language-c++">auto elementFactory() {
+  std::set&lt;...&gt; s;
+  s.emplace(...);
+  return s.extract(s.begin());
+}
+s2.insert(elementFactory());
+</code></pre>
+<p>Changing the key of a map element:</p>
+<pre><code class="language-c++">std::map&lt;int, string&gt; m {{1, &quot;one&quot;}, {2, &quot;two&quot;}, {3, &quot;three&quot;}};
+auto e = m.extract(2);
+e.key() = 4;
+m.insert(std::move(e));
+// m == { { 1, &quot;one&quot; }, { 3, &quot;three&quot; }, { 4, &quot;two&quot; } }
+</code></pre>
+<h3 id="parallel-algorithms">Parallel algorithms</h3>
+<p>Many of the STL algorithms, such as the <code>copy</code>, <code>find</code> and <code>sort</code> methods, started to support the <em>parallel execution policies</em>: <code>seq</code>, <code>par</code> and <code>par_unseq</code> which translate to &quot;sequentially&quot;, &quot;parallel&quot; and &quot;parallel unsequenced&quot;.</p>
+<pre><code class="language-c++">std::vector&lt;int&gt; longVector;
+// Find element using parallel execution policy
+auto result1 = std::find(std::execution::par, std::begin(longVector), std::end(longVector), 2);
+// Sort elements using sequential execution policy
+auto result2 = std::sort(std::execution::seq, std::begin(longVector), std::end(longVector));
+</code></pre>
+<h3 id="stdsample">std::sample</h3>
+<p>Samples n elements in the given sequence (without replacement) where every element has an equal chance of being selected.</p>
+<pre><code class="language-c++">const std::string ALLOWED_CHARS = &quot;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789&quot;;
+std::string guid;
+// Sample 5 characters from ALLOWED_CHARS.
+std::sample(ALLOWED_CHARS.begin(), ALLOWED_CHARS.end(), std::back_inserter(guid),
+  5, std::mt19937{ std::random_device{}() });
+
+std::cout &lt;&lt; guid; // e.g. G1fW2
+</code></pre>
+<h3 id="stdclamp">std::clamp</h3>
+<p>Clamp given value between a lower and upper bound.</p>
+<pre><code class="language-c++">std::clamp(42, -1, 1); // == 1
+std::clamp(-42, -1, 1); // == -1
+std::clamp(0, -1, 1); // == 0
+
+// `std::clamp` also accepts a custom comparator:
+std::clamp(0, -1, 1, std::less&lt;&gt;{}); // == 0
+</code></pre>
+<h3 id="stdreduce">std::reduce</h3>
+<p>Fold over a given range of elements. Conceptually similar to <code>std::accumulate</code>, but <code>std::reduce</code> will perform the fold in parallel. Due to the fold being done in parallel, if you specify a binary operation, it is required to be associative and commutative. A given binary operation also should not change any element or invalidate any iterators within the given range.</p>
+<p>The default binary operation is std::plus with an initial value of 0.</p>
+<pre><code class="language-c++">const std::array&lt;int, 3&gt; a{ 1, 2, 3 };
+std::reduce(std::cbegin(a), std::cend(a)); // == 6
+// Using a custom binary op:
+std::reduce(std::cbegin(a), std::cend(a), 1, std::multiplies&lt;&gt;{}); // == 6
+</code></pre>
+<p>Additionally you can specify transformations for reducers:</p>
+<pre><code class="language-c++">std::transform_reduce(std::cbegin(a), std::cend(a), 0, std::plus&lt;&gt;{}, times_ten); // == 60
+
+const std::array&lt;int, 3&gt; b{ 1, 2, 3 };
+const auto product_times_ten = [](const auto a, const auto b) { return a * b * 10; };
+
+std::transform_reduce(std::cbegin(a), std::cend(a), std::cbegin(b), 0, std::plus&lt;&gt;{}, product_times_ten); // == 140
+</code></pre>
+<h3 id="prefix-sum-algorithms">Prefix sum algorithms</h3>
+<p>Support for prefix sums (both inclusive and exclusive scans) along with transformations.</p>
+<pre><code class="language-c++">const std::array&lt;int, 3&gt; a{ 1, 2, 3 };
+
+std::inclusive_scan(std::cbegin(a), std::cend(a),
+    std::ostream_iterator&lt;int&gt;{ std::cout, &quot; &quot; }, std::plus&lt;&gt;{}); // 1 3 6
+
+std::exclusive_scan(std::cbegin(a), std::cend(a),
+    std::ostream_iterator&lt;int&gt;{ std::cout, &quot; &quot; }, 0, std::plus&lt;&gt;{}); // 0 1 3
+
+const auto times_ten = [](const auto n) { return n * 10; };
+
+std::transform_inclusive_scan(std::cbegin(a), std::cend(a),
+    std::ostream_iterator&lt;int&gt;{ std::cout, &quot; &quot; }, std::plus&lt;&gt;{}, times_ten); // 10 30 60
+
+std::transform_exclusive_scan(std::cbegin(a), std::cend(a),
+    std::ostream_iterator&lt;int&gt;{ std::cout, &quot; &quot; }, 0, std::plus&lt;&gt;{}, times_ten); // 0 10 30
+</code></pre>
+<h3 id="gcd-and-lcm">GCD and LCM</h3>
+<p>Greatest common divisor (GCD) and least common multiple (LCM).</p>
+<pre><code class="language-c++">const int p = 9;
+const int q = 3;
+std::gcd(p, q); // == 3
+std::lcm(p, q); // == 9
+</code></pre>
+<h3 id="stdnot_fn">std::not_fn</h3>
+<p>Utility function that returns the negation of the result of the given function.</p>
+<pre><code class="language-c++">const std::ostream_iterator&lt;int&gt; ostream_it{ std::cout, &quot; &quot; };
+const auto is_even = [](const auto n) { return n % 2 == 0; };
+std::vector&lt;int&gt; v{ 0, 1, 2, 3, 4 };
+
+// Print all even numbers.
+std::copy_if(std::cbegin(v), std::cend(v), ostream_it, is_even); // 0 2 4
+// Print all odd (not even) numbers.
+std::copy_if(std::cbegin(v), std::cend(v), ostream_it, std::not_fn(is_even)); // 1 3
+</code></pre>
+<h3 id="string-conversion-tofrom-numbers">String conversion to/from numbers</h3>
+<p>Convert integrals and floats to a string or vice-versa. Conversions are non-throwing, do not allocate, and are more secure than the equivalents from the C standard library.</p>
+<p>Users are responsible for allocating enough storage required for <code>std::to_chars</code>, or the function will fail by setting the error code object in its return value.</p>
+<p>These functions allow you to optionally pass a base (defaults to base-10) or a format specifier for floating type input.</p>
+<ul>
+<li><code>std::to_chars</code> returns a (non-const) char pointer which is one-past-the-end of the string that the function wrote to inside the given buffer, and an error code object.</li>
+<li><code>std::from_chars</code> returns a const char pointer which on success is equal to the end pointer passed to the function, and an error code object.</li>
+</ul>
+<p>Both error code objects returned from these functions are equal to the default-initialized error code object on success.</p>
+<p>Convert the number <code>123</code> to a <code>std::string</code>:</p>
+<pre><code class="language-c++">const int n = 123;
+
+// Can use any container, string, array, etc.
+std::string str;
+str.resize(3); // hold enough storage for each digit of `n`
+
+const auto [ ptr, ec ] = std::to_chars(str.data(), str.data() + str.size(), n);
+
+if (ec == std::errc{}) { std::cout &lt;&lt; str &lt;&lt; std::endl; } // 123
+else { /* handle failure */ }
+</code></pre>
+<p>Convert from a <code>std::string</code> with value <code>&quot;123&quot;</code> to an integer:</p>
+<pre><code class="language-c++">const std::string str{ &quot;123&quot; };
+int n;
+
+const auto [ ptr, ec ] = std::from_chars(str.data(), str.data() + str.size(), n);
+
+if (ec == std::errc{}) { std::cout &lt;&lt; n &lt;&lt; std::endl; } // 123
+else { /* handle failure */ }
+</code></pre>
+<h2 id="acknowledgements">Acknowledgements</h2>
+<ul>
+<li><a href="http://en.cppreference.com/w/cpp">cppreference</a> - especially useful for finding examples and documentation of new library features.</li>
+<li><a href="http://thbecker.net/articles/rvalue_references/section_01.html">C++ Rvalue References Explained</a> - a great introduction I used to understand rvalue references, perfect forwarding, and move semantics.</li>
+<li><a href="http://clang.llvm.org/cxx_status.html">clang</a> and <a href="https://gcc.gnu.org/projects/cxx-status.html">gcc</a>'s standards support pages. Also included here are the proposals for language/library features that I used to help find a description of, what it's meant to fix, and some examples.</li>
+<li><a href="https://godbolt.org/">Compiler explorer</a></li>
+<li><a href="https://www.amazon.com/Effective-Modern-Specific-Ways-Improve/dp/1491903996">Scott Meyers' Effective Modern C++</a> - highly recommended book!</li>
+<li><a href="https://www.youtube.com/channel/UCxHAlbZQNFU2LgEtiqd2Maw">Jason Turner's C++ Weekly</a> - nice collection of C++-related videos.</li>
+<li><a href="http://stackoverflow.com/questions/7027523/what-can-i-do-with-a-moved-from-object">What can I do with a moved-from object?</a></li>
+<li><a href="http://stackoverflow.com/questions/24109737/what-are-some-uses-of-decltypeauto">What are some uses of decltype(auto)?</a></li>
+<li>And many more SO posts I'm forgetting...</li>
+</ul>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://kimokcheon.github.io/post/cpp14/" class="post-title gt-a-link">
+                    CPP14
+                </a>
+            </div>
+        
+
+        
+
+        
+
+        
+            <script src='https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+
+<style>
+	div#vcomments{
+		width:100%;
+		max-width: 1000px;
+		padding: 2.5%
+	}
+</style>
+
+
+	<div id="vcomments"></div>
+
+<script>
+	new Valine({
+		el: '#vcomments',
+		appId: '',
+		appKey: '',
+		avatar: '',
+		pageSize: 5,
+		recordIp: false,
+		placeholder: 'Just Go Go',
+		visitor: false,
+	});
+</script>
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">他们都是萤火，聚在一起就成了太阳</div>
+    <div class="social-container">
+        
+            
+                <a href="https://github.com/Kimokcheon" target="_blank">
+                    <i class="fab fa-github gt-c-content-color-first"></i>
+                </a>
+            
+        
+            
+        
+            
+        
+            
+                <a href="https://www.zhihu.com/people/deng-yu-chuan-4" target="_blank">
+                    <i class="fab fa-zhihu gt-c-content-color-first"></i>
+                </a>
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+    </div>
+    <div>
+        Theme by <a href="https://imhanjie.com/" target="_blank">imhanjie</a>, Powered by <a
+                href="https://github.com/getgridea/gridea" target="_blank">Gridea | <a href="https://kimokcheon.github.io//atom.xml" target="_blank">RSS</a></a>
+    </div>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,469 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>Linux下C++文件操作 | Yuchuan&#39;s Blog</title>
+
+<link rel="shortcut icon" href="https://kimokcheon.github.io//favicon.ico?v=1695778991029">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://kimokcheon.github.io//styles/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            Yuchuan&#39;s Blog
+        </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+                <div class="nav-item">
+                    
+                        <a href="/" class="menu gt-a-link">
+                            首页
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/archives" class="menu gt-a-link">
+                            归档
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/tags" class="menu gt-a-link">
+                            标签
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="https://kimokcheon.github.io/post/about-me" class="menu gt-a-link">
+                            关于
+                        </a>
+                    
+                </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1695778991029" action="/search/index.html">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    Linux下C++文件操作
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2023-06-26 ·
+                    </time>
+                    
+                        <a href="https://kimokcheon.github.io/tag/candc/" class="post-tags">
+                            # C&amp;C++
+                        </a>
+                    
+                        <a href="https://kimokcheon.github.io/tag/linux/" class="post-tags">
+                            # Linux
+                        </a>
+                    
+                </div>
+                <div class="post-content">
+                    <h1 id="gcc编译器">GCC编译器</h1>
+<h2 id="安装">安装</h2>
+<pre><code>sudo apt update
+# 通过以下命令安装编译器和调试器
+sudo apt install build-essential gdb
+# 以下命令确认每个软件是否安装成功
+# 如果成功，则显示版本号
+gcc --version
+g++ --version
+gdb --version
+</code></pre>
+<h2 id="利用g分步编译cpp">利用g++分步编译cpp</h2>
+<pre><code># -E 选项指示编译器仅对输入文件进行预处理
+g++  -E test.cpp  -o test.i   //.i文件
+
+# -S 编译选项告诉 g++ 在为 C++ 代码产生了汇编语言文件后停止编译
+# g++ 产生的汇编语言文件的缺省扩展名是 .s
+g++  -S test.i  -o   test.s
+
+# -c 选项告诉 g++ 仅把源代码编译为机器语言的目标代码
+# 缺省时 g++ 建立的目标代码文件有一个 .o 的扩展名。
+g++  -c test.s  -o test.o
+
+# -o 编译选项来为将产生的可执行文件用指定的文件名
+g++ test.o  -o test
+</code></pre>
+<h2 id="重要的编译参数">重要的编译参数</h2>
+<pre><code># -g 选项告诉 GCC 产生能被 GNU 调试器GDB使用的调试信息，以调试程序。
+# 产生带调试信息的可执行文件test
+g++ -g test.cpp
+
+## 所谓优化，例如省略掉代码中从未使用过的变量、直接将常量表达式用结果值代替等等，这些操作
+会缩减目标文件所包含的代码量，提高最终生成的可执行文件的运行效率。
+# -O 选项告诉 g++ 对源代码进行基本优化。这些优化在大多数情况下都会使程序执行的更快。 -O2
+选项告诉 g++ 产生尽可能小和尽可能快的代码。 如-O2，-O3，-On（n 常为0–3）
+# -O 同时减小代码的长度和执行时间，其效果等价于-O1
+# -O0 表示不做优化
+# -O1 为默认优化
+# -O2 除了完成-O1的优化之外，还进行一些额外的调整工作，如指令调整等。
+# -O3 则包括循环展开和其他一些与处理特性相关的优化工作。
+# 选项将使编译的速度比使用 -O 时慢， 但通常产生的代码执行速度会更快。
+# 使用 -O2优化源代码，并输出可执行文件
+g++ -O2 test.cpp
+
+# -l参数(小写)就是用来指定程序要链接的库，-l参数紧接着就是库名
+# 在/lib和/usr/lib和/usr/local/lib里的库直接用-l参数就能链接
+# 链接glog库
+g++ -lglog test.cpp
+# 如果库文件没放在上面三个目录里，需要使用-L参数(大写)指定库文件所在目录
+# -L参数跟着的是库文件所在的目录名
+# 链接mytest库，libmytest.so在/home/bing/mytestlibfolder目录下
+g++ -L/home/bing/mytestlibfolder -lmytest test.cpp
+
+# -I
+# /usr/include目录一般是不用指定的，gcc知道去那里找，但 是如果头文件不在/usr/icnclude
+里我们就要用-I参数指定了，比如头文件放在/myinclude目录里，那编译命令行就要加上I/myinclude 参数了，如果不加你会得到一个”xxxx.h: No such file or directory”的错
+误。-I参数可以用相对路径，比如头文件在当前 目录，可以用-I.来指定。上面我们提到的–cflags参
+数就是用来生成-I参数的。
+g++ -I/myinclude test.cpp
+
+# 打印出gcc提供的警告信息
+g++ -Wall test.cpp
+
+# 关闭所有警告信息
+g++ -w test.cpp
+
+# 使用 c++11 标准编译 test.cpp
+g++ -std=c++11 test.cpp
+
+# 指定即将产生的文件名
+# 指定输出可执行文件名为test
+g++ test.cpp -o test
+</code></pre>
+<h2 id="编译举例">编译举例</h2>
+<pre><code># 最初目录结构
+.
+├── include
+│   └── Swap.h
+├── main.cpp
+└── src
+   └── Swap.cpp
+</code></pre>
+<h3 id="直接编译">直接编译</h3>
+<pre><code># 将 main.cpp src/Swap.cpp 编译为可执行文件
+g++ main.cpp src/Swap.cpp -Iinclude
+# 运行a.out
+./a.out
+# 将 main.cpp src/Swap.cpp 编译为可执行文件 附带一堆参数
+g++ main.cpp src/Swap.cpp -Iinclude -std=c++11 -O2 -Wall -o b.out
+# 运行 b.out
+./b.out
+</code></pre>
+<h3 id="生成库文件编译">生成库文件编译</h3>
+<h4 id="静态库">静态库</h4>
+<pre><code>## 进入src目录下
+$cd src
+# 汇编，生成Swap.o文件
+g++ Swap.cpp -c -I../include
+# 生成静态库libSwap.a
+ar rs libSwap.a Swap.o
+## 回到上级目录
+$cd ..
+# 链接，生成可执行文件:staticmain
+g++ main.cpp -Iinclude -Lsrc -lSwap -o staticmain
+</code></pre>
+<h4 id="动态库">动态库</h4>
+<pre><code>## 进入src目录下
+$cd src
+# 生成动态库libSwap.so
+g++ Swap.cpp -I../include -fPIC -shared -o libSwap.so
+## 上面命令等价于以下两条命令
+# gcc Swap.cpp -I../include -c -fPIC
+# gcc -shared -o libSwap.so Swap.o
+## 回到上级目录
+$cd ..
+# 链接，生成可执行文件:sharemain
+g++ main.cpp -Iinclude -Lsrc -lSwap -o sharemain
+</code></pre>
+<h1 id="gdb调试器">GDB调试器</h1>
+<pre><code>$(gdb)help(h) # 查看命令帮助，具体命令查询在gdb中输入help + 命令
+$(gdb)run(r) # 重新开始运行文件（run-text：加载文本文件，run-bin：加载二进制文
+件）
+$(gdb)start # 单步执行，运行程序，停在第一行执行语句
+$(gdb)list(l) # 查看原代码（list-n,从第n行开始查看代码。list+ 函数名：查看具体函
+数）
+$(gdb)set # 设置变量的值
+$(gdb)next(n)   # 单步调试（逐过程，函数直接执行）
+$(gdb)step(s) # 单步调试（逐语句：跳入自定义函数内部执行）
+$(gdb)backtrace(bt) # 查看函数的调用的栈帧和层级关系
+$(gdb)frame(f) # 切换函数的栈帧
+$(gdb)info(i) # 查看函数内部局部变量的数值
+$(gdb)finish # 结束当前函数，返回到函数调用点
+$(gdb)continue(c) # 继续运行
+$(gdb)print(p) # 打印值及地址
+$(gdb)quit(q) # 退出gdb
+$(gdb)break+num(b) # 在第num行设置断点
+$(gdb)info breakpoints # 查看当前设置的所有断点
+$(gdb)delete breakpoints num(d) # 删除第num个断点
+$(gdb)display # 追踪查看具体变量值
+$(gdb)undisplay # 取消追踪观察变量
+$(gdb)watch # 被设置观察点的变量发生修改时，打印显示
+$(gdb)i watch # 显示观察点
+$(gdb)enable breakpoints # 启用断点
+$(gdb)disable breakpoints # 禁用断点
+$(gdb)x # 查看内存x/20xw 显示20个单元，16进制，4字节每单元
+$(gdb)run argv[1] argv[2] # 调试时命令行传参
+$(gdb)set follow-fork-mode child#Makefile项目管理：选择跟踪父子进程（fork()）
+</code></pre>
+<h1 id="cmake">CMake</h1>
+<h2 id="安装-2">安装</h2>
+<pre><code># 通过以下命令安装编译器和调试器
+sudo apt install cmake
+
+# 确认是否安装成功
+# 如果成功，则显示版本号
+cmake --version
+</code></pre>
+<h2 id="重要指令">重要指令</h2>
+<pre><code># CMake最小版本要求为2.8.3
+cmake_minimum_required(VERSION 2.8.3)
+
+# 指定工程名为HELLOWORLD
+project(HELLOWORLD)
+
+# 定义SRC变量，其值为sayhello.cpp hello.cpp
+set(SRC sayhello.cpp hello.cpp)
+
+# 将/usr/include/myincludefolder 和 ./include 添加到头文件搜索路径
+include_directories(/usr/include/myincludefolder ./include)
+
+# 将/usr/lib/mylibfolder 和 ./lib 添加到库文件搜索路径
+link_directories(/usr/lib/mylibfolder ./lib)
+
+# 通过变量 SRC 生成 libhello.so 共享库
+add_library(hello SHARED ${SRC})
+
+# 添加编译参数 -Wall -std=c++11 -O2
+add_compile_options(-Wall -std=c++11 -O2)
+
+# 编译main.cpp生成可执行文件main
+add_executable(main main.cpp)
+
+# 将hello动态库文件链接到可执行文件main
+target_link_libraries(main hello)
+
+# 添加src子目录，src中需有一个CMakeLists.txt
+add_subdirectory(src)
+
+# 定义SRC变量，其值为当前目录下所有的源代码文件
+aux_source_directory(. SRC)
+
+# 编译SRC变量所代表的源代码文件，生成main可执行文件
+add_executable(main ${SRC})
+
+# 在CMAKE_CXX_FLAGS编译选项后追加-std=c++11
+set( CMAKE_CXX_FLAGS &quot;${CMAKE_CXX_FLAGS} -std=c++11&quot;)
+
+# 设定编译类型为debug，调试时需要选择debug
+set(CMAKE_BUILD_TYPE Debug)
+# 设定编译类型为release，发布时需要选择release
+set(CMAKE_BUILD_TYPE Release)
+</code></pre>
+<h2 id="构建方法">构建方法</h2>
+<h3 id="内部构件">内部构件</h3>
+<pre><code>## 内部构建
+# 在当前目录下，编译本目录的CMakeLists.txt，生成Makefile和其他文件
+cmake .
+# 执行make命令，生成target
+make
+</code></pre>
+<h3 id="外部构建">外部构建</h3>
+<pre><code>## 外部构建
+# 1. 在当前目录下，创建build文件夹
+mkdir build
+# 2. 进入到build文件夹
+cd build
+# 3. 编译上级目录的CMakeLists.txt，生成Makefile和其他文件
+cmake ..
+# 4. 执行make命令，生成target
+make
+</code></pre>
+<h2 id="cmake代码实践">CMake代码实践</h2>
+<h3 id="最小cmake工程">最小CMake工程</h3>
+<pre><code># Set the minimum version of CMake that can be used
+cmake_minimum_required(VERSION 3.0)
+# Set the project name
+project (HELLO)
+# Add an executable
+add_executable(hello_cmake main.cpp)
+</code></pre>
+<h3 id="多目录工程-直接编译">多目录工程 - 直接编译</h3>
+<pre><code># Set the minimum version of CMake that can be used
+cmake_minimum_required(VERSION 3.0)
+#project name
+project(SWAP)
+#head file pat
+include_directories( include )
+  
+#source directory files to var
+add_subdirectory( src DIR_SRCS )
+  
+#add executable file  
+add_executable(swap_02 ${TEST_MATH})
+  
+#add link library 
+target_link_libraries(${FS_BUILD_BINARY_PREFIX}sqrt ${LIBRARIES})
+</code></pre>
+<h3 id="多目录工程-生成库编译">多目录工程 - 生成库编译</h3>
+<pre><code># Set the minimum version of CMake that can be used
+cmake_minimum_required(VERSION 3.0)
+#project name  
+project(SWAP_LIBRARY)
+#add compile options
+add_compile_options(&quot;-Wall -std=c++11&quot;)
+#set CMAKE_BUILD_TYPE
+set( CMAKE_BUILD_TYPE Debug )
+# set output binary path  
+set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
+############################################################
+# Create a library
+############################################################
+#Generate the static library from the library sources
+add_library( swap_library STATIC src/Swap.cpp )
+target_include_directories( swap_lib PUBLIC ${PROJECT_SOURCE_DIR}/include )
+############################################################
+# Create an executable
+############################################################
+# Add an executable with the above sources
+add_executable( swap_01 main.cpp )
+# link the new swap_01 target with the swap_lib target
+target_link_libraries( swap_01 swap_liby )
+</code></pre>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://kimokcheon.github.io/post/effective-modern-cxue-xi-bi-ji/" class="post-title gt-a-link">
+                    Effective Modern C++学习笔记
+                </a>
+            </div>
+        
+
+        
+
+        
+
+        
+            <script src='https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+
+<style>
+	div#vcomments{
+		width:100%;
+		max-width: 1000px;
+		padding: 2.5%
+	}
+</style>
+
+
+	<div id="vcomments"></div>
+
+<script>
+	new Valine({
+		el: '#vcomments',
+		appId: '',
+		appKey: '',
+		avatar: '',
+		pageSize: 5,
+		recordIp: false,
+		placeholder: 'Just Go Go',
+		visitor: false,
+	});
+</script>
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">他们都是萤火，聚在一起就成了太阳</div>
+    <div class="social-container">
+        
+            
+                <a href="https://github.com/Kimokcheon" target="_blank">
+                    <i class="fab fa-github gt-c-content-color-first"></i>
+                </a>
+            
+        
+            
+        
+            
+        
+            
+                <a href="https://www.zhihu.com/people/deng-yu-chuan-4" target="_blank">
+                    <i class="fab fa-zhihu gt-c-content-color-first"></i>
+                </a>
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+    </div>
+    <div>
+        Theme by <a href="https://imhanjie.com/" target="_blank">imhanjie</a>, Powered by <a
+                href="https://github.com/getgridea/gridea" target="_blank">Gridea | <a href="https://kimokcheon.github.io//atom.xml" target="_blank">RSS</a></a>
+    </div>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+    </div>
+</div>
+</body>
+</html>

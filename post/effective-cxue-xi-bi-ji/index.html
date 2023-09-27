@@ -1,0 +1,556 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>Effective C++学习笔记 | Yuchuan&#39;s Blog</title>
+
+<link rel="shortcut icon" href="https://kimokcheon.github.io//favicon.ico?v=1695778991029">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://kimokcheon.github.io//styles/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            Yuchuan&#39;s Blog
+        </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+                <div class="nav-item">
+                    
+                        <a href="/" class="menu gt-a-link">
+                            首页
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/archives" class="menu gt-a-link">
+                            归档
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/tags" class="menu gt-a-link">
+                            标签
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="https://kimokcheon.github.io/post/about-me" class="menu gt-a-link">
+                            关于
+                        </a>
+                    
+                </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1695778991029" action="/search/index.html">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    Effective C++学习笔记
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2023-06-26 ·
+                    </time>
+                    
+                </div>
+                <div class="post-content">
+                    <h1 id="effective-c学习笔记">Effective C++学习笔记</h1>
+<p>偷一手展鹏的笔记</p>
+<h2 id="1-让自己习惯c">1、让自己习惯C++</h2>
+<h3 id="条款02-替换掉define">条款02、替换掉define</h3>
+<p>1、单纯常量用const替换define</p>
+<p>2、对于形似函数的宏，用inline代替define</p>
+<h3 id="条款03-尽可能多使用const">条款03、尽可能多使用const：</h3>
+<p>1、const用法：</p>
+<pre><code class="language-c++">const char*p;//const data
+char const *p;//const data
+char *const p;//const pointer
+const char *const p;//const data,const pointer
+const std::vector&lt;int&gt;::iterator iter;//const data
+std::vector&lt;int&gt;::const_iterator Citer;//const pointer
+</code></pre>
+<p>2、当const和non-const实质等价时，令non-const版本调用const版本可以避免代码重复</p>
+<h3 id="条款04-确保对象在使用时已被初始化">条款04、确保对象在使用时已被初始化</h3>
+<p>1、构造函数最好使用成员初值列，而不在构造函数里使用赋值</p>
+<h4 id="2-为免除跨编译单元之初始化次序问题用local-static替换non-local-staticsingleton模式">2、为免除“跨编译单元之初始化次序”问题，用local static替换non-local static（Singleton模式）：</h4>
+<p>将non-local static对象搬到专属函数内，这些函数返回reference指向它所含的对象。</p>
+<p>若被频繁调用，可以inline</p>
+<p>解决多线程下“等待某事发生”的麻烦，可以在单线程启动阶段手动调用所有reference-returning函数</p>
+<h2 id="2-构造析构赋值运算">2、构造/析构/赋值运算</h2>
+<h3 id="条款06-明确拒绝不想使用编辑器自动生成的函数">条款06、明确拒绝不想使用编辑器自动生成的函数</h3>
+<p>将对应成员函数声明为private并不予实现</p>
+<h3 id="条款07-为多态基类声明virtual析构函数">条款07、为多态基类声明virtual析构函数</h3>
+<p>若为具备多态性的基类（polymorphic base classes）必须声明virtual析构函数，否则不要声明</p>
+<h3 id="条款09-不在构造和析构过程中调用virtual函数">条款09、不在构造和析构过程中调用virtual函数</h3>
+<h3 id="条款10-令operator-返回一个reference-to-this">条款10、令operator=（+=、-=、*=）返回一个reference to *this</h3>
+<p>可以实现连锁形式</p>
+<h3 id="条款11-在operator中处理自我赋值">条款11、在operator=中处理“自我赋值”</h3>
+<p>写法一：</p>
+<pre><code class="language-c++">class Widget {
+...
+void swap(Widget&amp; rhs);//交换*this和rhs
+...
+};
+Widget&amp; Widget::operator=(const Widget&amp; rhs) {
+    Widget temp(rhs);
+    swap(temp);
+    return *this;
+}
+</code></pre>
+<p>写法二：</p>
+<pre><code class="language-c++">Widget&amp; Widget::operator=(Widget rhs) {//关键是这里是pass by value
+	swap(rhs);
+	return *this;
+}
+</code></pre>
+<h2 id="3-资源管理">3、资源管理</h2>
+<h3 id="条款131415-以对象管理资源raii资源获取时机便是初始化时机">条款13，14，15、以对象管理资源（RAII:资源获取时机便是初始化时机）</h3>
+<p>1、auto_ptr智能指针使用</p>
+<pre><code class="language-c++">void f(){	
+    ...
+	std::auto_ptr&lt;...&gt;p(create());
+    ...
+}
+</code></pre>
+<p>由于auto_ptr被销毁后会自动删除所指之物，所以一定要注意别让多个auto_ptr指向同一对象</p>
+<p>2、RCSP（引用计数型）：tr1::shared_ptr、tr1::weak_ptr(不计入计数的计算)</p>
+<pre><code class="language-c++">void f() {
+	...
+    std::tr1::shared_ptr&lt;...&gt;p(create());
+    ...
+}
+</code></pre>
+<p>但它们的析构函数内都是delete，而不是delete[]，若需要”动态分配数组“，可以使用vector和string</p>
+<p>3、以RAII原则建立资源管理类。对于非heap-based的资源（无法使用智能指针），RAII原则提倡：抑制copying、施行引用计数法</p>
+<h4 id="4-若遇到直接访问资源的apis需要将智能指针转化为指针显式转换更安全隐式转换对用户更方便">4、若遇到直接访问资源的APIs，需要将智能指针转化为指针，显式转换更安全，隐式转换对用户更方便。</h4>
+<p>显式转换方法(智能指针自带get()函数)：</p>
+<pre><code class="language-c++">class A {
+public:
+	...
+	B get() const {return f;}
+    ...
+}
+A f(...);
+change(f.get());
+</code></pre>
+<p>隐式转换方法：</p>
+<pre><code class="language-c++">class A {
+public:
+	...
+	operator B() const {return f;}
+	...
+}
+A f1(...);
+B f2 = f1;
+</code></pre>
+<h3 id="条款16new和delete对应">条款16：new和delete对应</h3>
+<p>new对应delete，new[]对应delete[]</p>
+<h3 id="条款17以独立语句将newed的对象置入智能指针">条款17：以独立语句将newed的对象置入智能指针</h3>
+<h2 id="4-设计与声明">4、设计与声明</h2>
+<h3 id="条款20尽量以pass-by-reference-to-const替换pass-by-value">条款20：尽量以pass-by-reference-to-const替换pass-by-value</h3>
+<p>1、前者更加高效，且可以避免对象切割问题（derived class对象特性切割，仅留下base class的错误）</p>
+<p>2、以上规则不适用于内置类型，STL迭代器和函数对象。对它们而言，pass-by-value往往比较适当</p>
+<h3 id="条款21必须返回对象时不要返回其reference">条款21：必须返回对象时，不要返回其reference</h3>
+<h3 id="条款22将成员变量声明为private">条款22：将成员变量声明为private</h3>
+<p>1、不封装意味着不可改变，愈多东西被封装，我们改变那些东西的能力就越大。</p>
+<p>2、越是广泛使用的class越需要封装，这样才能从改用一个较佳实现版本中收益。</p>
+<p>3、protected并不比public更具有封装性</p>
+<h3 id="条款23宁以non-member-non-friend替换member函数">条款23：宁以non-member、non-friend替换member函数</h3>
+<p>1、member函数封装性低于non-member、non-friend。</p>
+<h4 id="2-让函数成为class的non-member并不意味它不可以是另一个class的member比较自然的做法是将这个non-member函数位于class所在的同一个namespace中">2、让函数“成为class的non-member”并不意味它不可以是另一个class的member，比较自然的做法是将这个non-member函数位于class所在的同一个namespace中。</h4>
+<p>我们称之为“便利函数”，namespace是可以跨文件的,故可以将不同类型的便利函数写于不同文件。</p>
+<h3 id="条款24若所有参数皆需类型转换请采用non-member函数">条款24：若所有参数皆需类型转换，请采用non-member函数</h3>
+<p>1、class中的operator运算符重载只有当参数位于参数列内，这个参数才是隐式类型转换的合格参与者。</p>
+<p>2、当operator成为non-member函数时，便允许编译器在每一个实参身上执行隐式类型转换</p>
+<pre><code class="language-c++">class Rational {
+	...
+};
+const Rational operator*(const Rational&amp; lhs, const Rational&amp; rhs){
+    return Rational(lhs.numerator() * rhs.numerator(),
+                   lhs.denominator() * rhs.denominator());
+}
+</code></pre>
+<h3 id="条款25写出不抛异常的swap函数">条款25：写出不抛异常的swap函数</h3>
+<p>1、swap原是STL一部分，现在成为异常安全性编程的脊柱，以及用来成为处理自我赋值可能性的一个常见机制（见条款11）</p>
+<p>标准程序库提供的swap</p>
+<pre><code class="language-c++">namespace std {
+	template&lt;typename T&gt;
+    void swap(T &amp;a, T &amp;b){
+        T temp(a);
+        a = b;
+        b = temp;
+    }
+}
+</code></pre>
+<p>但对于某些类型，这些复制过于慢了，改进方法中的典型是“pimpl手法”（pointer to implementation)，如针对指针全特化</p>
+<pre><code class="language-c++">class A {
+public:
+    ...
+    void swap(A &amp;other){
+		using std::swap;
+        swap(pImpl, other.pImpl);//核心是化为指针swap加速
+    }
+    ...
+}
+namespace std {
+    template&lt;&gt;
+    void swap&lt;A&gt;(A &amp;a,A &amp;b){
+        //swap(a.pImpl,b.pImpl);无法通过编译，访问private
+        a.swap(b);
+    }
+}
+</code></pre>
+<p>但假如A是class templates而不是class时，对function templates偏特化是行不通的</p>
+<pre><code class="language-c++">namespace std {
+    template&lt;typename T&gt;
+	void swap&lt; A&lt;T&gt; &gt;(A&lt;T&gt;&amp;a,A&lt;T&gt;&amp;b){//对std::swap偏特化
+        a.swap(b);
+    }
+}//错误，不合法
+</code></pre>
+<pre><code class="language-c++">namespace B {
+    ...
+    template&lt;typename T&gt;
+    class A{...};//同前，内含swap成员函数
+    ...
+    template&lt;typename T&gt;
+    void swap(A&lt;T&gt; &amp;a,A&lt;T&gt; &amp;b){//non-member swap函数
+    	a.swap(b);			   //并不属于std命名空间
+    }
+}
+</code></pre>
+<p>对于调用swap的函数而言，需要查找到合适的swap版本（调用T专属版本，并在该版本不存在时调用std内的[特化版&gt;一般化]版本）</p>
+<pre><code class="language-c++">template&lt;typename T&gt;
+void doSomething(T &amp;obj1, T &amp;obj2){
+    using std::swap;//让std::swap在函数内曝光，可以针对T将std::swap特化，特化版会优先与一般化版本选中
+    ...
+    swap(obj1, obj2);//赤裸裸调用swap！
+    ...
+}
+</code></pre>
+<p>2、注意成员版的swap绝不可抛出异常。自定义的swap往往提供的不仅是高效置换对象值的办法，而且不抛出异常，这两个特性是连在一起的。</p>
+<h2 id="5-实现">5、实现</h2>
+<h3 id="条款26尽可能延后变量定义式的出现">条款26：尽可能延后变量定义式的出现</h3>
+<h3 id="条款27尽可能少做转型动作">条款27：尽可能少做转型动作</h3>
+<p>1、尽量用新式转型</p>
+<p>转型风格：</p>
+<pre><code class="language-c++">(T)expression//旧式转型
+const_cast&lt;T&gt;(expression)//常量性转除
+dynamic_cast&lt;T&gt;(expression)//安全向下转型
+static_cast&lt;T&gt;(expression)//强迫隐式转换
+</code></pre>
+<p>2、如果转型是必要的，试着将它隐藏于某个函数背后</p>
+<h3 id="条款28避免返回handles指向对象内部成分">条款28：避免返回handles指向对象内部成分</h3>
+<h4 id="1-避免返回handles指向对象内部可以增加封装性且将发生虚吊号码牌可能性降到最低">1、避免返回handles指向对象内部可以增加封装性，且将发生“虚吊号码牌”可能性降到最低。</h4>
+<p>成员函数返回reference时，private的成员变量封装性相当于public，即使成员函数为const，也可以被修改</p>
+<p>handle不一定比所指对象更长寿，可能会导致虚吊</p>
+<h3 id="条款30透彻了解inline">条款30：透彻了解inline</h3>
+<p>1、将inline限制在小型、被频繁调用的函数上。”82法则“平均一个程序将80%的执行时间花费在20%的代码上。</p>
+<p>2、不要只因为function templates出现在头文件，就将它们声明为inline</p>
+<h3 id="条款31将编译依存关系降到最低">条款31：将编译依存关系降到最低</h3>
+<h4 id="1-相依于声明式不要相依于定义式其手段有handle-classes和interface-classes可以解除接口和实现之间的耦合关系">1、相依于声明式，不要相依于定义式，其手段有Handle classes和Interface classes，可以解除接口和实现之间的耦合关系</h4>
+<p>C++没有将接口从实现中分离，如果头文件中任何一个改变，或头文件所依赖的其他头文件有任何改变，那么有依存关系的所有文件都将重新编译！</p>
+<h4 id="handle-classes">Handle classes：</h4>
+<p>将一个类分为两个类，一个只提供接口，另一个负责实现接口。</p>
+<p>尽量以class声明式替换class定义式</p>
+<p>为声明式和定义式提供不同的头文件，包含声明式的头文件一般命名为“...fwd.h&quot;（针对template声明式，c++提供了关键词export）</p>
+<pre><code class="language-c++">#include&quot;A.h&quot;
+#include&quot;AImpl.h&quot;
+A::A(...):pImpl(new AImple(...)){}
+... A::B()const{
+    return pImpl-&gt;B();
+}
+</code></pre>
+<h4 id="interface-class">Interface class</h4>
+<p>令Person(举例)成为一种特殊的abstract base class，通常不带成员变量，没有构造函数，只有一个virtual析构函数，和一组pure virtual函数，用来叙述整个接口，并通常调用一个特殊函数（下面的create），此函数扮演”真正将被具现化“的那个derived classes的构造函数角色，通常称为factory function，且往往在interface class中被声明为static。</p>
+<pre><code class="language-c++">class Person{
+public:
+    virtual ~Person();
+    virtual std::string name() const=0;
+    virtual std::string address() const=0;
+    static std::tr1::shared_ptr&lt;Person&gt;create(const std::string&amp; name,cosnt Date&amp; birthday,const Address&amp; addr);
+    ...
+};
+class RealPerson:public Person{
+public:
+    RealPerson(const std::string&amp; name, const Date&amp; birthday,const Address&amp; addr)
+        :theName(name),theBirthDay(birthday),theAddress(addr){}
+    virtual ~RealPerson(){}
+    std::string name() const;
+    std::string birthDate() const;
+    std::string address() const;
+private:
+    std::string theName;
+    Date theBirthDate;
+    Address theAddress;
+}
+std::tr1::shared_ptr&lt;Person&gt; Person::create(const std::string&amp; name,cosnt Date&amp; birthday,const Address&amp; addr){
+     	return std::tr1::shared_ptr&lt;Person&gt;(new RealPerson(name,birthday,addr));   
+}
+int main(){
+	std::string name;
+    Date dateOfBirth;
+    Address address;
+    ...
+    std::tr1::shared_ptr&lt;Person&gt;pp(Person::create(name,dateOfBirth,address));
+    ...
+    std::cout &lt;&lt; pp-&gt;name()
+        	  &lt;&lt; &quot; was born on &quot;
+              &lt;&lt; pp-&gt;birthDate()
+              &lt;&lt; &quot; and now lives at &quot;
+              &lt;&lt; pp-&gt;address();
+    ...
+}
+</code></pre>
+<h2 id="6-继承与面向对象设计">6、继承与面向对象设计</h2>
+<h3 id="条款32确保public继承塑模出is-a关系">条款32：确保public继承塑模出is-a关系</h3>
+<h3 id="条款33避免遮掩继承而来的名称">条款33：避免遮掩继承而来的名称</h3>
+<p>1、derived classes内的名称会遮掩base classes内的名称</p>
+<p>2、为了让被遮掩的名称再见天日，可使用using声明式或转交函数</p>
+<pre><code class="language-c++">class B:public A{
+public:
+    using A::f1;
+    using A:f3;
+    virtual void f1();
+    void f3();
+    virtual void f2(){A::f2();}
+    ...
+};
+</code></pre>
+<h3 id="条款34区分接口继承和实现继承">条款34：区分接口继承和实现继承</h3>
+<p>1、pure virtual函数只具体指定接口继承</p>
+<h3 id="条款35考虑virtual函数以外的其他选择">条款35：考虑virtual函数以外的其他选择</h3>
+<h4 id="1-template-method设计模式的表现形式non-virtual-interfacenvi让public函数成为non-virtual称为wrapper并调用一个private-virtual函数进行实际工作">1、Template Method设计模式的表现形式non-virtual interface（NVI)：让public函数成为non-virtual(称为wrapper)，并调用一个private virtual函数进行实际工作</h4>
+<pre><code class="language-c++">class A{
+public:
+    int B() const{
+        ...
+        B_dosomething();
+        ...
+    }
+private:
+    virtual ... B_dosomething() const {
+        ...
+    }
+};
+</code></pre>
+<p>NVI手法可以在derived classes重新定义private virtual函数，但并不会调用！当virtual函数必须是public时不能使用该手法（如析构函数）</p>
+<h4 id="2-由function-pointers实现strategy设计模式扩展内容较多具体见设计模式">2、由Function Pointers实现Strategy设计模式（扩展内容较多，具体见设计模式）</h4>
+<p>简而言之，函数不再是类继承体系内的成员函数，而是通过指针调用，也就意味着这些函数并未特别访问对象的内部成分</p>
+<p>优点：每个对象可以拥有自己的函数、可以在运行期改变函数</p>
+<p>缺点：为了获得部分non-public成员变量必须降低封装性</p>
+<p>通过tr1::function替换指针，可以允许用户用任何兼容的可调用物代替函数，所谓兼容指参数和返回类型可以被隐式转换为之前的形式</p>
+<h3 id="条款36绝不重新定义继承而来的non-virtual函数">条款36：绝不重新定义继承而来的non-virtual函数</h3>
+<h3 id="条款37绝不重新定义继承而来的缺省参数值">条款37：绝不重新定义继承而来的缺省参数值</h3>
+<p>缺省函数值永远是静态绑定！</p>
+<h3 id="条款38通过组合塑模出has-a或is-implemented-in-terms-of">条款38：通过组合塑模出has-a或“is-implemented-in-terms-of”</h3>
+<p>1、在应用域（如人、汽车、视频画面），组合意味has-a。在实现域（如缓冲区、互斥器、查找树），组合意味is-implemented-in-terms-of</p>
+<h3 id="条款39明智而审慎地使用private继承">条款39：明智而审慎地使用private继承</h3>
+<p>1、private继承也意味着is-implemented-in-terms-of</p>
+<p>2、尽可能使用复合，必要时才使用private继承。当derived classes需要访问protected base class的成员，或需要重新定义继承而来的virtual函数，或需要使对象尺寸最小化时，才更适合private继承</p>
+<h3 id="条款40明智而审慎地使用多重继承">条款40：明智而审慎地使用多重继承</h3>
+<p>1、多重继承比单一继承更复杂。可能导致歧义性，以及对virtual继承的需要。</p>
+<p>2、合理利用public继承Interface class，private继承某个协助实现的class。</p>
+<h2 id="7-模板与泛型编程">7、模板与泛型编程</h2>
+<h3 id="条款41了解隐式接口和编译期多态">条款41：了解隐式接口和编译期多态</h3>
+<p>1、显式接口指在源码中明确可见，对virtual函数调用将表现出运行期多态。而在泛型编程的世界，隐式接口和编译器多态居多，与template变量相关的表达式便是变量必须支持的隐式接口，而涉及该变量的任何函数调用，有可能造成template具现化，由于发生在编译期，称为编译期多态。</p>
+<pre><code class="language-c++">template&lt;typename T&gt;
+void A(T&amp;w) {
+	if(w.size() &gt; 10 &amp;&amp; w != ...) ...//必须提供一个名为size的成员函数，且返回int，必须支持一个operator!=函数，或许&amp;&amp;也可能被重载
+}
+</code></pre>
+<h3 id="条款42了解typename的双重意义">条款42：了解typename的双重意义</h3>
+<p>1、声明template参数时class和typename完全等价</p>
+<p>2、嵌套从属名称在缺省情况下不是类型，可能导致解析困难，而typename可以告诉编译器它是一个类型，但不可以出现在base、calsses、list内的嵌套从属名称前，也不可以在成员初值列中作为base class修饰符</p>
+<pre><code class="language-c++">template&lt;typename IterT&gt;
+void A(IterT iter) {
+	typedef typename std::iterator_traits&lt;IterT&gt;::value_type value_type;//traits class(见条款47)
+	value_type A(*iter);
+    ...
+}
+</code></pre>
+<h3 id="条款43学习处理模板化基类内的名称">条款43：学习处理模板化基类内的名称</h3>
+<p>1、解析 derived class template定义式时，编译器对base classes template内容毫无所悉-----可能存在特化版本。可以在base class函数调用前加上this-&gt;或using声明式告诉编译器存在该函数。</p>
+<h3 id="条款44将于参数无关的代码抽离templates">条款44：将于参数无关的代码抽离templates</h3>
+<p>1、任何template都不该与某个造成膨胀的template参数产生相依关系。</p>
+<p>2、通过以函数参数或class成员变量替换template参数可以消除因非类型模板参数而造成的代码膨胀。</p>
+<p>3、参数类型造成的代码膨胀可以通过让带有完全相同二进制表述的具体类型共享实现码降低。</p>
+<h3 id="条款46需要类型转换时请为模板定义非成员函数">条款46：需要类型转换时请为模板定义非成员函数</h3>
+<p>1、template实参推导过程中从不将隐式类型转换函数纳入考虑。为了让类型转换可能发生在所有实参上，我们需要non-member函数，而为了让它被自动具现化，需要把它声明在class内部，故只能声明为friend。template只声明函数而未提供定义式时，连接器找不到该函数，故只能用inline的方法。对与函数复杂的情况可以令friend函数调用辅助函数。</p>
+<pre><code class="language-c++">template&lt;typename T&gt;class Rational;
+template&lt;typename T&gt;
+const Rational&lt;T&gt; doMultiply(const Rational&lt;T&gt;&amp; lhs, const Rational&lt;T&gt;&amp; rhs) {
+    return Rational&lt;T&gt;(lhs.numerator() * rhs.numerator(), lhs.denominator() * rhs.denominator());//此处不一定需要inline
+}
+
+template&lt;typename T&gt;
+class Rational {
+public:
+    ...
+	friend const Rational&lt;T&gt; operator*(const Rational&lt;T&gt;&amp; lhs,const Rational&lt;T&gt;&amp; rhs) {
+        return doMultiply(lhs, rhs);
+    }
+    ...
+}
+</code></pre>
+<h3 id="条款47请使用traits-classes表现类型信息">条款47：请使用traits classes表现类型信息</h3>
+<p>1、traits允许你在编译期间获取某些类型信息，可以在编译期对类型执行if...else测试。但traits技术必须也能够施行于内置类型上（如指针），而无法施行于嵌套类型。</p>
+<p>2、习惯上，traits总是被实现为structs。</p>
+<p>3、Traits广泛用于标准程序库（50个以上），如iterator_traits,提供iterator_category、value_type;char_traits用来保存字符类型的相关信息;numeric_limits用来保存数值类型的相关信息。Tr1导入了许多新的traits classes，包括is_fundamental<T>(判断T是否为内置类型)，is_array<T>(判断T是否为数组类型)，以及is_base_of&lt;T1,T2&gt;(T1和T2相同，抑或T1是T2的base class)</p>
+<h3 id="条款48认识template元编程扩展较多详见泛型编程-模板元编程相关书籍">条款48：认识template元编程（扩展较多，详见泛型编程、模板元编程相关书籍）</h3>
+<p>1、模板元编程可将工作由运行期移往编译期，因而得以实现早期错误侦测和更高的执行效率。</p>
+<h2 id="8-定制new和delete">8、定制new和delete</h2>
+<h3 id="条款49了解new-handler行为">条款49：了解new-handler行为</h3>
+<p>1、set_new_handler允许客户指定一个函数，在内存分配无法满足时调用。</p>
+<h4 id="2-可以建立一个mixin风格的base-class将则个base-class转换为template每个derived-class将获得实体互异的class-data复件">2、可以建立一个”mixin”风格的base class，将则个base class转换为template，每个derived class将获得实体互异的class data复件</h4>
+<p>mixin风格：模板参数不被使用且只有static成员和函数的模板类</p>
+<pre><code class="language-c++">class A:public NewHandlerSupport&lt;A&gt; {//CPTP(怪异的循环模板模式)
+	...
+};
+</code></pre>
+<h3 id="条款51编写new和delete时需固守常规">条款51：编写new和delete时需固守常规</h3>
+<p>1、operator new应该内含一个无穷循环，并在其中尝试分配内存，如果它无法满足内存需求，就该调用new-handler</p>
+<p>2、operator delete应该在收到null指针时不要做任何事。</p>
+<h3 id="条款52写了placement-new也要写placement-delete">条款52：写了placement new也要写placement delete</h3>
+<p>1、如果operator new接受的参数初了一定会有的size_t外还有其他，就称为placement new，placement delete同理。要对应着声明。</p>
+<p>2、当你声明了placement new和placement delete，请确保不要无意识遮掩了它们的正常版本。</p>
+<h2 id="9-杂项讨论">9、杂项讨论</h2>
+<h3 id="条款53不要轻忽编译器警告">条款53：不要轻忽编译器警告</h3>
+<p>1、请确保了解警告意图说出的精确意义。</p>
+<h3 id="条款54让自己熟悉包括tr1在内的标准程序库">条款54：让自己熟悉包括TR1在内的标准程序库</h3>
+<h3 id="条款55熟悉boost">条款55：熟悉boost</h3>
+<p>1、boost是一个社群，也是一个网站。</p>
+<p>2、它提供了许多TR1组件实现品，以及其他许多程序库。</p>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://kimokcheon.github.io/post/shu-ju-fen-xi-lei-ti-mu-de-liu-cheng/" class="post-title gt-a-link">
+                    数据分析类题目的流程
+                </a>
+            </div>
+        
+
+        
+
+        
+
+        
+            <script src='https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+
+<style>
+	div#vcomments{
+		width:100%;
+		max-width: 1000px;
+		padding: 2.5%
+	}
+</style>
+
+
+	<div id="vcomments"></div>
+
+<script>
+	new Valine({
+		el: '#vcomments',
+		appId: '',
+		appKey: '',
+		avatar: '',
+		pageSize: 5,
+		recordIp: false,
+		placeholder: 'Just Go Go',
+		visitor: false,
+	});
+</script>
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">他们都是萤火，聚在一起就成了太阳</div>
+    <div class="social-container">
+        
+            
+                <a href="https://github.com/Kimokcheon" target="_blank">
+                    <i class="fab fa-github gt-c-content-color-first"></i>
+                </a>
+            
+        
+            
+        
+            
+        
+            
+                <a href="https://www.zhihu.com/people/deng-yu-chuan-4" target="_blank">
+                    <i class="fab fa-zhihu gt-c-content-color-first"></i>
+                </a>
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+    </div>
+    <div>
+        Theme by <a href="https://imhanjie.com/" target="_blank">imhanjie</a>, Powered by <a
+                href="https://github.com/getgridea/gridea" target="_blank">Gridea | <a href="https://kimokcheon.github.io//atom.xml" target="_blank">RSS</a></a>
+    </div>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+    </div>
+</div>
+</body>
+</html>

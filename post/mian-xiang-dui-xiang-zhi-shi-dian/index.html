@@ -1,0 +1,314 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>面向对象知识点 | Yuchuan&#39;s Blog</title>
+
+<link rel="shortcut icon" href="https://kimokcheon.github.io//favicon.ico?v=1695778991029">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://kimokcheon.github.io//styles/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            Yuchuan&#39;s Blog
+        </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+                <div class="nav-item">
+                    
+                        <a href="/" class="menu gt-a-link">
+                            首页
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/archives" class="menu gt-a-link">
+                            归档
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/tags" class="menu gt-a-link">
+                            标签
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="https://kimokcheon.github.io/post/about-me" class="menu gt-a-link">
+                            关于
+                        </a>
+                    
+                </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1695778991029" action="/search/index.html">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    面向对象知识点
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2023-06-27 ·
+                    </time>
+                    
+                </div>
+                <div class="post-content">
+                    <h2 id="1-c-classes-introduction">1. C++ Classes Introduction</h2>
+<h3 id="11-class-vs-struct">1.1 class vs. struct</h3>
+<h3 id="12-data-members-and-function-members">1.2 Data members and Function Members</h3>
+<p>Declaration and Definition</p>
+<h3 id="13-raii-and-smart-pointers">1.3 RAII and Smart Pointers</h3>
+<p><strong>Resource</strong> Acquisition is Initialization</p>
+<ul>
+<li>Resource Acquisition Is Initialization</li>
+<li>Smart Pointers:unique_ptr,shared_ptr,weak_ptr</li>
+</ul>
+<h2 id="2-class-hierarchy">2. Class Hierarchy</h2>
+<p>Child/Derived Class; Parent/Base Class; Extend.<br>
+多态初探</p>
+<h3 id="21-access-specifiers">2.1 Access Specifiers</h3>
+<p><code>pulic, protected, private</code></p>
+<h3 id="22-inheritance-access-specifiers">2.2 Inheritance Access Specifiers</h3>
+<p><code>pulic, protected, private</code></p>
+<h3 id="23-namespace">2.3 Namespace</h3>
+<h2 id="3-class-constructor-and-destructor">3. Class Constructor and Destructor</h2>
+<h3 id="31-intro">3.1 Intro</h3>
+<h3 id="32-default-constructor">3.2 Default Constructor</h3>
+<h3 id="33-class-initialization">3.3 Class Initialization</h3>
+<h4 id="331-initializer-list">3.3.1 Initializer List</h4>
+<h4 id="332-in-class-member-initializer">3.3.2 In-Class Member Initializer</h4>
+<h4 id="333-initialization-order">3.3.3 Initialization Order</h4>
+<p>follows the order of declarations and not the order in the initialization list</p>
+<h4 id="334-uniform-initialization">3.3.4 Uniform Initialization</h4>
+<h3 id="34-constructors-and-inheritance">3.4 Constructors and Inheritance</h3>
+<p>Class constructors are never inherited;<br>
+called order.</p>
+<h3 id="35-delegate-constructor">3.5 Delegate Constructor</h3>
+<h3 id="36-explicit-keyword">3.6 <code>explicit</code> Keyword</h3>
+<h3 id="37-copy-constructor">3.7 Copy Constructor</h3>
+<h3 id="38-move-constructor">3.8 Move Constructor</h3>
+<h4 id="381-move-semantics">3.8.1 Move Semantics</h4>
+<h4 id="382-std-move">3.8.2 std: :move</h4>
+<h4 id="383-lvalues-and-rvalues-references">3.8.3 lvalues and rvalues references</h4>
+<h4 id="384-move-operationsc11">3.8.4 move operations(c++11)</h4>
+<h4 id="385-std-vectortallocator-emplace_back">3.8.5 std: :vector&lt;T,Allocator&gt;: :emplace_back</h4>
+<h2 id="4templates">4.Templates</h2>
+<h3 id="41-template-functions">4.1 Template functions</h3>
+<h3 id="42-announcements">4.2 Announcements</h3>
+<h3 id="43-concept-lifting">4.3 Concept Lifting</h3>
+<h3 id="44-generic-programming-and-lifting">4.4 Generic Programming and Lifting</h3>
+<h2 id="5functions-and-algorithm">5.Functions and Algorithm</h2>
+<h3 id="51-lambda-functions">5.1 Lambda functions</h3>
+<h3 id="52-stl-algorithm">5.2 STL Algorithm</h3>
+<h2 id="6-class-keywords">6. Class Keywords</h2>
+<h3 id="61-this">6.1 this</h3>
+<h3 id="62-static">6.2 static</h3>
+<p>Initialization</p>
+<h3 id="63-const">6.3 const</h3>
+<h3 id="64-mutable">6.4 mutable</h3>
+<h3 id="65-using">6.5 using</h3>
+<ol>
+<li>Type Declaration</li>
+<li>Inheritance</li>
+</ol>
+<h3 id="66-friend">6.6 friend</h3>
+<ol>
+<li>Friend class</li>
+<li>Friend member function</li>
+</ol>
+<h3 id="67-delete">6.7 delete</h3>
+<h2 id="7-polymorphism">7. Polymorphism</h2>
+<p>Polymorphism vs. Overloading.<br>
+Function binding.</p>
+<ul>
+<li>Static binding</li>
+<li>Dynamic binding</li>
+</ul>
+<h3 id="71-virtual-methods">7.1 virtual methods</h3>
+<p>Usage.<br>
+When virual methods works.</p>
+<h3 id="72-virtual-table">7.2 Virtual Table</h3>
+<p>Never use <code>malloc</code> in C++.</p>
+<h3 id="73-override-keyword">7.3 <code>override</code> keyword</h3>
+<p>for safety</p>
+<h3 id="74-final-keyword">7.4 <code>final</code> keyword</h3>
+<p>for safety</p>
+<h3 id="75-common-errors">7.5 Common Errors</h3>
+<ol>
+<li>All classes with at least one virtual method should declare a virtual destructor</li>
+<li>Do not call virtual methods in constructor and destructor</li>
+<li>Do not use default parameters in virtual methods</li>
+</ol>
+<h3 id="76-pure-virtual-method">7.6 Pure Virtual Method</h3>
+<h3 id="77-abstract-class-and-interface">7.7 Abstract Class and Interface</h3>
+<h2 id="8-inheritance-casting-and-run-time-type-identification">8. Inheritance Casting and Run-time Type Identification</h2>
+<h3 id="81-hierarchy-casting">8.1 Hierarchy Casting</h3>
+<ul>
+<li>Upcasting</li>
+<li>Downcasting</li>
+<li>Sidecasting</li>
+</ul>
+<h3 id="82-rtti">8.2 RTTI</h3>
+<ul>
+<li><code>type_info</code> class</li>
+<li><code>typeid</code> keyword</li>
+<li><code>dynamic_cast</code> keyword</li>
+</ul>
+<h2 id="9-operator-overloading">9. Operator Overloading</h2>
+<h3 id="91-overview">9.1 Overview</h3>
+<h3 id="92-operator">9.2 operator[]</h3>
+<h3 id="93-operator">9.3 operator&lt;</h3>
+<h3 id="94-operator">9.4 operator&lt;=&gt;</h3>
+<h3 id="95-operator">9.5 operator()</h3>
+<h3 id="96-operator-t">9.6 operator T()</h3>
+<h3 id="97-return-type-overloading-resolution">9.7 Return type overloading resolution</h3>
+<h3 id="98-operator-">9.8 operator ++/--</h3>
+<h3 id="99-operator-type">9.9 operator type=</h3>
+<h3 id="910-operator">9.10 operator &lt;&lt;</h3>
+<h3 id="911-others">9.11 Others</h3>
+<h4 id="principle-of-least-astonishmentpola">Principle of Least Astonishment(POLA)</h4>
+<ol>
+<li>Operators preserve precedence and short-circuit properties</li>
+<li>Binary operators should be implemented as friend method</li>
+</ol>
+<h3 id=""></h3>
+<h2 id="10-error-handing">10. Error Handing</h2>
+<h3 id="101-c-exceptions">10.1 C++ Exceptions</h3>
+<h3 id="102-defining-custom-exceptions">10.2 Defining Custom Exceptions</h3>
+<h3 id="103-noexcept-keyword">10.3 <code>noexcept</code> Keyword</h3>
+<h3 id="104-memory-allocation-issues">10.4 Memory Allocation Issues</h3>
+<h3 id="105-alternative-error-handling-approaches">10.5 Alternative Error Handling Approaches</h3>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://kimokcheon.github.io/post/ai-research-tool/" class="post-title gt-a-link">
+                    AI Research Tool
+                </a>
+            </div>
+        
+
+        
+
+        
+
+        
+            <script src='https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+
+<style>
+	div#vcomments{
+		width:100%;
+		max-width: 1000px;
+		padding: 2.5%
+	}
+</style>
+
+
+	<div id="vcomments"></div>
+
+<script>
+	new Valine({
+		el: '#vcomments',
+		appId: '',
+		appKey: '',
+		avatar: '',
+		pageSize: 5,
+		recordIp: false,
+		placeholder: 'Just Go Go',
+		visitor: false,
+	});
+</script>
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">他们都是萤火，聚在一起就成了太阳</div>
+    <div class="social-container">
+        
+            
+                <a href="https://github.com/Kimokcheon" target="_blank">
+                    <i class="fab fa-github gt-c-content-color-first"></i>
+                </a>
+            
+        
+            
+        
+            
+        
+            
+                <a href="https://www.zhihu.com/people/deng-yu-chuan-4" target="_blank">
+                    <i class="fab fa-zhihu gt-c-content-color-first"></i>
+                </a>
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+    </div>
+    <div>
+        Theme by <a href="https://imhanjie.com/" target="_blank">imhanjie</a>, Powered by <a
+                href="https://github.com/getgridea/gridea" target="_blank">Gridea | <a href="https://kimokcheon.github.io//atom.xml" target="_blank">RSS</a></a>
+    </div>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+    </div>
+</div>
+</body>
+</html>

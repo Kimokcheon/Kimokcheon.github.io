@@ -1,0 +1,729 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>CPP20 | Yuchuan&#39;s Blog</title>
+
+<link rel="shortcut icon" href="https://kimokcheon.github.io//favicon.ico?v=1695778991029">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://kimokcheon.github.io//styles/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            Yuchuan&#39;s Blog
+        </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+                <div class="nav-item">
+                    
+                        <a href="/" class="menu gt-a-link">
+                            首页
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/archives" class="menu gt-a-link">
+                            归档
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/tags" class="menu gt-a-link">
+                            标签
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="https://kimokcheon.github.io/post/about-me" class="menu gt-a-link">
+                            关于
+                        </a>
+                    
+                </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1695778991029" action="/search/index.html">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    CPP20
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2023-06-26 ·
+                    </time>
+                    
+                </div>
+                <div class="post-content">
+                    <h2 id="overview">Overview</h2>
+<p>C++20 includes the following new language features:</p>
+<ul>
+<li><a href="#coroutines">coroutines</a></li>
+<li><a href="#concepts">concepts</a></li>
+<li><a href="#designated-initializers">designated initializers</a></li>
+<li><a href="#template-syntax-for-lambdas">template syntax for lambdas</a></li>
+<li><a href="#range-based-for-loop-with-initializer">range-based for loop with initializer</a></li>
+<li><a href="#likely-and-unlikely-attributes">[[likely]] and [[unlikely]] attributes</a></li>
+<li><a href="#deprecate-implicit-capture-of-this">deprecate implicit capture of this</a></li>
+<li><a href="#class-types-in-non-type-template-parameters">class types in non-type template parameters</a></li>
+<li><a href="#constexpr-virtual-functions">constexpr virtual functions</a></li>
+<li><a href="#explicitbool">explicit(bool)</a></li>
+<li><a href="#immediate-functions">immediate functions</a></li>
+<li><a href="#using-enum">using enum</a></li>
+<li><a href="#lambda-capture-of-parameter-pack">lambda capture of parameter pack</a></li>
+<li><a href="#char8_t">char8_t</a></li>
+<li><a href="#constinit">constinit</a></li>
+</ul>
+<p>C++20 includes the following new library features:</p>
+<ul>
+<li><a href="#concepts-library">concepts library</a></li>
+<li><a href="#synchronized-buffered-outputstream">synchronized buffered outputstream</a></li>
+<li><a href="#stdspan">std::span</a></li>
+<li><a href="#bit-operations">bit operations</a></li>
+<li><a href="#math-constants">math constants</a></li>
+<li><a href="#stdis_constant_evaluated">std::is_constant_evaluated</a></li>
+<li><a href="#stdmake_shared-supports-arrays">std::make_shared supports arrays</a></li>
+<li><a href="#starts_with-and-ends_with-on-strings">starts_with and ends_with on strings</a></li>
+<li><a href="#check-if-associative-container-has-element">check if associative container has element</a></li>
+<li><a href="#stdbit_cast">std::bit_cast</a></li>
+<li><a href="#stdmidpoint">std::midpoint</a></li>
+<li><a href="#stdto_array">std::to_array</a></li>
+</ul>
+<h2 id="c20-language-features">C++20 Language Features</h2>
+<h3 id="coroutines">Coroutines</h3>
+<p><em>Coroutines</em> are special functions that can have their execution suspended and resumed. To define a coroutine, the <code>co_return</code>, <code>co_await</code>, or <code>co_yield</code> keywords must be present in the function's body. C++20's coroutines are stackless; unless optimized out by the compiler, their state is allocated on the heap.</p>
+<p>An example of a coroutine is a <em>generator</em> function, which yields (i.e. generates) a value at each invocation:</p>
+<pre><code class="language-c++">generator&lt;int&gt; range(int start, int end) {
+  while (start &lt; end) {
+    co_yield start;
+    start++;
+  }
+
+  // Implicit co_return at the end of this function:
+  // co_return;
+}
+
+for (int n : range(0, 10)) {
+  std::cout &lt;&lt; n &lt;&lt; std::endl;
+}
+</code></pre>
+<p>The above <code>range</code> generator function generates values starting at <code>start</code> until <code>end</code> (exclusive), with each iteration step yielding the current value stored in <code>start</code>. The generator maintains its state across each invocation of <code>range</code> (in this case, the invocation is for each iteration in the for loop). <code>co_yield</code> takes the given expression, yields (i.e. returns) its value, and suspends the coroutine at that point. Upon resuming, execution continues after the <code>co_yield</code>.</p>
+<p>Another example of a coroutine is a <em>task</em>, which is an asynchronous computation that is executed when the task is awaited:</p>
+<pre><code class="language-c++">task&lt;void&gt; echo(socket s) {
+  for (;;) {
+    auto data = co_await s.async_read();
+    co_await async_write(s, data);
+  }
+
+  // Implicit co_return at the end of this function:
+  // co_return;
+}
+</code></pre>
+<p>In this example, the <code>co_await</code> keyword is introduced. This keyword takes an expression and suspends execution if the thing you're awaiting on (in this case, the read or write) is not ready, otherwise you continue execution. (Note that under the hood, <code>co_yield</code> uses <code>co_await</code>.)</p>
+<p>Using a task to lazily evaluate a value:</p>
+<pre><code class="language-c++">task&lt;int&gt; calculate_meaning_of_life() {
+  co_return 42;
+}
+
+auto meaning_of_life = calculate_meaning_of_life();
+// ...
+co_await meaning_of_life; // == 42
+</code></pre>
+<p><strong>Note:</strong> While these examples illustrate how to use coroutines at a basic level, there is lots more going on when the code is compiled. These examples are not meant to be complete coverage of C++20's coroutines. Since the <code>generator</code> and <code>task</code> classes are not provided by the standard library yet, I used the cppcoro library to compile these examples.</p>
+<h3 id="concepts">Concepts</h3>
+<p><em>Concepts</em> are named compile-time predicates which constrain types. They take the following form:</p>
+<pre><code>template &lt; template-parameter-list &gt;
+concept concept-name = constraint-expression;
+</code></pre>
+<p>where <code>constraint-expression</code> evaluates to a constexpr Boolean. <em>Constraints</em> should model semantic requirements, such as whether a type is a numeric or hashable. A compiler error results if a given type does not satisfy the concept it's bound by (i.e. <code>constraint-expression</code> returns <code>false</code>). Because constraints are evaluated at compile-time, they can provide more meaningful error messages and runtime safety.</p>
+<pre><code class="language-c++">// `T` is not limited by any constraints.
+template &lt;typename T&gt;
+concept always_satisfied = true;
+// Limit `T` to integrals.
+template &lt;typename T&gt;
+concept integral = std::is_integral_v&lt;T&gt;;
+// Limit `T` to both the `integral` constraint and signedness.
+template &lt;typename T&gt;
+concept signed_integral = integral&lt;T&gt; &amp;&amp; std::is_signed_v&lt;T&gt;;
+// Limit `T` to both the `integral` constraint and the negation of the `signed_integral` constraint.
+template &lt;typename T&gt;
+concept unsigned_integral = integral&lt;T&gt; &amp;&amp; !signed_integral&lt;T&gt;;
+</code></pre>
+<p>There are a variety of syntactic forms for enforcing concepts:</p>
+<pre><code class="language-c++">// Forms for function parameters:
+// `T` is a constrained type template parameter.
+template &lt;my_concept T&gt;
+void f(T v);
+
+// `T` is a constrained type template parameter.
+template &lt;typename T&gt;
+  requires my_concept&lt;T&gt;
+void f(T v);
+
+// `T` is a constrained type template parameter.
+template &lt;typename T&gt;
+void f(T v) requires my_concept&lt;T&gt;;
+
+// `v` is a constrained deduced parameter.
+void f(my_concept auto v);
+
+// `v` is a constrained non-type template parameter.
+template &lt;my_concept auto v&gt;
+void g();
+
+// Forms for auto-deduced variables:
+// `foo` is a constrained auto-deduced value.
+my_concept auto foo = ...;
+
+// Forms for lambdas:
+// `T` is a constrained type template parameter.
+auto f = []&lt;my_concept T&gt; (T v) {
+  // ...
+};
+// `T` is a constrained type template parameter.
+auto f = []&lt;typename T&gt; requires my_concept&lt;T&gt; (T v) {
+  // ...
+};
+// `T` is a constrained type template parameter.
+auto f = []&lt;typename T&gt; (T v) requires my_concept&lt;T&gt; {
+  // ...
+};
+// `v` is a constrained deduced parameter.
+auto f = [](my_concept auto v) {
+  // ...
+};
+// `v` is a constrained non-type template parameter.
+auto g = []&lt;my_concept auto v&gt; () {
+  // ...
+};
+</code></pre>
+<p>The <code>requires</code> keyword is used either to start a <code>requires</code> clause or a <code>requires</code> expression:</p>
+<pre><code class="language-c++">template &lt;typename T&gt;
+  requires my_concept&lt;T&gt; // `requires` clause.
+void f(T);
+
+template &lt;typename T&gt;
+concept callable = requires (T f) { f(); }; // `requires` expression.
+
+template &lt;typename T&gt;
+  requires requires (T x) { x + x; } // `requires` clause and expression on same line.
+T add(T a, T b) {
+  return a + b;
+}
+</code></pre>
+<p>Note that the parameter list in a <code>requires</code> expression is optional. Each requirement in a <code>requires</code> expression are one of the following:</p>
+<ul>
+<li><strong>Simple requirements</strong> - asserts that the given expression is valid.</li>
+</ul>
+<pre><code class="language-c++">template &lt;typename T&gt;
+concept callable = requires (T f) { f(); };
+</code></pre>
+<ul>
+<li><strong>Type requirements</strong> - denoted by the <code>typename</code> keyword followed by a type name, asserts that the given type name is valid.</li>
+</ul>
+<pre><code class="language-c++">struct foo {
+  int foo;
+};
+
+struct bar {
+  using value = int;
+  value data;
+};
+
+struct baz {
+  using value = int;
+  value data;
+};
+
+// Using SFINAE, enable if `T` is a `baz`.
+template &lt;typename T, typename = std::enable_if_t&lt;std::is_same_v&lt;T, baz&gt;&gt;&gt;
+struct S {};
+
+template &lt;typename T&gt;
+using Ref = T&amp;;
+
+template &lt;typename T&gt;
+concept C = requires {
+                     // Requirements on type `T`:
+  typename T::value; // A) has an inner member named `value`
+  typename S&lt;T&gt;;     // B) must have a valid class template specialization for `S`
+  typename Ref&lt;T&gt;;   // C) must be a valid alias template substitution
+};
+
+template &lt;C T&gt;
+void g(T a);
+
+g(foo{}); // ERROR: Fails requirement A.
+g(bar{}); // ERROR: Fails requirement B.
+g(baz{}); // PASS.
+</code></pre>
+<ul>
+<li><strong>Compound requirements</strong> - an expression in braces followed by a trailing return type or type constraint.</li>
+</ul>
+<pre><code class="language-c++">template &lt;typename T&gt;
+concept C = requires(T x) {
+  {*x} -&gt; std::convertible_to&lt;typename T::inner&gt;; // the type of the expression `*x` is convertible to `T::inner`
+  {x + 1} -&gt; std::same_as&lt;int&gt;; // the expression `x + 1` satisfies `std::same_as&lt;decltype((x + 1))&gt;`
+  {x * 1} -&gt; std::convertible_to&lt;T&gt;; // the type of the expression `x * 1` is convertible to `T`
+};
+</code></pre>
+<ul>
+<li><strong>Nested requirements</strong> - denoted by the <code>requires</code> keyword, specify additional constraints (such as those on local parameter arguments).</li>
+</ul>
+<pre><code class="language-c++">template &lt;typename T&gt;
+concept C = requires(T x) {
+  requires std::same_as&lt;sizeof(x), size_t&gt;;
+};
+</code></pre>
+<p>See also: <a href="#concepts-library">concepts library</a>.</p>
+<h3 id="designated-initializers">Designated initializers</h3>
+<p>C-style designated initializer syntax. Any member fields that are not explicitly listed in the designated initializer list are default-initialized.</p>
+<pre><code class="language-c++">struct A {
+  int x;
+  int y;
+  int z = 123;
+};
+
+A a {.x = 1, .z = 2}; // a.x == 1, a.y == 0, a.z == 2
+</code></pre>
+<h3 id="template-syntax-for-lambdas">Template syntax for lambdas</h3>
+<p>Use familiar template syntax in lambda expressions.</p>
+<pre><code class="language-c++">auto f = []&lt;typename T&gt;(std::vector&lt;T&gt; v) {
+  // ...
+};
+</code></pre>
+<h3 id="range-based-for-loop-with-initializer">Range-based for loop with initializer</h3>
+<p>This feature simplifies common code patterns, helps keep scopes tight, and offers an elegant solution to a common lifetime problem.</p>
+<pre><code class="language-c++">for (auto v = std::vector{1, 2, 3}; auto&amp; e : v) {
+  std::cout &lt;&lt; e;
+}
+// prints &quot;123&quot;
+</code></pre>
+<h3 id="likely-and-unlikely-attributes">[[likely]] and [[unlikely]] attributes</h3>
+<p>Provides a hint to the optimizer that the labelled statement has a high probability of being executed.</p>
+<pre><code class="language-c++">switch (n) {
+case 1:
+  // ...
+  break;
+
+[[likely]] case 2:  // n == 2 is considered to be arbitrarily more
+  // ...            // likely than any other value of n
+  break;
+}
+</code></pre>
+<p>If one of the likely/unlikely attributes appears after the right parenthesis of an if-statement,<br>
+it indicates that the branch is likely/unlikely to have its substatement (body) executed.</p>
+<pre><code class="language-c++">int random = get_random_number_between_x_and_y(0, 3);
+if (random &gt; 0) [[likely]] {
+  // body of if statement
+  // ...
+}
+</code></pre>
+<p>It can also be applied to the substatement (body) of an iteration statement.</p>
+<pre><code class="language-c++">while (unlikely_truthy_condition) [[unlikely]] {
+  // body of while statement
+  // ...
+}
+</code></pre>
+<h3 id="deprecate-implicit-capture-of-this">Deprecate implicit capture of this</h3>
+<p>Implicitly capturing <code>this</code> in a lambda capture using <code>[=]</code> is now deprecated; prefer capturing explicitly using <code>[=, this]</code> or <code>[=, *this]</code>.</p>
+<pre><code class="language-c++">struct int_value {
+  int n = 0;
+  auto getter_fn() {
+    // BAD:
+    // return [=]() { return n; };
+
+    // GOOD:
+    return [=, *this]() { return n; };
+  }
+};
+</code></pre>
+<h3 id="class-types-in-non-type-template-parameters">Class types in non-type template parameters</h3>
+<p>Classes can now be used in non-type template parameters. Objects passed in as template arguments have the type <code>const T</code>, where <code>T</code> is the type of the object, and has static storage duration.</p>
+<pre><code class="language-c++">struct foo {
+  foo() = default;
+  constexpr foo(int) {}
+};
+
+template &lt;foo f&gt;
+auto get_foo() {
+  return f;
+}
+
+get_foo(); // uses implicit constructor
+get_foo&lt;foo{123}&gt;();
+</code></pre>
+<h3 id="constexpr-virtual-functions">constexpr virtual functions</h3>
+<p>Virtual functions can now be <code>constexpr</code> and evaluated at compile-time. <code>constexpr</code> virtual functions can override non-<code>constexpr</code> virtual functions and vice-versa.</p>
+<pre><code class="language-c++">struct X1 {
+  virtual int f() const = 0;
+};
+
+struct X2: public X1 {
+  constexpr virtual int f() const { return 2; }
+};
+
+struct X3: public X2 {
+  virtual int f() const { return 3; }
+};
+
+struct X4: public X3 {
+  constexpr virtual int f() const { return 4; }
+};
+
+constexpr X4 x4;
+x4.f(); // == 4
+</code></pre>
+<h3 id="explicitbool">explicit(bool)</h3>
+<p>Conditionally select at compile-time whether a constructor is made explicit or not. <code>explicit(true)</code> is the same as specifying <code>explicit</code>.</p>
+<pre><code class="language-c++">struct foo {
+  // Specify non-integral types (strings, floats, etc.) require explicit construction.
+  template &lt;typename T&gt;
+  explicit(!std::is_integral_v&lt;T&gt;) foo(T) {}
+};
+
+foo a = 123; // OK
+foo b = &quot;123&quot;; // ERROR: explicit constructor is not a candidate (explicit specifier evaluates to true)
+foo c {&quot;123&quot;}; // OK
+</code></pre>
+<h3 id="immediate-functions">Immediate functions</h3>
+<p>Similar to <code>constexpr</code> functions, but functions with a <code>consteval</code> specifier must produce a constant. These are called <code>immediate functions</code>.</p>
+<pre><code class="language-c++">consteval int sqr(int n) {
+  return n * n;
+}
+
+constexpr int r = sqr(100); // OK
+int x = 100;
+int r2 = sqr(x); // ERROR: the value of 'x' is not usable in a constant expression
+                 // OK if `sqr` were a `constexpr` function
+</code></pre>
+<h3 id="using-enum">using enum</h3>
+<p>Bring an enum's members into scope to improve readability. Before:</p>
+<pre><code class="language-c++">enum class rgba_color_channel { red, green, blue, alpha };
+
+std::string_view to_string(rgba_color_channel channel) {
+  switch (channel) {
+    case rgba_color_channel::red:   return &quot;red&quot;;
+    case rgba_color_channel::green: return &quot;green&quot;;
+    case rgba_color_channel::blue:  return &quot;blue&quot;;
+    case rgba_color_channel::alpha: return &quot;alpha&quot;;
+  }
+}
+</code></pre>
+<p>After:</p>
+<pre><code class="language-c++">enum class rgba_color_channel { red, green, blue, alpha };
+
+std::string_view to_string(rgba_color_channel my_channel) {
+  switch (my_channel) {
+    using enum rgba_color_channel;
+    case red:   return &quot;red&quot;;
+    case green: return &quot;green&quot;;
+    case blue:  return &quot;blue&quot;;
+    case alpha: return &quot;alpha&quot;;
+  }
+}
+</code></pre>
+<h3 id="lambda-capture-of-parameter-pack">Lambda capture of parameter pack</h3>
+<p>Capture parameter packs by value:</p>
+<pre><code class="language-c++">template &lt;typename... Args&gt;
+auto f(Args&amp;&amp;... args){
+    // BY VALUE:
+    return [...args = std::forward&lt;Args&gt;(args)] {
+        // ...
+    };
+}
+</code></pre>
+<p>Capture parameter packs by reference:</p>
+<pre><code class="language-c++">template &lt;typename... Args&gt;
+auto f(Args&amp;&amp;... args){
+    // BY REFERENCE:
+    return [&amp;...args = std::forward&lt;Args&gt;(args)] {
+        // ...
+    };
+}
+</code></pre>
+<h3 id="char8_t">char8_t</h3>
+<p>Provides a standard type for representing UTF-8 strings.</p>
+<pre><code class="language-c++">char8_t utf8_str[] = u8&quot;\u0123&quot;;
+</code></pre>
+<h3 id="constinit">constinit</h3>
+<p>The <code>constinit</code> specifier requires that a variable must be initialized at compile-time.</p>
+<pre><code class="language-c++">const char* g() { return &quot;dynamic initialization&quot;; }
+constexpr const char* f(bool p) { return p ? &quot;constant initializer&quot; : g(); }
+
+constinit const char* c = f(true); // OK
+constinit const char* d = f(false); // ERROR: `g` is not constexpr, so `d` cannot be evaluated at compile-time.
+</code></pre>
+<h2 id="c20-library-features">C++20 Library Features</h2>
+<h3 id="concepts-library">Concepts library</h3>
+<p>Concepts are also provided by the standard library for building more complicated concepts. Some of these include:</p>
+<p><strong>Core language concepts:</strong></p>
+<ul>
+<li><code>same_as</code> - specifies two types are the same.</li>
+<li><code>derived_from</code> - specifies that a type is derived from another type.</li>
+<li><code>convertible_to</code> - specifies that a type is implicitly convertible to another type.</li>
+<li><code>common_with</code> - specifies that two types share a common type.</li>
+<li><code>integral</code> - specifies that a type is an integral type.</li>
+<li><code>default_constructible</code> - specifies that an object of a type can be default-constructed.</li>
+</ul>
+<p><strong>Comparison concepts:</strong></p>
+<ul>
+<li><code>boolean</code> - specifies that a type can be used in Boolean contexts.</li>
+<li><code>equality_comparable</code> - specifies that <code>operator==</code> is an equivalence relation.</li>
+</ul>
+<p><strong>Object concepts:</strong></p>
+<ul>
+<li><code>movable</code> - specifies that an object of a type can be moved and swapped.</li>
+<li><code>copyable</code> - specifies that an object of a type can be copied, moved, and swapped.</li>
+<li><code>semiregular</code> - specifies that an object of a type can be copied, moved, swapped, and default constructed.</li>
+<li><code>regular</code> - specifies that a type is <em>regular</em>, that is, it is both <code>semiregular</code> and <code>equality_comparable</code>.</li>
+</ul>
+<p><strong>Callable concepts:</strong></p>
+<ul>
+<li><code>invocable</code> - specifies that a callable type can be invoked with a given set of argument types.</li>
+<li><code>predicate</code> - specifies that a callable type is a Boolean predicate.</li>
+</ul>
+<p>See also: <a href="#concepts">concepts</a>.</p>
+<h3 id="synchronized-buffered-outputstream">Synchronized buffered outputstream</h3>
+<p>Buffers output operations for the wrapped output stream ensuring synchronization (i.e. no interleaving of output).</p>
+<pre><code class="language-c++">std::osyncstream{std::cout} &lt;&lt; &quot;The value of x is:&quot; &lt;&lt; x &lt;&lt; std::endl;
+</code></pre>
+<h3 id="stdspan">std::span</h3>
+<p>A span is a view (i.e. non-owning) of a container providing bounds-checked access to a contiguous group of elements. Since views do not own their elements they are cheap to construct and copy -- a simplified way to think about views is they are holding references to their data. As opposed to maintaining a pointer/iterator and length field, a span wraps both of those up in a single object.</p>
+<p>Spans can be dynamically-sized or fixed-sized (known as their <em>extent</em>). Fixed-sized spans benefit from bounds-checking.</p>
+<p>Span doesn't propogate const so to construct a read-only span use <code>std::span&lt;const T&gt;</code>.</p>
+<p>Example: using a dynamically-sized span to print integers from various containers.</p>
+<pre><code class="language-c++">void print_ints(std::span&lt;const int&gt; ints) {
+    for (const auto n : ints) {
+        std::cout &lt;&lt; n &lt;&lt; std::endl;
+    }
+}
+
+print_ints(std::vector{ 1, 2, 3 });
+print_ints(std::array&lt;int, 5&gt;{ 1, 2, 3, 4, 5 });
+
+int a[10] = { 0 };
+print_ints(a);
+// etc.
+</code></pre>
+<p>Example: a statically-sized span will fail to compile for containers that don't match the extent of the span.</p>
+<pre><code class="language-c++">void print_three_ints(std::span&lt;const int, 3&gt; ints) {
+    for (const auto n : ints) {
+        std::cout &lt;&lt; n &lt;&lt; std::endl;
+    }
+}
+
+print_three_ints(std::vector{ 1, 2, 3 }); // ERROR
+print_three_ints(std::array&lt;int, 5&gt;{ 1, 2, 3, 4, 5 }); // ERROR
+int a[10] = { 0 };
+print_three_ints(a); // ERROR
+
+std::array&lt;int, 3&gt; b = { 1, 2, 3 };
+print_three_ints(b); // OK
+
+// You can construct a span manually if required:
+std::vector c{ 1, 2, 3 };
+print_three_ints(std::span&lt;const int, 3&gt;{ c.data(), 3 }); // OK: set pointer and length field.
+print_three_ints(std::span&lt;const int, 3&gt;{ c.cbegin(), c.cend() }); // OK: use iterator pairs.
+</code></pre>
+<h3 id="bit-operations">Bit operations</h3>
+<p>C++20 provides a new <code>&lt;bit&gt;</code> header which provides some bit operations including popcount.</p>
+<pre><code class="language-c++">std::popcount(0u); // 0
+std::popcount(1u); // 1
+std::popcount(0b1111'0000u); // 4
+</code></pre>
+<h3 id="math-constants">Math constants</h3>
+<p>Mathematical constants including PI, Euler's number, etc. defined in the <code>&lt;numbers&gt;</code> header.</p>
+<pre><code class="language-c++">std::numbers::pi; // 3.14159...
+std::numbers::e; // 2.71828...
+</code></pre>
+<h3 id="stdis_constant_evaluated">std::is_constant_evaluated</h3>
+<p>Predicate function which is truthy when it is called in a compile-time context.</p>
+<pre><code class="language-c++">constexpr bool is_compile_time() {
+    return std::is_constant_evaluated();
+}
+
+constexpr bool a = is_compile_time(); // true
+bool b = is_compile_time(); // false
+</code></pre>
+<h3 id="stdmake_shared-supports-arrays">std::make_shared supports arrays</h3>
+<pre><code class="language-c++">auto p = std::make_shared&lt;int[]&gt;(5); // pointer to `int[5]`
+// OR
+auto p = std::make_shared&lt;int[5]&gt;(); // pointer to `int[5]`
+</code></pre>
+<h3 id="starts_with-and-ends_with-on-strings">starts_with and ends_with on strings</h3>
+<p>Strings (and string views) now have the <code>starts_with</code> and <code>ends_with</code> member functions to check if a string starts or ends with the given string.</p>
+<pre><code class="language-c++">std::string str = &quot;foobar&quot;;
+str.starts_with(&quot;foo&quot;); // true
+str.ends_with(&quot;baz&quot;); // false
+</code></pre>
+<h3 id="check-if-associative-container-has-element">Check if associative container has element</h3>
+<p>Associative containers such as sets and maps have a <code>contains</code> member function, which can be used instead of the &quot;find and check end of iterator&quot; idiom.</p>
+<pre><code class="language-c++">std::map&lt;int, char&gt; map {{1, 'a'}, {2, 'b'}};
+map.contains(2); // true
+map.contains(123); // false
+
+std::set&lt;int&gt; set {1, 2, 3};
+set.contains(2); // true
+</code></pre>
+<h3 id="stdbit_cast">std::bit_cast</h3>
+<p>A safer way to reinterpret an object from one type to another.</p>
+<pre><code class="language-c++">float f = 123.0;
+int i = std::bit_cast&lt;int&gt;(f);
+</code></pre>
+<h3 id="stdmidpoint">std::midpoint</h3>
+<p>Calculate the midpoint of two integers safely (without overflow).</p>
+<pre><code class="language-c++">std::midpoint(1, 3); // == 2
+</code></pre>
+<h3 id="stdto_array">std::to_array</h3>
+<p>Converts the given array/&quot;array-like&quot; object to a <code>std::array</code>.</p>
+<pre><code class="language-c++">std::to_array(&quot;foo&quot;); // returns `std::array&lt;char, 4&gt;`
+std::to_array&lt;int&gt;({1, 2, 3}); // returns `std::array&lt;int, 3&gt;`
+
+int a[] = {1, 2, 3};
+std::to_array(a); // returns `std::array&lt;int, 3&gt;`
+</code></pre>
+<h2 id="acknowledgements">Acknowledgements</h2>
+<ul>
+<li><a href="http://en.cppreference.com/w/cpp">cppreference</a> - especially useful for finding examples and documentation of new library features.</li>
+<li><a href="http://thbecker.net/articles/rvalue_references/section_01.html">C++ Rvalue References Explained</a> - a great introduction I used to understand rvalue references, perfect forwarding, and move semantics.</li>
+<li><a href="http://clang.llvm.org/cxx_status.html">clang</a> and <a href="https://gcc.gnu.org/projects/cxx-status.html">gcc</a>'s standards support pages. Also included here are the proposals for language/library features that I used to help find a description of, what it's meant to fix, and some examples.</li>
+<li><a href="https://godbolt.org/">Compiler explorer</a></li>
+<li><a href="https://www.amazon.com/Effective-Modern-Specific-Ways-Improve/dp/1491903996">Scott Meyers' Effective Modern C++</a> - highly recommended book!</li>
+<li><a href="https://www.youtube.com/channel/UCxHAlbZQNFU2LgEtiqd2Maw">Jason Turner's C++ Weekly</a> - nice collection of C++-related videos.</li>
+<li><a href="http://stackoverflow.com/questions/7027523/what-can-i-do-with-a-moved-from-object">What can I do with a moved-from object?</a></li>
+<li><a href="http://stackoverflow.com/questions/24109737/what-are-some-uses-of-decltypeauto">What are some uses of decltype(auto)?</a></li>
+<li>And many more SO posts I'm forgetting...</li>
+</ul>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://kimokcheon.github.io/post/cpp17/" class="post-title gt-a-link">
+                    CPP17
+                </a>
+            </div>
+        
+
+        
+
+        
+
+        
+            <script src='https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+
+<style>
+	div#vcomments{
+		width:100%;
+		max-width: 1000px;
+		padding: 2.5%
+	}
+</style>
+
+
+	<div id="vcomments"></div>
+
+<script>
+	new Valine({
+		el: '#vcomments',
+		appId: '',
+		appKey: '',
+		avatar: '',
+		pageSize: 5,
+		recordIp: false,
+		placeholder: 'Just Go Go',
+		visitor: false,
+	});
+</script>
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">他们都是萤火，聚在一起就成了太阳</div>
+    <div class="social-container">
+        
+            
+                <a href="https://github.com/Kimokcheon" target="_blank">
+                    <i class="fab fa-github gt-c-content-color-first"></i>
+                </a>
+            
+        
+            
+        
+            
+        
+            
+                <a href="https://www.zhihu.com/people/deng-yu-chuan-4" target="_blank">
+                    <i class="fab fa-zhihu gt-c-content-color-first"></i>
+                </a>
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+    </div>
+    <div>
+        Theme by <a href="https://imhanjie.com/" target="_blank">imhanjie</a>, Powered by <a
+                href="https://github.com/getgridea/gridea" target="_blank">Gridea | <a href="https://kimokcheon.github.io//atom.xml" target="_blank">RSS</a></a>
+    </div>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+    </div>
+</div>
+</body>
+</html>

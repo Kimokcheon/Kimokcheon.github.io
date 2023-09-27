@@ -1,0 +1,414 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>Pytorch_Example | Yuchuan&#39;s Blog</title>
+
+<link rel="shortcut icon" href="https://kimokcheon.github.io//favicon.ico?v=1695778991029">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://kimokcheon.github.io//styles/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            Yuchuan&#39;s Blog
+        </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+                <div class="nav-item">
+                    
+                        <a href="/" class="menu gt-a-link">
+                            首页
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/archives" class="menu gt-a-link">
+                            归档
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/tags" class="menu gt-a-link">
+                            标签
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="https://kimokcheon.github.io/post/about-me" class="menu gt-a-link">
+                            关于
+                        </a>
+                    
+                </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1695778991029" action="/search/index.html">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    Pytorch_Example
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2023-06-27 ·
+                    </time>
+                    
+                </div>
+                <div class="post-content">
+                    <h1 id="pytorch-cookbock">Pytorch Cookbock</h1>
+<ul>
+<li>Cookbook<br>
+https://zhuanlan.zhihu.com/p/59205847</li>
+<li>Python 使用和高性能技巧总结<br>
+https://zhuanlan.zhihu.com/p/48293468</li>
+</ul>
+<br>
+<h1 id="tensor-processing-example">Tensor Processing Example</h1>
+<pre><code class="language-python">import torch
+x = torch.zeros((16,10,30,30), dtype=torch.float)
+print(x.shape)
+
+a = torch.stack((x,x,x),1)  # stack是建立一个新的维度
+print(a.shape)
+
+b = torch.cat((x,x,x), dim=1)  # cat是在已有的维度上拼接
+print(b.shape)
+
+k = x.expand(2,3,-1,-1,-1,-1)  # 只能将大小为1维度的扩展到更大尺寸
+# k = x.expand(2,3,-1,20,-1,-1)  # 会报错
+print(k.shape)
+
+c = x.repeat(2,3,1,2,1,1)  # 可以repeat任意维度，新的维度默认加在前面
+print(c.shape)
+
+d = torch.unsqueeze(x, 2)
+print(d.shape)
+
+e = torch.unsqueeze(x, 2).repeat(1,1,3,1,1)
+print(e.shape)
+</code></pre>
+<p>得到<br>
+torch.Size([16, 10, 30, 30])<br>
+torch.Size([16, 3, 10, 30, 30])<br>
+torch.Size([16, 30, 30, 30])<br>
+torch.Size([2, 3, 16, 10, 30, 30])<br>
+torch.Size([2, 3, 16, 20, 30, 30])<br>
+torch.Size([16, 10, 1, 30, 30])<br>
+torch.Size([16, 10, 3, 30, 30])</p>
+<br>
+<h1 id="custom-dataloader-example">Custom DataLoader Example</h1>
+<p>见： https://pytorch.org/tutorials/beginner/data_loading_tutorial.html<br>
+https://zhuanlan.zhihu.com/p/30934236</p>
+<ul>
+<li>
+<p>要点在于在 <code>CustomDataset(Dataset)</code>的<code>__init__</code>中不直接读入图片，而只读入csv文件，包含图片路径等；在<code>__getitem__</code>中才读入index所对应图片。这样可以节省内存。</p>
+</li>
+<li>
+<p>Pytorch的数据读取主要包含三个类，这三者大致是一个依次封装的关系: 1被装进2, 2被装进3</p>
+<ul>
+<li>Dataset: 提供了自定义数据集的方法，可在<code>__getitem__</code>中使用<code>transform</code>
+<ul>
+<li><code>class torchvision.transforms.Compose(transforms)</code><br>
+见: https://pytorch.org/docs/stable/torchvision/transforms.html<br>
+https://blog.csdn.net/Hansry/article/details/84071316</li>
+</ul>
+</li>
+<li>DataLoader: 在<code>Dataset</code>的基础上，加上了mini-batch, shuffle, multi-threading 的功能</li>
+<li>DataLoaderIter<pre><code class="language-python">from torch.utils.data import Dataset, DataLoader
+from torchvision import transforms, utils
+
+class CustomDataset(Dataset):
+   def __init__(self, transform = None):
+       XXX
+       self.transform = transform
+
+   def __len__(self):
+       XXX
+
+   def __getitem__(self, idx):
+       sample = XXX
+       if self.transform:
+           sample = self.transform(sample)
+       return sample
+
+my_dataset = CustomDataset(transform=transforms.Compose([Rescale(256), RandomCrop(224), ToTensor()]))
+dataloader = Dataloader(my_dataset, batch_size=4, shuffle=True, num_workers=4)
+
+for index, sample in enumerate(dataloader):
+   # training...
+</code></pre>
+</li>
+<li>torchvision: torchvision package provides some common datasets and transforms<br>
+见： https://pytorch.org/tutorials/beginner/data_loading_tutorial.html#afterword-torchvision</li>
+</ul>
+</li>
+<li>
+<p>collate_fn的使用:</p>
+<blockquote>
+<p>You can use your own collate_fn to process the list of samples to form a batch. The batch argument is a list with all your samples. E.g. if you would like to return variable-sized data.<br>
+https://zhuanlan.zhihu.com/p/30385675<br>
+https://blog.csdn.net/weixin_42028364/article/details/81675021</p>
+</blockquote>
+<p><code>collate_fn</code>中可以定义怎样将 从<code>__getitem__</code>获取的长度为<code>batch_size</code>的数据 组成<code>a batch of training data</code>，输入训练网络。比如文字识别，label是一个单词，每个label不一样长，需要先把他们统一成相同长度。或者<code>multi-scale training: selects new image size every tenth batch</code>:</p>
+<pre><code class="language-python">def collate_fn(self, batch):
+
+    # Selects new image size every tenth batch
+    if self.multiscale and self.batch_count % 10 == 0:
+        self.img_size = random.choice(range(self.min_size, self.max_size + 1, 32))
+  
+    # Resize images to input shape
+    imgs = torch.stack([resize(img, self.img_size) for img in imgs])
+    self.batch_count += 1
+
+    return paths, imgs, targets
+</code></pre>
+</li>
+<li>
+<p>dataloader 输出的数据都是默认在 CPU 上，如果要用 GPU 训练，需要手动移到 GPU 上。用 <code>dali</code> 模块，可以将一些预处理也放在 GPU 上</p>
+</li>
+</ul>
+<br>
+<h1 id="linear-regression-example">Linear Regression Example</h1>
+<blockquote>
+<p>这个例子是把所有训练数据一次性读到内存中了的</p>
+</blockquote>
+<p>见: https://gist.github.com/dvgodoy/1d818d86a6a0dc6e7c07610835b46fe4</p>
+<ul>
+<li>Only load the batch training data instead of the whole data into GPU because graphics card’s RAM is precious.</li>
+<li>We need to send our model to the same device where the data is. If our data is made of GPU tensors, our model must “live” inside the GPU as well.</li>
+<li>During validation, it's better to use <code>with torch.no_grad() </code> and <code>model.eval()</code> together.</li>
+</ul>
+<pre><code class="language-python">import numpy as np
+import torch
+import torch.optim as optim
+import torch.nn as nn
+from torchviz import make_dot
+from torch.utils.data import Dataset, TensorDataset, DataLoader
+from torch.utils.data.dataset import random_split
+
+device = 'cuda' if torch.cuda.is_available() else 'cpu'
+
+
+############## Genreate dataset, dataloader ################
+np.random.seed(42)
+x = np.random.rand(100, 1)
+true_a, true_b = 1, 2
+y = true_a + true_b*x + 0.1*np.random.randn(100, 1)
+
+x_tensor = torch.from_numpy(x).float()
+y_tensor = torch.from_numpy(y).float()
+
+class CustomDataset(Dataset):
+    def __init__(self, x_tensor, y_tensor):
+        self.x = x_tensor
+        self.y = y_tensor
+
+    def __getitem__(self, index):
+        return (self.x[index], self.y[index])
+
+    def __len__(self):
+        return len(self.x)
+
+dataset = TensorDataset(x_tensor, y_tensor)  # dataset = CustomDataset(x_tensor, y_tensor)
+
+train_dataset, val_dataset = random_split(dataset, [80, 20])
+
+train_loader = DataLoader(dataset=train_dataset, batch_size=16)     # it is on CPU
+val_loader = DataLoader(dataset=val_dataset, batch_size=20)         # it is on CPU
+
+
+##################### Generate Model ########################
+class ManualLinearRegression(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.linear = nn.Linear(1, 1)
+
+    def forward(self, x):
+        return self.linear(x)
+
+
+################### Define train step ######################
+def make_train_step(model, loss_fn, optimizer):
+    def train_step(x, y):
+        model.train()
+        yhat = model(x)
+        loss = loss_fn(y, yhat)
+        loss.backward()
+        optimizer.step()
+        optimizer.zero_grad()
+        return loss.item()
+    return train_step
+
+
+################### Train the model ######################
+# Estimate a and b
+torch.manual_seed(42)
+
+model = ManualLinearRegression().to(device) # model = nn.Sequential(nn.Linear(1, 1)).to(device)
+loss_fn = nn.MSELoss(reduction='mean')  # output the mean of several MSEloss
+optimizer = optim.SGD(model.parameters(), lr=1e-1)
+train_step = make_train_step(model, loss_fn, optimizer) # return of make_train_step is a function 
+
+n_epochs = 100
+training_losses = []
+validation_losses = []
+print(model.state_dict())
+
+for epoch in range(n_epochs):
+    batch_losses = []
+    for x_batch, y_batch in train_loader:
+        x_batch = x_batch.to(device)    # Transfer the batch data from CPU to device
+        y_batch = y_batch.to(device)
+        loss = train_step(x_batch, y_batch)
+        batch_losses.append(loss)
+    training_loss = np.mean(batch_losses)   # report one training_loss per epoch
+    training_losses.append(training_loss)
+
+    with torch.no_grad():
+        val_losses = []
+        for x_val, y_val in val_loader:
+            x_val = x_val.to(device)
+            y_val = y_val.to(device)
+            model.eval()
+            yhat = model(x_val)
+            val_loss = loss_fn(y_val, yhat).item()  # change tensor to python type
+            val_losses.append(val_loss)
+        validation_loss = np.mean(val_losses)
+        validation_losses.append(validation_loss)
+
+    print(f&quot;[{epoch+1}] Training loss: {training_loss:.3f}\t Validation loss: {validation_loss:.3f}&quot;)
+
+print(model.state_dict())   # get the current value for all parameters
+</code></pre>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://kimokcheon.github.io/post/pytorch_advance/" class="post-title gt-a-link">
+                    Pytorch_Advance
+                </a>
+            </div>
+        
+
+        
+
+        
+
+        
+            <script src='https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+
+<style>
+	div#vcomments{
+		width:100%;
+		max-width: 1000px;
+		padding: 2.5%
+	}
+</style>
+
+
+	<div id="vcomments"></div>
+
+<script>
+	new Valine({
+		el: '#vcomments',
+		appId: '',
+		appKey: '',
+		avatar: '',
+		pageSize: 5,
+		recordIp: false,
+		placeholder: 'Just Go Go',
+		visitor: false,
+	});
+</script>
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">他们都是萤火，聚在一起就成了太阳</div>
+    <div class="social-container">
+        
+            
+                <a href="https://github.com/Kimokcheon" target="_blank">
+                    <i class="fab fa-github gt-c-content-color-first"></i>
+                </a>
+            
+        
+            
+        
+            
+        
+            
+                <a href="https://www.zhihu.com/people/deng-yu-chuan-4" target="_blank">
+                    <i class="fab fa-zhihu gt-c-content-color-first"></i>
+                </a>
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+    </div>
+    <div>
+        Theme by <a href="https://imhanjie.com/" target="_blank">imhanjie</a>, Powered by <a
+                href="https://github.com/getgridea/gridea" target="_blank">Gridea | <a href="https://kimokcheon.github.io//atom.xml" target="_blank">RSS</a></a>
+    </div>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+    </div>
+</div>
+</body>
+</html>

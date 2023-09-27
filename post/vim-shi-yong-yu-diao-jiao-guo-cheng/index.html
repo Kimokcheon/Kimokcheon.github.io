@@ -1,0 +1,235 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>Vim使用与调教过程 | Yuchuan&#39;s Blog</title>
+
+<link rel="shortcut icon" href="https://kimokcheon.github.io//favicon.ico?v=1695778991029">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://kimokcheon.github.io//styles/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            Yuchuan&#39;s Blog
+        </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+                <div class="nav-item">
+                    
+                        <a href="/" class="menu gt-a-link">
+                            首页
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/archives" class="menu gt-a-link">
+                            归档
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/tags" class="menu gt-a-link">
+                            标签
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="https://kimokcheon.github.io/post/about-me" class="menu gt-a-link">
+                            关于
+                        </a>
+                    
+                </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1695778991029" action="/search/index.html">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    Vim使用与调教过程
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2023-06-27 ·
+                    </time>
+                    
+                </div>
+                <div class="post-content">
+                    <h1 id="背景">背景</h1>
+<p>我对Vim并不陌生，也用Vim写过代码，但也只是靠<code>i</code>和<code>:wq</code>来做一些小的事情，比如写写commit message之类。如果能用vscode我还是用vscode的。我的确被别人安利过Vim，听过很多人说Vim熟练了会大大提升效率，它只用键盘。然而我还是望而却步：要学的东西太多了啊，这么多快捷键，很难在短时间内达到熟练。而且我觉得vscode已经很方便了，为啥要用Vim？</p>
+<p>那我为什么又要用Vim呢？还是因为两天前我抱着电脑在床上瞎看东西，突然触摸板失灵了。我又懒得去拿鼠标，就只能用键盘了。结果是，在浏览器里点链接要狂按Tab键，使用体验极差。这时我突然想起来，以前看过视频，有一个浏览器插件，安装之后就能像Vim一样用键盘浏览网页，也有<code>hjkl</code>移动等等类似Vim的功能。</p>
+<p>狂按Tab键之后终于找到并且下载了这个插件，叫做Vimium。简单熟悉了一下主要功能，还不错。于是我又顺路去学了学Vim，并且简单地配置了一下。</p>
+<h1 id="vim学习与配置">Vim学习与配置</h1>
+<h2 id="学习vim使用vimtutor">学习Vim：使用vimtutor</h2>
+<p>Vim自带教程。在终端输入<code>vimtutor</code>并按回车键即可打开。</p>
+<p>vimtutor看起来不短，但实际上是因为它编写的很详细。所以大约半小时就可以把整个教程过一遍。</p>
+<p>看一遍基本能记住七成，隔一天再看一遍就记得差不多了。重点是多写点小程序什么的自己练手，教程上也说了，不要去记对应规则，而是通过写东西来练手、掌握。</p>
+<h2 id="配置vim颜色主题与插件">配置Vim：颜色主题与插件</h2>
+<h3 id="主题配色onedark">主题配色：onedark</h3>
+<p>听取了同学的建议，使用了onedark配色，GitHub链接：<a href="https://github.com/joshdick/onedark.vim">https://github.com/joshdick/onedark.vim</a>。按照README文件的说明进行安装即可，装完感觉还是挺不错的。</p>
+<p>这位同学还使用了treesitter高亮，之后再说罢，现在已经不赖了。</p>
+<h3 id="终端界面ohmyzsh-agnoster">终端界面：ohmyzsh - agnoster</h3>
+<p>采用ohmyzsh的agnoster样式（按照官方文件的说法这应该是最花哨的样式了hhhh，不过真觉得挺好看的，我觉得也不花哨，还是足够简洁的）。</p>
+<p>ohmyzsh的GitHub链接：<a href="https://github.com/ohmyzsh/ohmyzsh">https://github.com/ohmyzsh/ohmyzsh</a>。按照README文件的说明来安装即可。</p>
+<p>另外，注意要先安装zsh才能安装ohmyzsh，另外千万不要一时兴起直接用<code>sudo apt remove</code>把zsh卸载了，否则就打不开ubuntu终端了（血泪教训QAQ）。因为这样的文件会修改终端的配置，如果手滑修改了，要去找到/etc目录下的passwd（应该是叫这个）文件，把含有zsh的那一行中的zsh改成bash。</p>
+<p>另外我还做了个小动作：让终端只显示相对路径，终端命令之前的“前摇”就简洁了很多了。</p>
+<p>如果采用agnoster，要实现如上的效果，就得修改agnoster主题的配置文件，可参考教程：<a href="https://www.cnblogs.com/goldsunshine/p/9567613.html">https://www.cnblogs.com/goldsunshine/p/9567613.html</a>。</p>
+<p>另外，要去掉主机名，即从原来的“用户名@主机名”变为仅显示用户名或者用户名也不显示，可以找到函数<code>prompt_context()</code>所在行（我的是从89行开始），if和fi中间那一行最后有个<code>%n@%m</code>，%n指代的是用户名，%m指代的是主机名，按照需求修改即可。</p>
+<h3 id="插件管理器vundle">插件管理器：Vundle</h3>
+<p>我使用Vundle来管理插件，这里有一篇不错的Vundle安装和使用教程：<a href="https://cloud.tencent.com/developer/article/1669204">https://cloud.tencent.com/developer/article/1669204</a>。</p>
+<h4 id="自动补全插件youcompleteme">自动补全插件：YouCompleteMe</h4>
+<p>我的Vim起初是裸奔的（谁的不是呢），然后因为没有自动补全提示很难受……于是一通google，发现大家还挺推荐YouCompleteMe（GitHub链接：<a href="https://github.com/ycm-core/YouCompleteMe">https://github.com/ycm-core/YouCompleteMe</a>）这个插件的，还有人直接说是Vim必备的几大神器之一。要用Vundle来安装，于是Vundle就顺理成章地成为我的插件管理器了。</p>
+<p>另外，安装完YouCompleteMe之后，还要把设置文件（路径：~/.vimrc）再修改一下，在<code>call vundle#begin()</code>和<code>call vundle#end()</code>之间加入下面的语句，这样会有更好的体验：</p>
+<pre><code class="language-shell">let g:ycm_show_diagnostics_ui = 0
+let g:ycm_server_log_level = 'info'
+let g:ycm_min_num_identifier_candidate_chars = 2
+let g:ycm_collect_identifiers_from_comments_and_strings = 1
+let g:ycm_complete_in_strings=1
+let g:ycm_key_invoke_completion = '&lt;c-z&gt;'
+
+noremap &lt;c-z&gt; &lt;NOP&gt;
+
+let g:ycm_semantic_triggers =  {
+            \ 'c,cpp,python,java,go,erlang,perl': ['re!\w{2}'],
+            \ 'cs,lua,javascript': ['re!\w{2}'],
+            \ }
+</code></pre>
+<p>这个YouCompleteMe配置过程中还有可能遇到各种各样的问题，上网查或者自己看配置文件猜解决方法也能搞定。配置好之后使用体验也还是可以的（虽然我没感觉像传的那么神）。</p>
+<h4 id="彩虹括号插件rainbow-parenthesis-improved">“彩虹括号”插件：Rainbow Parenthesis Improved</h4>
+<p>后来我又通过Vundle安装了“彩虹括号”（Rainbow Parenthesis Improved，GitHub链接：<a href="https://github.com/luochen1990/rainbow">https://github.com/luochen1990/rainbow</a>）。这样一来看括号就舒服多了。</p>
+<h1 id="vimium浏览器仿vim插件">Vimium：浏览器仿Vim插件</h1>
+<p>我主用浏览器是chrome，在chrome应用商店可以找到Vimium，链接：<a href="https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb?hl=zh-CN">https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb?hl=zh-CN</a>。</p>
+<p>可以按?键（即shift + /）调出使用说明。到该插件的GitHub仓库下查看README文件也有使用介绍：<a href="https://github.com/philc/vimium">https://github.com/philc/vimium</a>。</p>
+<p>使用熟练之后还挺舒服的，尤其是靠在床上看电脑的时候。不过也有局限性，尤其是在看B站的时候。对我来说还是不能完全替代鼠标的，不过大多数场景下可以不用鼠标自由浏览，熟练之后切换标签页还是挺快的。</p>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://kimokcheon.github.io/post/cpp20/" class="post-title gt-a-link">
+                    CPP20
+                </a>
+            </div>
+        
+
+        
+
+        
+
+        
+            <script src='https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+
+<style>
+	div#vcomments{
+		width:100%;
+		max-width: 1000px;
+		padding: 2.5%
+	}
+</style>
+
+
+	<div id="vcomments"></div>
+
+<script>
+	new Valine({
+		el: '#vcomments',
+		appId: '',
+		appKey: '',
+		avatar: '',
+		pageSize: 5,
+		recordIp: false,
+		placeholder: 'Just Go Go',
+		visitor: false,
+	});
+</script>
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">他们都是萤火，聚在一起就成了太阳</div>
+    <div class="social-container">
+        
+            
+                <a href="https://github.com/Kimokcheon" target="_blank">
+                    <i class="fab fa-github gt-c-content-color-first"></i>
+                </a>
+            
+        
+            
+        
+            
+        
+            
+                <a href="https://www.zhihu.com/people/deng-yu-chuan-4" target="_blank">
+                    <i class="fab fa-zhihu gt-c-content-color-first"></i>
+                </a>
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+    </div>
+    <div>
+        Theme by <a href="https://imhanjie.com/" target="_blank">imhanjie</a>, Powered by <a
+                href="https://github.com/getgridea/gridea" target="_blank">Gridea | <a href="https://kimokcheon.github.io//atom.xml" target="_blank">RSS</a></a>
+    </div>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+    </div>
+</div>
+</body>
+</html>

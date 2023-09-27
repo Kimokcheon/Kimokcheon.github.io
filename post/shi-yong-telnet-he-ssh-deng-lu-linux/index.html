@@ -1,0 +1,432 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>使用telnet和ssh登录linux | Yuchuan&#39;s Blog</title>
+
+<link rel="shortcut icon" href="https://kimokcheon.github.io//favicon.ico?v=1695778991029">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://kimokcheon.github.io//styles/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            Yuchuan&#39;s Blog
+        </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+                <div class="nav-item">
+                    
+                        <a href="/" class="menu gt-a-link">
+                            首页
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/archives" class="menu gt-a-link">
+                            归档
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/tags" class="menu gt-a-link">
+                            标签
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="https://kimokcheon.github.io/post/about-me" class="menu gt-a-link">
+                            关于
+                        </a>
+                    
+                </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1695778991029" action="/search/index.html">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    使用telnet和ssh登录linux
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2023-06-26 ·
+                    </time>
+                    
+                </div>
+                <div class="post-content">
+                    <p>#telnet简介<br>
+Telnet协议是TCP/IP协议家族中的一员，是Internet远程登陆服务的标准协议和主要方式。它为用户提供了在本地计算机上完成远程主机工作的能力。在终端使用者的电脑上使用telnet程序，用它连接到服务器。终端使用者可以在telnet程序中输入命令，这些命令会在服务器上运行，就像直接在服务器的控制台上输入一样。可以在本地就能控制服务器。要开始一个telnet会话，必须输入用户名和密码来登录服务器。Telnet是常用的远程控制Web服务器的方法。<br>
+#telnet登录<br>
+例：使用telnet命令登录到127.0.0.1主机。登录用户：user01，密码：12345678，登录成功后退出登录。</p>
+<pre><code>telnet 127.0.0.1
+user01
+12345678
+exit
+</code></pre>
+<p>#SSH简介<br>
+Secure Shell(SSH) 是由 IETF(The Internet Engineering Task Force) 制定的建立在应用层基础上的安全网络协议。它是专为远程登录会话(甚至可以用Windows远程登录Linux服务器进行文件互传)和其他网络服务提供安全性的协议，可有效弥补网络中的漏洞。通过SSH，可以把所有传输的数据进行加密，也能够防止DNS欺骗和IP欺骗。还有一个额外的好处就是传输的数据是经过压缩的，所以可以加快传输的速度。目前已经成为Linux系统的标准配置。</p>
+<p>#SSH的安全机制<br>
+SSH之所以能够保证安全，原因在于它采用了非对称加密技术(RSA)加密了所有传输的数据。</p>
+<p>传统的网络服务程序，如FTP、Pop和Telnet其本质上都是不安全的；因为它们在网络上用明文传送数据、用户帐号和用户口令，很容易受到中间人（man-in-the-middle）攻击方式的攻击。就是存在另一个人或者一台机器冒充真正的服务器接收用户传给服务器的数据，然后再冒充用户把数据传给真正的服务器。</p>
+<p>但并不是说SSH就是绝对安全的，因为它本身提供两种级别的验证方法：</p>
+<p>第一种级别（基于口令的安全验证）：只要你知道自己帐号和口令，就可以登录到远程主机。所有传输的数据都会被加密，但是不能保证你正在连接的服务器就是你想连接的服务器。可能会有别的服务器在冒充真正的服务器，也就是受到“中间人攻击”这种方式的攻击。</p>
+<p>第二种级别（基于密钥的安全验证）：你必须为自己创建一对密钥，并把公钥放在需要访问的服务器上。如果你要连接到SSH服务器上，客户端软件就会向服务器发出请求，请求用你的密钥进行安全验证。服务器收到请求之后，先在该服务器上你的主目录下寻找你的公钥，然后把它和你发送过来的公钥进行比较。如果两个密钥一致，服务器就用公钥加密“质询”(challenge)并把它发送给客户端软件。客户端软件收到“质询”之后就可以用你的私钥在本地解密再把它发送给服务器完成登录。与第一种级别相比，第二种级别不仅加密所有传输的数据，也不需要在网络上传送口令，因此安全性更高，可以有效防止中间人攻击。<br>
+#SSH的安装与运行<br>
+SSH分为客户端 openssh-client 和服务器 openssh-server，可以利用以下命令确认电脑上是否安装了客户端和服务器。</p>
+<pre><code>dpkg -l | grep ssh
+</code></pre>
+<p>开放本机的SSH服务就需要安装服务器</p>
+<pre><code>sudo apt-get install openssh-client 
+sudo apt-get install openssh-server 
+</code></pre>
+<p>启动服务器的SSH服务</p>
+<pre><code>ps -e | grep ssh//确认启动
+</code></pre>
+<p>未启动则</p>
+<pre><code>sudo /etc/init.d/ssh start 
+</code></pre>
+<p>停止和重启ssh服务的命令如下：停止和重启ssh服务的命令如下：</p>
+<pre><code>sudo /etc/init.d/ssh stop  #server停止ssh服务 
+sudo /etc/init.d/ssh restart  #server重启ssh服务
+</code></pre>
+<p>#SSH登录<br>
+##口令登录<br>
+例：ssh命令登录到127.0.0.1主机。登录用户：user01，密码：12345678，登录成功后退出登录。</p>
+<pre><code>ssh user01@127.0.0.1
+12345678
+exit
+</code></pre>
+<ul>
+<li>如果被控端没有 user01 用户，那么创建user01 用户；如果没有开启telnet服务，那么手动开启telnet服务；<br>
+如果需要调用图形界面程序可以使用 -X 选项</li>
+</ul>
+<pre><code>ssh -X user01@127.0.0.1
+</code></pre>
+<p>如果客户机的用户名和服务器的用户名相同，登录时可以省略用户名</p>
+<pre><code>ssh 127.0.0.1
+</code></pre>
+<p>还要说明的是，SSH服务的默认端口是22，也就是说，如果你不设置端口的话登录请求会自动送到远程主机的22端口。我们可以使用 -p 选项来修改端口号，比如连接到服务器的1234端口：</p>
+<pre><code>ssh -p 1234 user01@127.0.0.1
+</code></pre>
+<p>客户机必须要知道服务器的ip地址。可以在服务器端电脑上利用 ifconfig 命令查看该机的ip地址：<br>
+##公钥登录<br>
+###在本机生成密钥对</p>
+<pre><code>ssh-keygen -t rsa   #-t表示类型选项，这里采用rsa加密算法
+</code></pre>
+<p>然后根据提示一步步的按enter键即可（其中有一个提示是要求设置私钥口令passphrase，不设置则为空，这里看心情吧，如果不放心私钥的安全可以设置一下），执行结束以后会在 /home/当前用户 目录下生成一个 .ssh 文件夹,其中包含私钥文件 id_rsa 和公钥文件 id_rsa.pub。<br>
+###将公钥复制到远程主机中<br>
+使用ssh-copy-id命令将公钥复制到远程主机。ssh-copy-id会将公钥写到远程主机的 ~/ .ssh/authorized_key 文件中</p>
+<pre><code>ssh-copy-id user01@127.0.0.1
+</code></pre>
+<p>#SSH使用远程主机不中断的跑程序<br>
+当我们利用ssh在远程主机上跑程序的时候，只要关闭了终端就会中断ssh连接，然后远程主机上正在跑的程序或者服务就会自动停止运行。我们可以利用 nohup + 需要运行的程序 使运行的程序在切断ssh连接的时候仍然能够继续在远程主机中运行。nohup即no hang up(不挂起)。<br>
+用Termux搞个好玩的，用手机操作电脑。具体来说就是实现了从手机上连接到电脑的cmd命令行窗口。借助ssh实现。</p>
+<h2 id="电脑安装和开启ssh">电脑安装和开启ssh</h2>
+<ul>
+<li>
+<p>系统：win10</p>
+</li>
+<li>
+<p>参考教程：<a href="https://blog.csdn.net/weixin_43064185/article/details/90080815">win10 开启ssh server服务 远程登录</a></p>
+</li>
+</ul>
+<p><strong>安装OpenSSH</strong>：按照下面几张图片依次找到设置 - 应用 - 可选功能 - 添加功能</p>
+<center><img src="/assets/images/http-server/12.png" alt="12" style="zoom: 60%;" /></center>
+<center><img src="/assets/images/http-server/13.png" alt="13" style="zoom: 60%;" /></center>
+<center><img src="/assets/images/http-server/14.png" alt="14" style="zoom: 80%;" /></center>
+<p>找到OpenSSH服务器和OpenSSH客户端，选择安装（两个都要装）</p>
+<center><img src="/assets/images/http-server/15.png" alt="15" style="zoom: 80%;" /></center>
+<p>到cmd中输入<code>ssh</code>，若出现下图结果说明客户端安装成功</p>
+<center><img src="/assets/images/http-server/16.png" alt="16" style="zoom: 80%;" /></center>
+<p><strong>启动SSH服务</strong>：以管理员身份运行cmd（否则会出现系统错误），执行命令</p>
+<pre><code class="language-shell">net start sshd
+</code></pre>
+<p>出现下图界面即为成功</p>
+<center><img src="/assets/images/http-server/17.png" alt="17" style="zoom: 80%;" /></center>
+<blockquote>
+<p>注：可以使用命令</p>
+<pre><code class="language-shell">net stop sshd
+</code></pre>
+<p>来关闭SSH。</p>
+</blockquote>
+<h2 id="手机安装ssh并连接到电脑">手机安装SSH并连接到电脑</h2>
+<p>到Termux下，执行命令</p>
+<pre><code class="language-bash">pkg install openssh 
+</code></pre>
+<p>然后可以用命令</p>
+<pre><code class="language-bash">ssh username@ip
+</code></pre>
+<p>来连接电脑，其中<code>username</code>是你的电脑的用户名，<code>ip</code>是你的电脑的IP地址。</p>
+<blockquote>
+<p>如何查看自己电脑的IP地址？在电脑命令行中输入</p>
+<pre><code class="language-bash">ipconfig
+</code></pre>
+<p>即可找到。例如我的是：</p>
+<center><img src="/assets/images/http-server/18.png" alt="18" style="zoom: 80%;" /></center>
+</blockquote>
+<p>第一次连接时会出现如下提示</p>
+<pre><code class="language-shell">The authenticity of host 'host (xx.xxx.xx.xx)' can't be established.
+RSA key fingerprint is XX:XX:XX......
+Are you sure you want to continue connecting (yes/no)?
+</code></pre>
+<p>意思是这个服务器的真实性尚未被证实，它的公钥指纹是XX:XX:XX:...，问你是否要继续连接？输入yes即可，它会将这个公钥加入到自己的列表中，日后就不需要再确认了。</p>
+<p>之后会要求你输入密码，输入电脑的开机密码即可。出现下图即为成功。</p>
+<center><img src="/assets/images/http-server/19.jpg" alt="19" style="zoom: 80%;" /></center>
+<p>可以输入<code>exit</code>退出SSH，回到原界面。</p>
+<h2 id="用screenfetch测试连接成功">用Screenfetch测试连接成功</h2>
+<p>screenfetch可以显示当前运行的设备信息。我们先在电脑上以管理员权限打开powershell，按照如下步骤进行<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>：</p>
+<ol>
+<li>输入 <code>Install-Module -Name windows-screenfetch</code>，回车（输入Y，接受）</li>
+<li>输入 <code>Set-ExecutionPolicy -ExecutionPolicy Unrestricted</code>，回车（输入Y，接受）</li>
+<li>输入 <code>Import-Module windows-screenfetch</code></li>
+</ol>
+<p>输入<code>Screenfetch</code>测试，出现下图界面即为安装成功：</p>
+<center><img src="/assets/images/http-server/20.png" alt="20" style="zoom: 80%;" /></center>
+<p>我们先将powershell的路径添加到环境变量中：</p>
+<p>(1) 新建名为powershell，值为powershell所在文件夹的系统变量：</p>
+<center><img src="/assets/images/http-server/21.png" alt="21" style="zoom: 60%;" /></center>
+<p>(2) 向系统变量Path中添加<code>%powershell%</code>：</p>
+<center><img src="/assets/images/http-server/22.png" alt="22" style="zoom: 80%;" /></center>
+<p>这样就可以直接在cmd中输入<code>powershell</code>打开powershell，而不用cd到powershell所在的目录，这对于手机操作尤为方便。</p>
+<p>铺垫完成，我们下面在手机中使用Screenfetch，来确定自己的确用手机操控打开了电脑。</p>
+<p>如果我们没有用ssh连接到电脑，直接在Termux上先使用<code>pkg install screenfetch</code>安装screenfetch（注意这里首字母s是小写，与上面不同），再执行命令<code>screenfetch</code>的话，看到的是安卓机的设备信息：</p>
+<center><img src="/assets/images/http-server/23.png" alt="23" style="zoom: 80%;" /></center>
+<p>我们执行命令</p>
+<pre><code class="language-bash">ssh username@ip
+</code></pre>
+<p>（同样地，<code>username</code>是你的电脑的用户名，<code>ip</code>是你的电脑的IP地址）来连接电脑，然后执行命令</p>
+<pre><code class="language-bash">powershell # 进入powershell
+Screenfetch # 打开Screenfetch，注意S大写
+</code></pre>
+<p>看到如下界面，说明的确连接到了我们的电脑。</p>
+<center><img src="/assets/images/http-server/24.png" alt="24" style="zoom: 80%;" /></center>
+<h1 id="后记">后记</h1>
+<p>连接到电脑就可以干一些好玩的事情了，比如我们在手机上就可以浏览电脑上的文件，也可以用http-server在手机浏览器上看电脑上保存的视频，用cmd跑电脑上的程序。其实就是把电脑当作了一台可供同一局域网中设备访问的服务器。</p>
+<p>美中不足的是，我们必须保证电脑和手机都在同一个局域网中，否则SSH无法连接。那能不能不在同一个局域网中依然可以访问呢？是可以的，利用<strong>内网穿透</strong>技术即可，我现在还没搞，之后搞了的话会在这里再次更新的。<br>
+如果要基于http-server实现功能，就必须要有shell，电脑上直接用cmd来搞就可以，手机上得有能支持shell的平台，我们这里选用Termux。教程参考此处：<a href="https://www.ruanyifeng.com/blog/2019/07/termux-tutorial.html#comment-412342">Termux 入门教程：架设手机 Server 下载文件</a></p>
+<h1 id="用termux实现手机向电脑传输文件">用Termux实现手机向电脑传输文件</h1>
+<p>Termux在安卓手机上模拟了Linux平台。这里分为三步走：安装Termux，安装Node.js，通过Node.js运行http-server。</p>
+<h2 id="1-安装termux">1. 安装Termux</h2>
+<p>Google Play商店因为技术原因已经停止更新Termux，故我们从GitHub上直接下载，地址为：<a href="https://github.com/termux/termux-app/releases">https://github.com/termux/termux-app/releases</a>。<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
+<p>选择一个apk文件下载安装后直接打开应用，可以看到这样的界面：</p>
+<center><img src="/assets/images/http-server/1.jpg" alt="1" style="zoom: 25%;" /></center>
+<p>做一下简单的环境准备：</p>
+<p>执行下面两条命令更新系统：</p>
+<pre><code class="language-shell"># 连接远程仓库，获取软件包信息
+$ apt update
+
+# 更新本地已经安装的软件包
+$ apt upgrade
+</code></pre>
+<p>可以安装运行sl软件包测试系统是否正常：</p>
+<pre><code class="language-shell"># 安装 sl 软件包
+$ apt install sl
+
+# 运行
+$ sl
+</code></pre>
+<p>如果一切正常，会显示一个火车的命令行动画。</p>
+<p>然后让手机能访问本地存储（重要）：</p>
+<pre><code class="language-shell">$ termux-setup-storage
+</code></pre>
+<p>执行完之后手机会询问是否允许Termux访问本地存储，选择“始终允许”。</p>
+<p>这样的话键入<code>ls</code>会看到本地目录下多了一个<code>storage</code>目录：</p>
+<center><img src="/assets/images/http-server/2.png" alt="2" style="zoom: 50%;" /></center>
+<h2 id="2-安装nodejs">2. 安装Node.js</h2>
+<p>执行命令</p>
+<pre><code class="language-shell">$ apt install nodejs
+</code></pre>
+<p>即可安装Node.js</p>
+<h2 id="3-架设server">3. 架设Server</h2>
+<p>现在，通过 Node.js 运行 HTTP Server。</p>
+<p>首先，安装 npm 模块http-server。</p>
+<pre><code class="language-shell">$ npm install -g http-server
+</code></pre>
+<p>然后，运行 Server。</p>
+<pre><code class="language-shell">$ http-server
+</code></pre>
+<p>正常情况下，命令行会提示 Server 已经在 8080 端口运行了，并且还会提示外部可以访问的 IP 地址。</p>
+<center><img src="/assets/images/http-server/3.png" alt="3" style="zoom: 50%;" /></center>
+<p>这时，在电脑浏览器地址栏输入&quot;Available on&quot;后面的某个ip地址就能访问了（第一个不是，可能是第二个也可能是第三个，都试试肯定有一个能行），如下图：</p>
+<center><img src="/assets/images/http-server/4.png" alt="4" style="zoom: 60%;" /></center>
+<p>可以看到，<code>storage</code>文件夹下面保存了手机中的图片、视频等文件：</p>
+<center><img src="/assets/images/http-server/5.png" alt="5" style="zoom: 60%;" /></center>
+<h1 id="实现电脑向手机传输文件">实现电脑向手机传输文件</h1>
+<p>与手机端类似，不过这次我们可以直接用命令行窗口来搞了。</p>
+<h2 id="安装配置nodejs">安装配置Node.js</h2>
+<p>参考这则教程：<a href="https://blog.csdn.net/github_38585431/article/details/105362502">nodejs本地环境配置(windows10)</a></p>
+<h2 id="安装http-server">安装http-server</h2>
+<p>直接在cmd窗口中执行</p>
+<pre><code class="language-shell">npm install http-server
+</code></pre>
+<p>安装http-server。安装完毕后找到本地Node.js的目录，将其中<code>node-global</code>的路径放入环境变量中：</p>
+<p>右键此电脑 - 属性 - 高级系统设置 - 环境变量，出现窗口：</p>
+<center><img src="/assets/images/http-server/6.png" alt="6" style="zoom: 60%;" /></center>
+<p>找到系统变量中的Path，双击打开，然后新建环境变量并将<code>node-global</code>的路径放入其中，如图所示：</p>
+<center><img src="/assets/images/http-server/7.png" alt="7" style="zoom: 60%;" /></center>
+<p>这时候到你想要分享的文件夹下，打开cmd，执行命令</p>
+<pre><code class="language-shell">http-server
+</code></pre>
+<p>看到如下窗口：</p>
+<center><img src="/assets/images/http-server/8.png" alt="8" style="zoom: 80%;" /></center>
+<p>有了手机端的经验，我们直接在手机浏览器地址栏输入之前输入的ip地址，比如我的就是<code>https://10.204.26.21:8080</code>，就能得到如下的界面：</p>
+<center><img src="/assets/images/http-server/9.jpg" alt="9" style="zoom: 30%;" /></center>
+<p>这些文件就可以下载到手机中了。</p>
+<h1 id="关于termux多说两句">关于Termux，多说两句</h1>
+<p>Termux可以在手机上模拟Linux，那就可以写一些简单的C程序或者python程序了，比如我们可以用下面的命令安装clang包，支持C程序编译和运行</p>
+<pre><code class="language-shell">pkg install clang
+</code></pre>
+<p>再安装文本编辑器vim</p>
+<pre><code class="language-shell">pkg install vim
+</code></pre>
+<p>这时候就可以像在电脑端linux的终端那样编写C代码了。当然也可以活学活用，比如把电脑上的C程序通过http-server传到手机上，再用Termux打开并保存。比如我在电脑上写了一个多项式求导的C程序，保存到手机上:</p>
+<center><img src="/assets/images/http-server/10.jpg" alt="10" style="zoom: 30%;" /></center>
+<p>用gcc编译运行这个程序，就和电脑运行一模一样：</p>
+<center><img src="/assets/images/http-server/11.png" alt="11" style="zoom: 40%;" /></center>
+<h1 id="后续">后续</h1>
+<p>之后想使用http-server，如果在电脑上，到想要共享的路径下打开cmd，输入<code>http-server</code>即可；如果在手机上，打开Termux，转到想要共享的路径下，输入<code>http-server</code>即可。</p>
+<p>#参考教程<br>
+https://blog.csdn.net/pipisorry/article/details/52269785<br>
+https://blog.csdn.net/li528405176/article/details/82810342</p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>来源：<a href="https://blog.csdn.net/weixin_43852511/article/details/105735291">Windows10 安装 Screenfetch</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>更多Termux app相关内容可见<a href="https://github.com/termux/termux-app#github">此处</a>。 <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://kimokcheon.github.io/post/git-sui-ji/" class="post-title gt-a-link">
+                    Git 随记
+                </a>
+            </div>
+        
+
+        
+
+        
+
+        
+            <script src='https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+
+<style>
+	div#vcomments{
+		width:100%;
+		max-width: 1000px;
+		padding: 2.5%
+	}
+</style>
+
+
+	<div id="vcomments"></div>
+
+<script>
+	new Valine({
+		el: '#vcomments',
+		appId: '',
+		appKey: '',
+		avatar: '',
+		pageSize: 5,
+		recordIp: false,
+		placeholder: 'Just Go Go',
+		visitor: false,
+	});
+</script>
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">他们都是萤火，聚在一起就成了太阳</div>
+    <div class="social-container">
+        
+            
+                <a href="https://github.com/Kimokcheon" target="_blank">
+                    <i class="fab fa-github gt-c-content-color-first"></i>
+                </a>
+            
+        
+            
+        
+            
+        
+            
+                <a href="https://www.zhihu.com/people/deng-yu-chuan-4" target="_blank">
+                    <i class="fab fa-zhihu gt-c-content-color-first"></i>
+                </a>
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+    </div>
+    <div>
+        Theme by <a href="https://imhanjie.com/" target="_blank">imhanjie</a>, Powered by <a
+                href="https://github.com/getgridea/gridea" target="_blank">Gridea | <a href="https://kimokcheon.github.io//atom.xml" target="_blank">RSS</a></a>
+    </div>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+    </div>
+</div>
+</body>
+</html>

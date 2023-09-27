@@ -1,0 +1,657 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>AI Research Tool | Yuchuan&#39;s Blog</title>
+
+<link rel="shortcut icon" href="https://kimokcheon.github.io//favicon.ico?v=1695778991029">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://kimokcheon.github.io//styles/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            Yuchuan&#39;s Blog
+        </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+                <div class="nav-item">
+                    
+                        <a href="/" class="menu gt-a-link">
+                            首页
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/archives" class="menu gt-a-link">
+                            归档
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/tags" class="menu gt-a-link">
+                            标签
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="https://kimokcheon.github.io/post/about-me" class="menu gt-a-link">
+                            关于
+                        </a>
+                    
+                </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1695778991029" action="/search/index.html">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    AI Research Tool
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2023-06-27 ·
+                    </time>
+                    
+                </div>
+                <div class="post-content">
+                    <h1 id="ai-research-tools">AI-research-tools</h1>
+<blockquote>
+<ul>
+<li>推荐一些我喜欢的科研工具（有些限定于 AI 领域）</li>
+<li>标记【待尝试】的是我还未使用过但感觉比较有用的工具，会尽快尝试并根据体验决定是否保留</li>
+<li>请通过 issues 等方式向我推荐您觉得好用的但不在此清单上的 AI 领域科研工具，感谢</li>
+</ul>
+</blockquote>
+<h2 id="目录-omit-in-toc-">目录  <!-- omit in toc --></h2>
+<ul>
+<li><a href="#ai-research-tools">AI-research-tools</a>
+<ul>
+<li><a href="#%E8%B6%8B%E5%8A%BF%E5%85%B3%E6%B3%A8">趋势关注</a>
+<ul>
+<li><a href="#rss-%E9%98%85%E8%AF%BB%E5%99%A8">RSS 阅读器</a></li>
+</ul>
+</li>
+<li><a href="#%E8%AE%BA%E6%96%87%E6%9F%A5%E6%89%BE">论文查找</a>
+<ul>
+<li><a href="#%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E">搜索引擎</a></li>
+<li><a href="#arxiv-%E7%9B%B8%E5%85%B3">arXiv 相关</a></li>
+<li><a href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0%E6%9F%A5%E6%89%BE">代码实现查找</a></li>
+</ul>
+</li>
+<li><a href="#%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB">论文阅读</a>
+<ul>
+<li><a href="#%E6%9F%A5%E9%98%85%E4%B8%8B%E8%BD%BD">查阅下载</a></li>
+<li><a href="#%E6%96%87%E7%8C%AE%E7%AE%A1%E7%90%86">文献管理</a></li>
+<li><a href="#%E6%96%87%E7%8C%AE%E7%BF%BB%E8%AF%91">文献翻译</a></li>
+<li><a href="#%E7%AC%94%E8%AE%B0%E5%B7%A5%E5%85%B7">笔记工具</a></li>
+</ul>
+</li>
+<li><a href="#%E7%BC%96%E7%A0%81%E5%AE%9E%E9%AA%8C">编码实验</a>
+<ul>
+<li><a href="#pytorch-%E7%9B%B8%E5%85%B3">Pytorch 相关</a>
+<ul>
+<li><a href="#%E5%8A%9F%E8%83%BD%E9%85%8D%E7%BD%AE%E5%B0%81%E8%A3%85">功能配置封装</a></li>
+<li><a href="#%E9%A1%B9%E7%9B%AE%E5%8F%82%E8%80%83">项目参考</a></li>
+<li><a href="#%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86">项目管理</a></li>
+<li><a href="#%E9%A3%8E%E6%A0%BC%E6%8C%87%E5%8D%97">风格指南</a></li>
+<li><a href="#%E9%A1%B9%E7%9B%AE%E6%A8%A1%E6%9D%BF">项目模板</a></li>
+<li><a href="#%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%88%86%E6%9E%90%E5%99%A8">神经网络分析器</a></li>
+<li><a href="#%E5%8F%AF%E8%A7%86%E5%8C%96">可视化</a></li>
+</ul>
+</li>
+<li><a href="#%E5%AE%9E%E9%AA%8C%E8%AE%B0%E5%BD%95">实验记录</a></li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E9%9B%86%E6%9F%A5%E6%89%BE">数据集查找</a></li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E9%9B%86%E4%B8%8B%E8%BD%BD">数据集下载</a></li>
+<li><a href="#%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B">特征工程</a></li>
+<li><a href="#%E8%B6%85%E5%8F%82%E6%90%9C%E7%B4%A2">超参搜索</a></li>
+<li><a href="#debug-%E5%B7%A5%E5%85%B7">Debug 工具</a></li>
+</ul>
+</li>
+<li><a href="#%E8%AE%BA%E6%96%87%E5%86%99%E4%BD%9C">论文写作</a>
+<ul>
+<li><a href="#latex-%E6%A8%A1%E6%9D%BF">LaTeX 模板</a></li>
+<li><a href="#latex-%E7%BC%96%E8%BE%91%E5%99%A8">LaTeX 编辑器</a></li>
+<li><a href="#%E8%AF%AD%E8%A8%80%E8%A1%A8%E8%BE%BE">语言表达</a>
+<ul>
+<li><a href="#%E6%90%AD%E9%85%8D%E6%9F%A5%E6%89%BE">搭配查找</a></li>
+<li><a href="#%E5%8F%A5%E5%BC%8F%E6%8E%A8%E8%8D%90">句式推荐</a></li>
+<li><a href="#%E5%86%99%E4%BD%9C%E6%A3%80%E6%9F%A5">写作检查</a></li>
+</ul>
+</li>
+<li><a href="#%E5%85%AC%E5%BC%8F%E7%BC%96%E8%BE%91">公式编辑</a></li>
+<li><a href="#%E6%88%AA%E5%B1%8F%E6%82%AC%E6%B5%AE">截屏悬浮</a></li>
+<li><a href="#%E8%A1%A8%E6%A0%BC%E8%BD%AC-latex">表格转 LaTeX</a></li>
+<li><a href="#%E7%BB%98%E5%88%B6%E7%A4%BA%E6%84%8F%E5%9B%BE">绘制示意图</a>
+<ul>
+<li><a href="#%E7%BB%98%E5%9B%BE%E5%B7%A5%E5%85%B7">绘图工具</a></li>
+<li><a href="#%E7%BB%98%E5%9B%BE%E5%8F%82%E8%80%83">绘图参考</a></li>
+<li><a href="#ppt-%E6%8F%92%E4%BB%B6">PPT 插件</a></li>
+<li><a href="#%E5%9B%BE%E7%89%87%E8%BD%AC%E6%8D%A2">图片转换</a></li>
+<li><a href="#%E5%9B%BE%E7%89%87%E4%BC%91%E6%95%B4">图片休整</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E8%AE%BA%E6%96%87%E6%8A%95%E9%80%92">论文投递</a>
+<ul>
+<li><a href="#%E4%BC%9A%E8%AE%AE%E6%9C%9F%E5%88%8A%E6%9F%A5%E6%89%BE%E7%AD%9B%E9%80%89">会议期刊查找筛选</a></li>
+<li><a href="#%E5%8C%BF%E5%90%8D%E9%93%BE%E6%8E%A5">匿名链接</a></li>
+<li><a href="#arxiv-%E6%8F%90%E4%BA%A4">arXiv 提交</a></li>
+<li><a href="#%E4%BB%A3%E7%A0%81%E5%BC%80%E6%BA%90">代码开源</a></li>
+</ul>
+</li>
+<li><a href="#%E5%85%B6%E4%BB%96">其他</a>
+<ul>
+<li><a href="#%E4%B8%93%E5%88%A9%E6%A3%80%E7%B4%A2">专利检索</a></li>
+<li><a href="#%E4%B8%93%E6%B3%A8%E5%B7%A5%E4%BD%9C">专注工作</a></li>
+<li><a href="#%E7%99%BD%E5%99%AA%E5%A3%B0--%E9%9F%B3%E4%B9%90">白噪声 / 音乐</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="趋势关注">趋势关注</h2>
+<h3 id="rss-阅读器">RSS 阅读器</h3>
+<ul>
+<li><a href="http://irreader.fatecore.com/">irreader 阅读器</a>：这是我现在在使用的 RSS 阅读器。一个非常大的优点是，对于一些没有提供 RSS 订阅源的网站，irreader 可以自定义 RSS 订阅源。另外，订阅的 RSS 更新时，有弹窗提醒。还有一个我暂时用不到的功能是，irreader 同时支持订阅播客和播放有声媒体。</li>
+</ul>
+<h2 id="论文查找">论文查找</h2>
+<h3 id="搜索引擎">搜索引擎</h3>
+<ul>
+<li>
+<p><a href="https://scholar.google.com/schhp?hl=zh-CN">Google scholar</a>：搜索论文的首选，可以在这里查看论文统计和引用参考文献，还能通过关注作者或者论文获得新论文更新提醒，以及利用自动化推荐来提供一个基本库。</p>
+</li>
+<li>
+<p><a href="https://www.semanticscholar.org/">Semantic scholar</a>：可以结合外部材料整合进行论文的语义分析。功能包括：展示引用和参考文献、度量论文影响力、展示论文图表、自动生成关键词（根据标题）、分析作者、在互联网寻找额外资源（例如，相关 youtube 视频），以及推荐论文。</p>
+</li>
+<li>
+<p><a href="https://dblp.org/">dblp: computer science bibliography</a>：专为 CS 设计的论文查询网站，收录比较顶级并可以被检索到的论文。可以根据会议、期刊等分类查询作者的论文，想搜一个计算机会议的所有文章时好用。</p>
+</li>
+<li>
+<p><a href="https://chn.oversea.cnki.net/index/">中国知网海外服务</a>：支持全 PDF 格式下载。具体可见 <a href="https://iseex.github.io//2020-07/CNKI-oversea/">海外版知网升级了！（全PDF下载），从此告别CAJ阅读器！</a>。</p>
+</li>
+</ul>
+<h3 id="arxiv-相关">arXiv 相关</h3>
+<ul>
+<li>
+<p><a href="https://arxiv.org/">arXiv</a>: 论文预印本收录网站。</p>
+</li>
+<li>
+<p><a href="http://arxiv-sanity.com/">arXiv-sanity</a>：在功能上相比于 arXiv 有很大的改进，包括在浏览中显示摘要、评论和非常基本的社交、推荐、库功能。搜索也更好用。</p>
+</li>
+<li>
+<p><a href="https://s2-sanity.apps.allenai.org">Semantic Sanity: A Personalized Adaptive Feed</a>：创建自己的个性化 arXiv 选读 Feed。创建每个 Feed 时，会让您先选择几篇论文，然后根据这几篇论文开始推荐，对于推荐结果可以点赞或者不喜欢来帮助调整推荐结果。</p>
+</li>
+<li>
+<p><a href="http://arxiv.xixiaoyao.cn/">卖萌屋Arxiv服务</a>: 只包含 arxiv 当日更新的论文。优点在于把作者机构也展示出来。仍在改进。</p>
+</li>
+<li>
+<p><a href="https://www.paperdigest.org/">Paper Digest – AI for tracking and summarizing papers</a>: 提供邮件订阅前一天出的论文的列表，附有每篇论文的一句话总结。对我更重要的是这个网站也会在每个顶会论文全部公布时进行整理。</p>
+</li>
+</ul>
+<h3 id="代码实现查找">代码实现查找</h3>
+<ul>
+<li><a href="https://paperswithcode.com/">Papers With Code</a>：自动把论文连接到实现代码的 GitHub 资源库和数据集，并根据 GitHub 的收藏量排序。展示各任务上的 SOTA 以供比较。</li>
+</ul>
+<!-- * [rasbt/deeplearning-models](https://github.com/rasbt/deeplearning-models)：使用 TensorFlow 和 PyTorch 实现各种深度学习模型的合集。 -->
+<ul>
+<li><a href="https://github.com/labmlai/annotated_deep_learning_paper_implementations">labmlai/annotated_deep_learning_paper_implementations</a>：很多算法的 PyTorch 实现，带有在线版的注释。缺点是展示的部分不是从头实现，一部分代码放在他们自己的包里了。</li>
+</ul>
+<h2 id="论文阅读">论文阅读</h2>
+<h3 id="查阅下载">查阅下载</h3>
+<ul>
+<li><a href="http://tool.yovisun.com/scihub/">SCI-Hub 科研论文全文下载可用网址</a></li>
+</ul>
+<h3 id="文献管理">文献管理</h3>
+<ul>
+<li><a href="https://www.mendeley.com">Mendeley</a>：支持 web、PC、Mac 和移动手机等多个平台，可以直接注释和高亮显示 PDF，有限额的免费云存储。另外有每周邮件推荐论文。</li>
+</ul>
+<h3 id="文献翻译">文献翻译</h3>
+<ul>
+<li>
+<p><a href="https://copytranslator.github.io/">CopyTranslator</a>：最大的优点在于有置顶、点按复制、监听剪贴板等功能，阅读文献配合使用时可以无缝切换，非常方便。</p>
+</li>
+<li>
+<p><a href="https://saladict.crimx.com/">Saladict 沙拉查词</a>：浏览器翻译插件，有非常丰富的设置来配合用户的使用习惯。除了官方文档，也可以看 <a href="https://zhuanlan.zhihu.com/p/113809716">沙拉查词 + Alfred，打造最佳文献翻译体验！</a> 来了解。我还在探索如何在 Windows 系统上实现浏览器外翻译。</p>
+</li>
+</ul>
+<h3 id="笔记工具">笔记工具</h3>
+<ul>
+<li>我个人习惯使用<a href="https://www.yinxiang.com/">印象笔记</a>。</li>
+</ul>
+<h2 id="编码实验">编码实验</h2>
+<h3 id="pytorch-相关">Pytorch 相关</h3>
+<h4 id="功能配置封装">功能配置封装</h4>
+<ul>
+<li><a href="https://github.com/williamFalcon/pytorch-lightning">pytorch-lightning</a>：将 PyTorch 开发中的各种通用配置（训练验证逻辑、超参搜索、分布式训练等）全部包装起来，以更高级的形式快速搭建模型。功能强大，有些复杂，正在摸索。<a href="https://mp.weixin.qq.com/s/5ueJvt1tcWW0wknpkM3WIg">机器之心写的简介</a></li>
+</ul>
+<h4 id="项目参考">项目参考</h4>
+<ul>
+<li>
+<p><a href="https://github.com/ritchieng/the-incredible-pytorch">the-incredible-pytorch</a>：有关 PyTorch 的各种教程、项目、视频等资源。</p>
+</li>
+<li>
+<p><a href="https://github.com/microsoft/computervision-recipes">computervision-recipes</a>：微软出品，基于 PyTorch 的各种 CV 任务的教程。</p>
+</li>
+</ul>
+<!-- * [donnyyou/torchcv](https://github.com/donnyyou/torchcv)：基于 PyTorch 的 CV 模型框架，包含图像分类、语义分割、目标检测、姿态检测、实例分割、生成对抗网络等任务中的多个常见模型。 -->
+<h4 id="项目管理">项目管理</h4>
+<ul>
+<li><a href="https://oidiotlin.com/torchtracer/">torchtracer</a>：一个管理 PyTorch AI 实验项目的工具，主要用于保存各类训练数据（模型 checkpoints、超参数组合、日志、loss 变化曲线图像等）。</li>
+</ul>
+<h4 id="风格指南">风格指南</h4>
+<ul>
+<li><a href="https://github.com/IgorSusmelj/pytorch-styleguide">pytorch-styleguide</a>：一份 PyTorch 的非官方风格指南和最佳实践总结。</li>
+</ul>
+<h4 id="项目模板">项目模板</h4>
+<ul>
+<li>
+<p><a href="https://github.com/moemen95/Pytorch-Project-Template">Pytorch-Project-Template</a>：一个可扩展的 PyTorch 项目模板，包括图像分割、目标分类、GANs 和强化学习等实例。</p>
+</li>
+<li>
+<p><a href="https://github.com/lyakaap/pytorch-template">pytorch-template</a>：另一份 PyTorch 项目模板。</p>
+</li>
+</ul>
+<h4 id="神经网络分析器">神经网络分析器</h4>
+<ul>
+<li>
+<p><a href="https://github.com/TylerYep/torchinfo">torchinfo</a>：打印 PyTorch 模型信息，包含模型每层的参数量、输出张量大小等。</p>
+</li>
+<li>
+<p><a href="https://github.com/sovrasov/flops-counter.pytorch">flops-counter.pytorch</a>：计算模型总共的 FLOPs（浮点运算数，理解为计算量，可以用来衡量算法/模型的复杂度）以及每层的占比。缺点是似乎不支持 RNN 相关层，另外打印下来的信息不是很方便看。</p>
+</li>
+</ul>
+<h4 id="可视化">可视化</h4>
+<ul>
+<li>
+<p>PyTorch 最新版本已经带有 tensorboard。<a href="https://pytorch.org/tutorials/intermediate/tensorboard_tutorial.html">官方 tutorial</a>。</p>
+</li>
+<li>
+<p><a href="https://github.com/facebookresearch/visdom">visdom</a>：【待尝试】用于创建、组织和共享实时丰富数据可视化的灵活工具。</p>
+</li>
+<li>
+<p><a href="https://ezyang.github.io/convolution-visualizer/index.html">Convolution Visualizer</a>：如果卷积层配置比较复杂，不方便计算输出大小时，可以利用这个可视化工具辅助。</p>
+</li>
+</ul>
+<h3 id="实验记录">实验记录</h3>
+<ul>
+<li><a href="https://github.com/fastnlp/fitlog">fitlog</a>：【待尝试】架构无关的实验记录工具，可以看<a href="https://www.zhihu.com/question/384519338/answer/1181186086">邱锡鹏老师在知乎写的介绍</a>。</li>
+</ul>
+<h3 id="数据集查找">数据集查找</h3>
+<ul>
+<li>
+<p><a href="https://toolbox.google.com/datasetsearch">Google Dataset Search</a></p>
+</li>
+<li>
+<p><a href="https://datasets.bifrost.ai/">Data Search | Bifrost</a>：视觉数据集搜索。</p>
+</li>
+</ul>
+<h3 id="数据集下载">数据集下载</h3>
+<ul>
+<li><a href="https://github.com/wkentaro/gdown">gdown</a>：用于解决在 Google Drive 上下载大型数据集常发生的失败现象。</li>
+</ul>
+<h3 id="特征工程">特征工程</h3>
+<ul>
+<li><a href="https://github.com/featuretools/featuretools">Featuretools</a>：【待尝试】自动化特征工程库。</li>
+</ul>
+<h3 id="超参搜索">超参搜索</h3>
+<ul>
+<li>
+<p><a href="https://github.com/optuna/optuna">optuna</a>：自动超参数优化框架。</p>
+</li>
+<li>
+<p><a href="https://github.com/microsoft/nni/blob/master/README_zh_CN.md">microsoft/nni</a>：【待尝试】用于神经模型搜索和超参数调优的开源自动机器学习（AutoML）的工具包，支持绝大多数主流框架和运行环境。</p>
+</li>
+<li>
+<p><a href="http://hyperopt.github.io/hyperopt/">Hyperopt</a>：【待尝试】分布式异步超参数优化。看到知乎上有人推荐，不过根据文档来看，目前支持的优化算法只有两种，且不包括贝叶斯优化。</p>
+</li>
+<li>
+<p><a href="https://github.com/pytorch/botorch">BoTorch</a>：【待尝试】基于 PyTorch 的贝叶斯优化库。</p>
+</li>
+<li>
+<p><a href="https://github.com/automl/Auto-PyTorch">automl/Auto-PyTorch</a>：【待尝试】基于 PyTorch 的自动结构搜素和超参数搜索。</p>
+</li>
+</ul>
+<h3 id="debug-工具">Debug 工具</h3>
+<ul>
+<li><a href="https://github.com/cool-RR/pysnooper">PySnooper</a>：【待尝试】致力让用户抛弃<code>print</code>函数来 debug（然而，至少目前我还是习惯用 logging 模块，和<code>print</code>差不了多少）。<a href="https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&amp;mid=2650760939&amp;idx=1&amp;sn=5b69c106549f329f83ca241e1bc71ff3&amp;chksm=871aa295b06d2b83deade4fc16f99ed5354572c8838d202d0a229d804bb535815f2315d980d0&amp;scene=0&amp;xtrack=1&amp;key=6854b25c2a023c1b259671991171b31fab8ca8f0b3be42cfe9746f0ac6a97af337c3f692988c69af5813e1658308b6087dc66c1d1f218619aab29c7d02dfc8b005eff42eea7fcb837022e321727f14b5&amp;ascene=1&amp;uin=MjA1ODkwNzIyNw%3D%3D&amp;devicetype=Windows+10&amp;version=62060739&amp;lang=zh_CN&amp;pass_ticket=5JdoVuTltfAvWg%2FaBYq40SvnVT0xZhhRK9fPaxA3iu2MgoceoLJpRqamQ9gnBuY2">机器之心写的简介</a></li>
+</ul>
+<h2 id="论文写作">论文写作</h2>
+<h3 id="latex-模板">LaTeX 模板</h3>
+<p>包括论文、报告、海报等在内的各种 LaTeX 模板。</p>
+<ul>
+<li>
+<p><a href="https://www.overleaf.com/latex/templates">Templates from Overleaf</a></p>
+</li>
+<li>
+<p><a href="http://www.latextemplates.com/">LaTeX Templates</a></p>
+</li>
+</ul>
+<h3 id="latex-编辑器">LaTeX 编辑器</h3>
+<ul>
+<li>
+<p>我个人习惯使用 VSCode 进行离线的 LaTeX 写作，配合 Github 私有库进行版本管理。</p>
+</li>
+<li>
+<p><a href="https://www.overleaf.com/">Overleaf</a>：支持多人协作的<strong>在线</strong> LaTeX 编辑器。但是对网络连接有一定要求。</p>
+</li>
+</ul>
+<h3 id="语言表达">语言表达</h3>
+<h4 id="搭配查找">搭配查找</h4>
+<p>可以看一下这篇文章的推荐：<a href="https://zhuanlan.zhihu.com/p/35396232">有了这些网站，英文论文再也不难写了（15个英文论文写作辅助网站介绍和使用技巧） - 知乎</a></p>
+<ul>
+<li>
+<p><a href="https://linggle.com/">Linggle</a>：搜索最常出现的英文词语搭配。不确定自己的表达方式是否正确时使用。</p>
+</li>
+<li>
+<p><a href="https://www.english-corpora.org/coca/">Corpus of Contemporary American English (COCA)</a>：可以查词汇搭配的<strong>美式</strong>英语语料库，可以查看具体的用了这个词的句子。 <a href="https://www.english-corpora.org/bnc/">British National Corpus (BYU-BNC)</a>：英式英语的语料库，语料比美式的少一些</p>
+</li>
+<li>
+<p><a href="https://www.thesaurus.com/">Thesaurus</a>：将低端词汇转换为同义的高端词汇。</p>
+</li>
+<li>
+<p><a href="http://www.esoda.org/">易搜搭ESODA</a>：清华HCI Lab工作室出品的一款适合国人英语写作的词组搭配查询工具。可切换具体研究方向的论文语料库，展示相关的可替换用法，支持中英混搜。</p>
+</li>
+<li>
+<p><a href="https://www.wordandphrase.info/analyzeText.asp">Words and phrases: frequency, genres, collocates, concordances, synonyms, and WordNet</a>：用不同颜色区分高中低频词，展现代表文章类型的词汇，并归类出相关可替换的词。虽然说是英文写作措辞辅助工具，感觉最大的用途是学习相关领域论文常用的词汇和搭配。</p>
+</li>
+</ul>
+<h4 id="句式推荐">句式推荐</h4>
+<ul>
+<li><a href="http://www.phrasebank.manchester.ac.uk/">Academic Phrasebank</a>：学术用语库，告诉你各个章节适合用哪些句式搭配。</li>
+</ul>
+<h4 id="写作检查">写作检查</h4>
+<p>请注意在线检测工具的泄露风险，谨慎处理关键文字。</p>
+<ul>
+<li>
+<p><a href="https://www.grammarly.com/">Grammarly</a>：语法、句型、标点、选词检测修改，有浏览器插件。</p>
+</li>
+<li>
+<p><a href="https://www.nounplus.net/">Nounplus.net</a>：免费的在线英文语法检测。</p>
+</li>
+<li>
+<p><a href="https://gitlab.com/snowhitiger/proofread">proofread</a>：【待尝试】对科学文章草稿自动检查，寻找不符合英文科学写作标准的部分，并提出修改意见。作者写的介绍：<a href="https://zhuanlan.zhihu.com/p/62351973">分享一个自己做的英文科学写作检查器 - 知乎</a>。</p>
+</li>
+</ul>
+<h3 id="公式编辑">公式编辑</h3>
+<ul>
+<li>
+<p><a href="https://mathpix.com/">Mathpix</a>：通过截取复杂数学方程式的截图将其转换为 LaTeX 代码。可以处理 PDF 的印刷体和照片中的手写公式等。</p>
+</li>
+<li>
+<p><a href="https://webdemo.myscript.com/">MyScript Webdemo</a>：Math 模块可以将手写公式转为 LaTeX 代码；同时，Diagram 模块可以将手绘的框图转化为工整的框图。</p>
+</li>
+<li>
+<p><a href="http://detexify.kirelabs.org/classify.html">Detexify LaTeX handwritten symbol recognition</a>: 忘记某些字符用 LaTeX 怎么表示时，可以在这个网站上通过手写来查询。</p>
+</li>
+</ul>
+<h3 id="截屏悬浮">截屏悬浮</h3>
+<p>写论文时经常会遇到需要参考多个文献或代码的情况，同时查看多个文件并频繁切换会非常麻烦。这里是别人推荐的两个能够将截图悬浮置顶的工具，并随时调整位置和大小，方便写作时参考。</p>
+<ul>
+<li>
+<p><a href="https://www.snipaste.com/">Snipaste</a>：【待尝试】有 Windows 和 Mac 版，暂时没有 Linux 版。</p>
+</li>
+<li>
+<p><a href="http://snappy-app.com/">Snappy</a>：【待尝试】有 Mac 和 iPhone &amp; iPad 版，暂时没有 Windows 版。</p>
+</li>
+</ul>
+<h3 id="表格转-latex">表格转 LaTeX</h3>
+<ul>
+<li><a href="https://ctan.org/tex-archive/support/excel2latex">Excel2LaTeX</a>：用在 Excel 上的宏工具，能够将 Excel 表格转换为 LaTeX 代码，节省很多时间。能够满足大多数效果的转换，有些效果可能需要微调。</li>
+</ul>
+<h3 id="绘制示意图">绘制示意图</h3>
+<h4 id="绘图工具">绘图工具</h4>
+<ul>
+<li>
+<p>PPT 通常是我的第一选择：入手快，种类多，自由度高，支持导出矢量图。</p>
+</li>
+<li>
+<p><a href="https://inkscape.org/">Inkscape</a> with <a href="https://writetex.tk/">latex equation extensions</a>：【待尝试】</p>
+</li>
+<li>
+<p><a href="https://www.lucidchart.com/">http://Lucidchart.com</a>：在线画矢量图，可以导出 png、pdf，也支持各种颜色，组合和图层等。</p>
+</li>
+</ul>
+<h4 id="绘图参考">绘图参考</h4>
+<ul>
+<li>
+<p><a href="https://github.com/MLNLP-World/Paper-Picture-Writing-Code">Paper-Picture-Writing-Code</a>：基于 LaTex 的画图代码，包含折线图、柱状图、散点图、注意力可视化以及结构图。</p>
+</li>
+<li>
+<p><a href="https://github.com/xinychen/academic-drawing">academic-drawing</a>：Matlab/Python 绘图，主要用于画时序数据。</p>
+</li>
+<li>
+<p><a href="https://github.com/xinychen/awesome-latex-drawing">awesome-latex-drawing</a>：LaTeX 绘图，主要用于画贝叶斯网络、张量分解等。</p>
+</li>
+<li>
+<p><a href="https://github.com/HarisIqbal88/PlotNeuralNet">PlotNeuralNet</a>：Python 得到可用于 LaTeX 的图，主要画 CNN。</p>
+</li>
+</ul>
+<h4 id="ppt-插件">PPT 插件</h4>
+<ul>
+<li><a href="http://www.jonathanleroux.org/software/iguanatex/">IguanaTex</a>：帮助插入 LaTeX 公式的 PPT 插件。将输入的 LaTeX 代码转换为高质量的 png 图片来插入。</li>
+</ul>
+<h4 id="图片转换">图片转换</h4>
+<p>提供各种格式的图片的转换服务的网站很多。这里只是简单列举，你也可以通过搜索引擎来找到其他类似的网站。</p>
+<ul>
+<li>
+<p><a href="http://www.tlhiv.org/rast2vec/">Convert PNG/JPEG (Raster) to EPS/PDF (Vector) Format</a>：将 jpg、png 格式的图片文件转换为 eps 文件。</p>
+</li>
+<li>
+<p><a href="https://convertio.co/zh/eps-pdf/">EPS到PDF转换器</a>：也可以将 eps 文件转换为别的格式的图片。</p>
+</li>
+</ul>
+<h4 id="图片休整">图片休整</h4>
+<ul>
+<li>
+<p><a href="https://pdfresizer.com/crop">Crop PDF files online - PDF Tools</a>：裁剪 pdf 文件的白边。</p>
+</li>
+<li>
+<p>在命令行中直接将 eps 转换为 pdf：<code>epstopdf &lt;file.eps&gt;</code>；自动裁剪 pdf 的白边：<code>pdfcrop &lt;file.pdf&gt;</code>。</p>
+</li>
+</ul>
+<h2 id="论文投递">论文投递</h2>
+<h3 id="会议期刊查找筛选">会议期刊查找筛选</h3>
+<ul>
+<li>
+<p><a href="https://ccfddl.github.io/">ccf-deadlines</a>：可以根据研究方向和 CCF 等级来筛选本年度已经确定截稿日期的会议。对国内的同学比较友好。</p>
+</li>
+<li>
+<p><a href="https://aideadlin.es/">AI Conference Deadlines</a>：可以根据研究方向筛选会议。但是好像需要科学上网才能看到全部信息。</p>
+</li>
+<li>
+<p><a href="http://www.conferencelist.info/upcoming.html">Conference List</a>：根据截稿时间排序，过期的会议不在首页出现。有一页可以看每个研究方向有哪些会议，但是没有办法根据研究方向筛选还没过期的会议。</p>
+</li>
+<li>
+<p><a href="http://www.myhuiban.com/">Conference Partner (会伴)</a>：计算机最新国际会议和期刊列表。可以注册以关注会议或期刊。比较全，但目前信息更新不及时。</p>
+</li>
+<li>
+<p><a href="https://github.com/lixin4ever/Conference-Acceptance-Rate">Conference-Acceptance-Rate</a>：主要会议近年录取率统计。</p>
+</li>
+</ul>
+<h3 id="匿名链接">匿名链接</h3>
+<p>出于论文盲审考虑，有时候文件（如源码）链接需要是匿名的。有些人会选择在 Github 上创建一个匿名用户，但为每一个会议的每一篇论文都创建一个之后再用不到的用户过于繁琐。我查到有一些工具支持匿名分享文件如下。</p>
+<ul>
+<li>
+<p><a href="https://www.dropbox.com/">Dropbox</a>：应该是最常用的。</p>
+</li>
+<li>
+<p><a href="http://help.osf.io/m/links_forks/l/783581-create-a-view-only-link-for-a-registration">Open Science Framework</a></p>
+</li>
+<li>
+<p><a href="https://knowledge.figshare.com/articles/item/how-to-share-cite-or-embed-my-data">Figshare</a></p>
+</li>
+</ul>
+<h3 id="arxiv-提交">arXiv 提交</h3>
+<ul>
+<li>
+<p><a href="https://zhuanlan.zhihu.com/p/109405192">Arxiv 论文提交流程——看这篇就够了</a>：文章，用于了解将论文提交至 arXiv 上的流程。</p>
+</li>
+<li>
+<p><a href="https://github.com/google-research/arxiv-latex-cleaner">arxiv-latex-cleaner</a>：将论文的 LaTeX 代码清理为提交至 arXiv 上的要求。一个亮点是能够自动清理掉论文中所有被注释掉的内容。</p>
+</li>
+<li>
+<p><a href="https://zhuanlan.zhihu.com/p/558225069">overleaf -&gt; arxiv 丝滑提交过程</a>：如果是使用 Overleaf（而不是在本地将 LaTeX 代码编译为论文），可以先参考本文下载合适的源码包，然后再考虑使用 arxiv-latex-cleaner。</p>
+</li>
+</ul>
+<h3 id="代码开源">代码开源</h3>
+<p>为已发表的论文提供清晰、可复现的代码能够有效推动领域发展。这里推荐一些对开源代码有帮助的工具。</p>
+<ul>
+<li>
+<p><a href="https://www.cs.mcgill.ca/~jpineau/ReproducibilityChecklist.pdf">ReproducibilityChecklist-v2.0</a>：一份机器学习复现清单，列举了你应该提供哪些文件来增强你的论文的可复现性。</p>
+</li>
+<li>
+<p><a href="https://github.com/Damnever/pigar">pigar</a>：Python 项目 requirements 文件自动生成工具。</p>
+</li>
+</ul>
+<h2 id="其他">其他</h2>
+<h3 id="专利检索">专利检索</h3>
+<ul>
+<li><a href="https://iseex.github.io//2020-05/Google-Patents/">Google Patents</a>：免费检索和下载中英文专利。具体可见 <a href="https://iseex.github.io//2020-05/Google-Patents/">Google Patents，免费检索和下载中英文专利的最佳工具！</a>。</li>
+</ul>
+<h3 id="专注工作">专注工作</h3>
+<ul>
+<li><a href="http://www.tomatolife.cn/index.html">番茄·人生</a>：Windows PC 端待办事项软件，番茄工作法时钟。</li>
+</ul>
+<h3 id="白噪声-音乐">白噪声 / 音乐</h3>
+<ul>
+<li>
+<p><a href="https://rainyscope.com">Rainyscope rain simulator</a>：下雨声。</p>
+</li>
+<li>
+<p><a href="https://www.lofi.cafe/">lofi.cafe - lofi music 🎧</a>：随机播放 Lo-Fi 音乐，习惯在工作时听音乐的同学可以尝试一下。需要科学上网。</p>
+</li>
+</ul>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://kimokcheon.github.io/post/operating-system/" class="post-title gt-a-link">
+                    Operating System
+                </a>
+            </div>
+        
+
+        
+
+        
+
+        
+            <script src='https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+
+<style>
+	div#vcomments{
+		width:100%;
+		max-width: 1000px;
+		padding: 2.5%
+	}
+</style>
+
+
+	<div id="vcomments"></div>
+
+<script>
+	new Valine({
+		el: '#vcomments',
+		appId: '',
+		appKey: '',
+		avatar: '',
+		pageSize: 5,
+		recordIp: false,
+		placeholder: 'Just Go Go',
+		visitor: false,
+	});
+</script>
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">他们都是萤火，聚在一起就成了太阳</div>
+    <div class="social-container">
+        
+            
+                <a href="https://github.com/Kimokcheon" target="_blank">
+                    <i class="fab fa-github gt-c-content-color-first"></i>
+                </a>
+            
+        
+            
+        
+            
+        
+            
+                <a href="https://www.zhihu.com/people/deng-yu-chuan-4" target="_blank">
+                    <i class="fab fa-zhihu gt-c-content-color-first"></i>
+                </a>
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+    </div>
+    <div>
+        Theme by <a href="https://imhanjie.com/" target="_blank">imhanjie</a>, Powered by <a
+                href="https://github.com/getgridea/gridea" target="_blank">Gridea | <a href="https://kimokcheon.github.io//atom.xml" target="_blank">RSS</a></a>
+    </div>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+    </div>
+</div>
+</body>
+</html>
