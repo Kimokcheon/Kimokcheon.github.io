@@ -19,8 +19,9 @@ Here is my CV.
 ### Bachelor: Sichuan University (2021.9 ~ )
 
 - **Major**：Computer Science and Technology, College of Computer Science
-- **Required Course GPA**：
-- **Average Score**：
+- **Required Course GPA**：3.85
+- **Average Score**：90.97
+- **Rank**:14/312
 
 
 
@@ -28,7 +29,9 @@ Here is my CV.
 
 - Text-based Face Generation
 
+- Text-based Person Retrieval
 
+- Deep Fake Detection
 
 ## Scholarships
 
