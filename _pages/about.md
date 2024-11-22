@@ -21,9 +21,6 @@ Here is my CV.
 - **Major**：Computer Science and Technology, College of Computer Science
 - **Required Course GPA**：3.85
 - **Average Score**：90.97
-- **Rank**:1/312
-
-
 
 ## Research Interests
 

@@ -13,7 +13,7 @@ name                     : &name "Yuchuan Deng"
 description              : &description "personal description"
 url                      : https://kimokcheon.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "LucasQAQ/LucasQAQ.github.io"
+repository               : "Kimokcheon/Kimokcheon.github.io"
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
 breadcrumbs              : false # true, false (default)
 words_per_minute         : 160
@@ -82,8 +82,8 @@ analytics:
 author:
   name             : "Yuchuan Deng"
   avatar           : "profile.jpg"
-  bio              : "SCU"
-  location         : "Cheng Du"
+  bio              : "SCU, next RUC"
+  location         : "Cheng Du, next Beijing"
   employer         :
   pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   googlescholar    : #"http://yourfullgooglescholarurl.com"
