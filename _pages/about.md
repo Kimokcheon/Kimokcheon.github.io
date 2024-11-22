@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-Hi! I am an undergraduate in Computer Science and Technology at [Sichuan University](https://www.scu.edu.cn/) and expected to graduate in June 2025.
+Hi! I am a senior in Computer Science and Technology at [Sichuan University](https://www.scu.edu.cn/) and expected to graduate in June 2025.
 
 I have engaged in research projects related to Deep Learning (DL), Computer Vision (CV), MultiModal Machine Learning (MMML), etc. My current advisor is Prof. [Qijun Zhao](http://www.scubrl.org/qjzhao) from the [College of Computer Science](https://cs.scu.edu.cn/). 
 
@@ -21,21 +21,14 @@ Here is my CV.
 - **Major**：Computer Science and Technology, College of Computer Science
 - **Required Course GPA**：3.85
 - **Average Score**：90.97
-- **Rank**:14/312
+- **Rank**:1/312
 
 
 
 ## Research Interests
 
-- Text-based Face Generation
+- MLLM
 
-- Text-based Person Retrieval
-
-- Deep Fake Detection
-
-## Scholarships
-
-- **2022  HUAWEI Intellectual Pedestal Scholarship** (**2%**)
 
 
 
