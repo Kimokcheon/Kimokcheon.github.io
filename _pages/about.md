@@ -63,8 +63,8 @@ GPA: **3.86/4.00**
 - 索南尖措, 赵启军, 尼玛扎西, **邓钰川**, 杨欣渝.  
   *基于 SAM 的自适应非接触式牦牛体重分析方法及系统.*  
   专利号：2024105204668  
-- 李可昀, **邓钰川**, 赵启军, 邓国营
-  *一种智能识别设备* 
+- 李可昀, **邓钰川**, 赵启军, 邓国营.
+  *一种智能识别设备*. 
   申请号：2024209943132
 
 
@@ -108,10 +108,10 @@ GPA: **3.86/4.00**
 
 ### Teaching Assistant  
 
-#### **Advanced Programming II** *(Spring 2023)*  
-**Instructor:** [Prof. Qijun Zhao](http://www.scubrl.org/qjzhao)  
+- Advanced Programming II *(Spring 2023)*  
+  - Instructor: [Prof. Qijun Zhao](http://www.scubrl.org/qjzhao)  
 
 
-#### **Database Systems** *(Fall 2023)*  
-**Instructor:** [Prof. Ning Yang](https://yneversky.github.io/)  
+- Database Systems *(Fall 2023)*  
+  - Instructor: [Prof. Ning Yang](https://yneversky.github.io/)  
 

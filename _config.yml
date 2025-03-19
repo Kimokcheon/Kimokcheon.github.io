@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Yuchuan Deng(邓钰川)"
+title                    : "About Me"
 title_separator          : "-"
 name                     : &name "Yuchuan Deng"
 description              : &description "personal description"
@@ -82,8 +82,8 @@ analytics:
 author:
   name             : "Yuchuan Deng"
   avatar           : "profile.jpg"
-  bio              : "SCU, next RUC"
-  location         : "Cheng Du, next Beijing"
+  bio              : "RUC"
+  location         : "Beijing"
   employer         :
   pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   googlescholar    : #"http://yourfullgooglescholarurl.com"
@@ -224,7 +224,7 @@ defaults:
       type: publications
     values:
       layout: single
-      author_profile: true
+      author_profile: false
       share: true
       comments: true
   # _portfolio
