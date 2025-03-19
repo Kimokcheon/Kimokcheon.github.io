@@ -17,12 +17,12 @@ Here is my CV.
 
 ## Education
 ### Ph.D. in Computer Science and Technology *(Sep. 2025 – Present)*  
-Renmin University of China, Beijing, China  
+- Renmin University of China, Beijing, China  
 
 
 ### B.Eng. in Computer Science and Technology *(Sep. 2021 – Jun. 2025)*  
-Sichuan University, Chengdu, China 
-GPA: **3.86/4.00**
+- Sichuan University, Chengdu, China 
+- GPA: **3.86/4.00**
 
 
 ## Research Interests
@@ -57,17 +57,15 @@ GPA: **3.86/4.00**
 
 
 ## Patents
-- **邓钰川**, 赵启军, 傅可人, 叶礼斌, 邓宗永.  
-  *一种基于 SAM 的文本信息驱动的行人检索方法及系统.*  
-  专利号：ZL 2024 1 042542.5  
+- **邓钰川**, 赵启军, 傅可人, 叶礼斌, 邓宗永.*
+  - 一种基于 SAM 的文本信息驱动的行人检索方法及系统.*  
+  - 专利号：ZL 2024 1 042542.5  
 - 索南尖措, 赵启军, 尼玛扎西, **邓钰川**, 杨欣渝.  
-  *基于 SAM 的自适应非接触式牦牛体重分析方法及系统.*  
-  专利号：2024105204668  
+  - *基于 SAM 的自适应非接触式牦牛体重分析方法及系统.*  
+  - 专利号：2024105204668  
 - 李可昀, **邓钰川**, 赵启军, 邓国营.
-
-  *一种智能识别设备*. 
-  
-  申请号：2024209943132
+  - *一种智能识别设备*. 
+  - 申请号：2024209943132
 
 
 
