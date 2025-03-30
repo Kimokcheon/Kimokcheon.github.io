@@ -49,20 +49,18 @@ Here is my CV.
 - **2023** - *Meritorious Winner*, Mathematical Contest in Modeling (MCM/ICM)  
 - **2023** - 全国大学生数学建模竞赛 *省级三等奖*  
 - **2023** - *Outstanding Project*, IAPR/IEEE Winter School on Biometrics 2023  
-- **2023** - *Second Prize*, 第九届四川大学 “互联网+” 大学生创新创业大赛 *(University-Level)*  
-- **2023** - 四川大学 2023 年基础学科拔尖学生 “挑战与猜想” *三等奖*  
 - **2024** - *Bronze Medal*, 第十四届 “挑战杯” 大学生创业计划竞赛 *(Provincial Level)*  
 - **2024** - *Second Prize*, 第十九届 “挑战杯” 全国大学生课外学术科技作品竞赛 *(National Level)*  
 
 
 
 ## Patents
-- **邓钰川**, 赵启军, 傅可人, 叶礼斌, 邓宗永.*
-  - 一种基于 SAM 的文本信息驱动的行人检索方法及系统.*  
+- **邓钰川**, 赵启军, 傅可人, 叶礼斌, 邓宗永.
+  - *一种基于 SAM 的文本信息驱动的行人检索方法及系统.*  
   - 专利号：ZL 2024 1 042542.5  
 - 索南尖措, 赵启军, 尼玛扎西, **邓钰川**, 杨欣渝.  
   - *基于 SAM 的自适应非接触式牦牛体重分析方法及系统.*  
-  - 专利号：2024105204668  
+  - 专利号：ZL 2024 1 0520466.8 
 - 李可昀, **邓钰川**, 赵启军, 邓国营.
   - *一种智能识别设备*. 
   - 申请号：2024209943132
@@ -108,10 +106,10 @@ Here is my CV.
 
 ### Teaching Assistant  
 
-- Advanced Programming II *(Spring 2023)*  
+- Advanced Programming II, SCU *(Spring 2023)*  
   - Instructor: [Prof. Qijun Zhao](http://www.scubrl.org/qjzhao)  
 
 
-- Database Systems *(Fall 2023)*  
+- Database Systems, SCU *(Fall 2023)*  
   - Instructor: [Prof. Ning Yang](https://yneversky.github.io/)  
 
