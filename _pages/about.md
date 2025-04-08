@@ -44,13 +44,13 @@ Here is my CV.
 
 
 ## Selected Awards & Honors
-- **2022** - 华为 MindSpore 众智项目 *“金质量奖”提名*  
-- **2022** - 全国大学生数学建模竞赛 *省级二等奖*  
-- **2023** - *Meritorious Winner*, Mathematical Contest in Modeling (MCM/ICM)  
-- **2023** - 全国大学生数学建模竞赛 *省级三等奖*  
-- **2023** - *Outstanding Project*, IAPR/IEEE Winter School on Biometrics 2023  
-- **2024** - *Bronze Medal*, 第十四届 “挑战杯” 大学生创业计划竞赛 *(Provincial Level)*  
-- **2024** - *Second Prize*, 第十九届 “挑战杯” 全国大学生课外学术科技作品竞赛 *(National Level)*  
+- **2022** 华为 MindSpore 众智项目 *“金质量奖”提名*  
+- **2022** 全国大学生数学建模竞赛 *省级二等奖*  
+- **2023** *Meritorious Winner*, Mathematical Contest in Modeling (MCM/ICM)  
+- **2023** 全国大学生数学建模竞赛 *省级三等奖*  
+- **2023** *Outstanding Project*, IAPR/IEEE Winter School on Biometrics 2023  
+- **2024** *Bronze Medal*, 第十四届 “挑战杯” 大学生创业计划竞赛 *(Provincial Level)*  
+- **2024** *Second Prize*, 第十九届 “挑战杯” 全国大学生课外学术科技作品竞赛 *(National Level)*  
 
 
 
@@ -113,3 +113,5 @@ Here is my CV.
 - Database Systems, SCU *(Fall 2023)*  
   - Instructor: [Prof. Ning Yang](https://yneversky.github.io/)  
 
+## Activities
+President of Artificial Intelligent Association, Sichuan University *(Jun. 2023 – Jul. 2024)* 
