@@ -39,8 +39,11 @@ Here is my CV.
 2. **Yuchuan Deng**, Zhanpeng Hu, Zijie Xin, Chuang Deng, Qijun Zhao.  
    *DAPL: Integration of Positive and Negative Descriptions in Text-Based Person Search.*  
    Accepted by *IEEE International Conference on Multimedia & Expo (ICME) 2025*.  
-   [arXiv](https://arxiv.org/abs/2405.07459)
+   [arXiv](https://arxiv.org/pdf/2405.07459)
 
+3. Jiazhen Liu, **Yuchuan Deng**, Long Chen
+   *Empowering Small VLMs to Think with Dynamic Memorization and Exploration*
+   [arXiv](https://arxiv.org/pdf/2506.23061)
 
 
 ## Selected Awards & Honors
@@ -49,8 +52,6 @@ Here is my CV.
 - **2023** *Outstanding Project*, IAPR/IEEE Winter School on Biometrics 2023  
 - **2024** *Second Prize*, 第十九届 “挑战杯” 全国大学生课外学术科技作品竞赛 *(National Level)*  
 - **2025** 四川省优秀大学毕业生
-
-
 
 ## Patents
 - **邓钰川**, 赵启军, 傅可人, 叶礼斌, 邓宗永.
