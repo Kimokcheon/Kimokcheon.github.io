@@ -1,16 +1,9 @@
-// --------------------------------------------------
-// Vendor Imports
-// --------------------------------------------------
 @import "vendor/breakpoint/breakpoint";   // Media query mixins
 @import "vendor/susy/susy";               // Grid system
 @import "vendor/font-awesome/fontawesome";
 @import "vendor/font-awesome/solid";
 @import "vendor/font-awesome/brands";
 @import "vendor/magnific-popup/magnific-popup";
-
-// --------------------------------------------------
-// Base Settings
-// --------------------------------------------------
 @import "variables";   // Global variables
 @import "mixins";      // Reusable mixins
 
