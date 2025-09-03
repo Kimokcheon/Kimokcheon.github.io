@@ -1,48 +1,43 @@
-@import "vendor/breakpoint/breakpoint";   // Media query mixins
-@import "vendor/susy/susy";               // Grid system
-@import "vendor/font-awesome/fontawesome";
-@import "vendor/font-awesome/solid";
-@import "vendor/font-awesome/brands";
-@import "vendor/magnific-popup/magnific-popup";
-@import "variables";   // Global variables
-@import "mixins";      // Reusable mixins
+---
+---
 
-// --------------------------------------------------
-// Core Styles
-// --------------------------------------------------
-@import "reset";       // Reset browser defaults
-@import "base";        // Base typography & elements
-@import "utilities";   // Helpers & utility classes
-@import "animations";  // Keyframes & transitions
+/*
+ * This file controls what is imported from /_sass
+ *
+ * Note that the files are processed in the order they are imported, so they are partly
+   sorted by the dependencies. Also, the first two lines of the file are required by Jekyll.
+ */
 
-// --------------------------------------------------
-// Components
-// --------------------------------------------------
-@import "tables";
-@import "buttons";
-@import "notices";
-@import "forms";
+@import
+    "vendor/breakpoint/breakpoint",
 
-// --------------------------------------------------
-// Layout
-// --------------------------------------------------
-@import "masthead";    // Header
-@import "navigation";  // Navigation
-@import "sidebar";     // Sidebar
-@import "footer";      // Footer
+    "themes",
+    "theme/{{ site.site_theme | default: 'default' | append: '_light' }}",
+    "theme/{{ site.site_theme | default: 'default' | append: '_dark' }}",
 
-// --------------------------------------------------
-// Pages
-// --------------------------------------------------
-@import "page";
-@import "archive";
+    "include/mixins",
+    "vendor/susy/susy",
 
-// --------------------------------------------------
-// Syntax Highlighting
-// --------------------------------------------------
-@import "syntax";
+    "layout/reset",
+    "layout/base",
 
-// --------------------------------------------------
-// Print Styles
-// --------------------------------------------------
-@import "print";
+    "include/utilities",
+    "layout/tables",
+    "layout/buttons",
+    "layout/notices",
+    "layout/masthead",
+    "layout/navigation",
+    "layout/footer",
+    "syntax",
+
+    "layout/forms",
+
+    "layout/page",
+    "layout/archive",
+    "layout/sidebar",
+    "layout/json_cv",
+
+    "vendor/font-awesome/fontawesome",
+    "vendor/font-awesome/solid",
+    "vendor/font-awesome/brands"
+;
