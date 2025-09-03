@@ -84,10 +84,10 @@ author:
   avatar           : "profile.jpg"
   bio              : "Ph.D.@RUC"
   location         : "Beijing, China"
-  employer         : "Renmin University of China"
+  employer         : 
   pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
-  googlescholar    : #"http://yourfullgooglescholarurl.com"
-  email            : Chinadyc2003@outlook.com
+  googlescholar    : "https://scholar.google.com/citations?user=hG1Gj4QAAAAJ&hl"
+  email            : dengyuchuan@ruc.edu.cn
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
@@ -103,7 +103,7 @@ author:
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
   linkedin         :
-  orcid            : 
+  orcid            : "https://orcid.org/my-orcid?orcid=0009-0009-0537-6801"
   pinterest        :
   soundcloud       :
   stackoverflow    : # http://stackoverflow.com/users/123456/username
