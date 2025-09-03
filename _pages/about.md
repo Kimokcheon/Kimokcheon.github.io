@@ -8,6 +8,7 @@ redirect_from:
   - /about.html
 ---
 
+
 Hi! I’m **Yuchuan Deng (邓钰川)**, a Ph.D. student at the [AI & Media Computing Lab (AIMC Lab)](https://ruc-aimc-lab.github.io/), [Renmin University of China (RUC)](https://www.ruc.edu.cn/), supervised by [Prof. Xirong Li](https://lixirong.net/).
 
 I received my **Bachelor of Engineering in Computer Science and Technology** from the [College of Computer Science](https://cs.scu.edu.cn/), [Sichuan University (SCU)](https://www.scu.edu.cn/), advised by [Prof. Qijun Zhao](http://www.scubrl.org/qjzhao).
@@ -16,16 +17,16 @@ My research interests include **resource-efficient multimodal large language mod
 
 📄 [Curriculum Vitae](#)
 
----
 
-## News  *(with a smooth scrolling style ✨)*
+
+## News 
 
 * **Sep 7, 2025** – Officially started my Ph.D. at RUC under the supervision of Prof. Xirong Li in the AIMC Lab. 👨‍🎓
 * **Jun 28, 2025** – Graduated with my bachelor’s degree from SCU and honored as *Outstanding Graduate of Sichuan Province*! 🎓
 * **Mar 21, 2025** – Our paper on *Text-based Person Search* was accepted to **ICME 2025**! 🎉
 * **Mar 1, 2025** – Started a research internship at **Baidu**, focusing on large-scale model data. 💻
 
----
+
 
 ## Education
 
@@ -38,7 +39,7 @@ My research interests include **resource-efficient multimodal large language mod
 * Sichuan University, Chengdu, China
 * GPA: **3.86 / 4.00**
 
----
+
 
 ## Research Interests
 
@@ -47,7 +48,7 @@ My research interests include **resource-efficient multimodal large language mod
 * **Medical (Ophthalmology) Applications of MLLMs**
 * **Multimodal Video Understanding & Retrieval**
 
----
+
 
 ## Publications
 
