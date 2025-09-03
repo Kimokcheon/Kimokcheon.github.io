@@ -15,9 +15,8 @@ I received my **Bachelor of Engineering in Computer Science and Technology** fro
 
 My research interests include **resource-efficient multimodal large language models**, **ophthalmology-oriented multimodal LLMs**, and **multimodal video retrieval**.
 
-📄 [Curriculum Vitae](#)
 
-
+---
 
 ## News 
 
