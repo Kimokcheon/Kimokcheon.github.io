@@ -8,72 +8,98 @@ redirect_from:
   - /about.html
 ---
 
-Hi! I'm Yuchuan Deng (邓钰川), a Ph.D. student at the [AI & Media Computing Lab (AIMC Lab)](https://ruc-aimc-lab.github.io/), [Renmin University of China (RUC)](https://www.ruc.edu.cn/), under the supervision of [Prof. Xirong Li](https://lixirong.net/).
-I have earned my Bachelor of Engineering degree in Computer Science and Technology from the [College of Computer Science](https://cs.scu.edu.cn/) at [Sichuan University (SCU)](https://www.scu.edu.cn/), where I was advised by [Prof. Qijun Zhao](http://www.scubrl.org/qjzhao). 
-My research interests include **efficient fine-tuning of multimodal large models**, **medical multimodal large language models**, and **vision-language pretraining**.
+Hi! I’m **Yuchuan Deng (邓钰川)**, a Ph.D. student at the [AI & Media Computing Lab (AIMC Lab)](https://ruc-aimc-lab.github.io/), [Renmin University of China (RUC)](https://www.ruc.edu.cn/), supervised by [Prof. Xirong Li](https://lixirong.net/).
 
-Here is my CV.
+I received my **Bachelor of Engineering in Computer Science and Technology** from the [College of Computer Science](https://cs.scu.edu.cn/), [Sichuan University (SCU)](https://www.scu.edu.cn/), advised by [Prof. Qijun Zhao](http://www.scubrl.org/qjzhao).
 
+My research interests include **resource-efficient multimodal large language models**, **ophthalmology-oriented multimodal LLMs**, and **multimodal video retrieval**.
+
+📄 [Curriculum Vitae](#)
+
+---
+
+## News  *(with a smooth scrolling style ✨)*
+
+* **Sep 7, 2025** – Officially started my Ph.D. at RUC under the supervision of Prof. Xirong Li in the AIMC Lab. 👨‍🎓
+* **Jun 28, 2025** – Graduated with my bachelor’s degree from SCU and honored as *Outstanding Graduate of Sichuan Province*! 🎓
+* **Mar 21, 2025** – Our paper on *Text-based Person Search* was accepted to **ICME 2025**! 🎉
+* **Mar 1, 2025** – Started a research internship at **Baidu**, focusing on large-scale model data. 💻
+
+---
 
 ## Education
-### Ph.D. in Computer Science and Technology *(Sep. 2025 – Present)*  
-- Renmin University of China, Beijing, China  
 
+**Ph.D. in Computer Science and Technology** *(Sep. 2025 – Present)*
 
-### B.Eng. in Computer Science and Technology *(Sep. 2021 – Jun. 2025)*  
-- Sichuan University, Chengdu, China 
-- GPA: **3.86/4.00**
+* Renmin University of China, Beijing, China
 
+**B.Eng. in Computer Science and Technology** *(Sep. 2021 – Jun. 2025)*
+
+* Sichuan University, Chengdu, China
+* GPA: **3.86 / 4.00**
+
+---
 
 ## Research Interests
-- **Multimodal Large Language Models (MLLM)**  
 
+* **Multimodal Large Language Models (MLLMs)**
+* **Resource-Constrained Model Design**
+* **Medical (Ophthalmology) Applications of MLLMs**
+* **Multimodal Video Understanding & Retrieval**
 
+---
 
 ## Publications
-1. **Yuchuan Deng**, Qijun Zhao, Zhanpeng Hu, Zixiang Xu.  
-   *Text-Based Face Retrieval: Methods and Challenges.*  
-   Accepted by *2023 Chinese Conference on Biometric Recognition (CCBR) (Oral).*  
+
+1. [Jiazhen Liu](https://jiazhen-code.github.io/about.me/), **Yuchuan Deng**, [Long Chen](https://zjuchenlong.github.io/).
+   *Empowering Small VLMs to Think with Dynamic Memorization and Exploration.*
+   [arXiv](https://arxiv.org/pdf/2506.23061)
+
+2. **Yuchuan Deng**, [Qijun Zhao](http://www.scubrl.org/qjzhao), [Zhanpeng Hu](https://lucasqaq.github.io/), [Zixiang Xu](https://xzx34.github.io/).
+   *Text-Based Face Retrieval: Methods and Challenges.*
+   In *Chinese Conference on Biometric Recognition (CCBR) 2023 (Oral).*
    [Springer](https://link.springer.com/chapter/10.1007/978-981-99-8565-4_15)
 
-2. **Yuchuan Deng**, Zhanpeng Hu, Zijie Xin, Chuang Deng, Qijun Zhao.  
-   *DAPL: Integration of Positive and Negative Descriptions in Text-Based Person Search.*  
-   Accepted by *IEEE International Conference on Multimedia & Expo (ICME) 2025*.  
+3. **Yuchuan Deng**, [Zhanpeng Hu](https://lucasqaq.github.io/), [Zijie Xin](https://xxayt.github.io/), Chuang Deng, [Qijun Zhao](http://www.scubrl.org/qjzhao).
+   *DAPL: Integration of Positive and Negative Descriptions in Text-Based Person Search.*
+   In *IEEE International Conference on Multimedia & Expo (ICME) 2025.*
    [arXiv](https://arxiv.org/pdf/2405.07459)
 
-3. Jiazhen Liu, **Yuchuan Deng**, Long Chen
-   *Empowering Small VLMs to Think with Dynamic Memorization and Exploration*
-   [arXiv](https://arxiv.org/pdf/2506.23061)
 
 
 ## Selected Awards & Honors
-- **2022** 华为 MindSpore 众智项目 *“金质量奖”提名*  
-- **2023** *Meritorious Winner*, Mathematical Contest in Modeling (MCM/ICM)  
-- **2023** *Outstanding Project*, IAPR/IEEE Winter School on Biometrics 2023  
-- **2024** *Second Prize*, 第十九届 “挑战杯” 全国大学生课外学术科技作品竞赛 *(National Level)*  
-- **2025** 四川省优秀大学毕业生
+
+* **2022** Nomination for *“Golden Quality Award”*, Huawei MindSpore MindSpore Crowd Intelligence Project
+* **2023** *Meritorious Winner*, Mathematical Contest in Modeling (MCM/ICM)
+* **2023** *Outstanding Project*, IAPR/IEEE Winter School on Biometrics 2023
+* **2024** *Second Prize*, 19th “Challenge Cup” National College Student Extracurricular Academic Science and Technology Competition *(National Level)*
+* **2025** Outstanding Graduate of Sichuan Province
 
 ## Patents
-- **邓钰川**, 赵启军, 傅可人, 叶礼斌, 邓宗永.
-  - *一种基于 SAM 的文本信息驱动的行人检索方法及系统.*  
-  - 专利号：ZL 2024 1 042542.5  
-- 索南尖措, 赵启军, 尼玛扎西, **邓钰川**, 杨欣渝.  
-  - *基于 SAM 的自适应非接触式牦牛体重分析方法及系统.*  
-  - 专利号：ZL 2024 1 0520466.8 
-- 李可昀, **邓钰川**, 赵启军, 邓国营.
-  - *一种智能识别设备*. 
-  - 申请号：2024209943132
+
+* **Yuchuan Deng**, Qijun Zhao, Keran Fu, Libin Ye, Zongyong Deng.
+
+  * *Text-Driven Pedestrian Retrieval Method and System Based on SAM.*
+  * Patent No.: ZL 2024 1 042542.5
+
+* Sonam Jianzhuo, Qijun Zhao, Nima Zhaxi, **Yuchuan Deng**, Xinyu Yang.
+
+  * *Adaptive Non-Contact Yak Weight Analysis Method and System Based on SAM.*
+  * Patent No.: ZL 2024 1 0520466.8
+
+* Keyun Li, **Yuchuan Deng**, Qijun Zhao, Guoying Deng.
+
+  * *An Intelligent Recognition Device.*
+  * Application No.: 2024209943132
 
 
 ## Service 
 ### Reviewer
 - ICME 2025  
-### Teaching Assistant  
 
+### Teaching Assistant  
 - Advanced Programming II, SCU *(Spring 2023)*  
   - Instructor: [Prof. Qijun Zhao](http://www.scubrl.org/qjzhao)  
-
-
 - Database Systems, SCU *(Fall 2023)*  
   - Instructor: [Prof. Ning Yang](https://yneversky.github.io/)  
 
