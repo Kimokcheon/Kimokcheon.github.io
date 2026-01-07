@@ -30,13 +30,10 @@ My research interests include **resource-efficient multimodal large language mod
 ## Education
 
 **Ph.D. in Computer Science and Technology** *(Sep. 2025 – Present)*
-
 * Renmin University of China, Beijing, China
 
 **B.Eng. in Computer Science and Technology** *(Sep. 2021 – Jun. 2025)*
-
 * Sichuan University, Chengdu, China
-* GPA: **3.86 / 4.00**
 
 
 
@@ -51,29 +48,19 @@ My research interests include **resource-efficient multimodal large language mod
 
 ## Publications
 
-1. [Jiazhen Liu](https://jiazhen-code.github.io/about.me/), **Yuchuan Deng**, [Long Chen](https://zjuchenlong.github.io/).
-   *Empowering Small VLMs to Think with Dynamic Memorization and Exploration.*
+1. [Jiazhen Liu](https://jiazhen-code.github.io/about.me/), **Yuchuan Deng**, [Long Chen](https://zjuchenlong.github.io/).  
+   *Empowering Small VLMs to Think with Dynamic Memorization and Exploration.*  
    [arXiv](https://arxiv.org/pdf/2506.23061)
 
-2. **Yuchuan Deng**, [Qijun Zhao](http://www.scubrl.org/qjzhao), [Zhanpeng Hu](https://lucasqaq.github.io/), [Zixiang Xu](https://xzx34.github.io/).
-   *Text-Based Face Retrieval: Methods and Challenges.*
-   In *Chinese Conference on Biometric Recognition (CCBR) 2023 (Oral).*
+2. **Yuchuan Deng**, [Zhanpeng Hu](https://lucasqaq.github.io/), [Zijie Xin](https://xxayt.github.io/), Chuang Deng, [Qijun Zhao](http://www.scubrl.org/qjzhao).  
+   *DAPL: Integration of Positive and Negative Descriptions in Text-Based Person Search.*  
+   In *IEEE International Conference on Multimedia & Expo (ICME), 2025.*  
+   [IEEE](https://ieeexplore.ieee.org/abstract/document/11210038/)
+
+3. **Yuchuan Deng**, [Qijun Zhao](http://www.scubrl.org/qjzhao), [Zhanpeng Hu](https://lucasqaq.github.io/), [Zixiang Xu](https://xzx34.github.io/).  
+   *Text-Based Face Retrieval: Methods and Challenges.*  
+   In *Chinese Conference on Biometric Recognition (CCBR), 2023 (Oral).*  
    [Springer](https://link.springer.com/chapter/10.1007/978-981-99-8565-4_15)
-
-3. **Yuchuan Deng**, [Zhanpeng Hu](https://lucasqaq.github.io/), [Zijie Xin](https://xxayt.github.io/), Chuang Deng, [Qijun Zhao](http://www.scubrl.org/qjzhao).
-   *DAPL: Integration of Positive and Negative Descriptions in Text-Based Person Search.*
-   In *IEEE International Conference on Multimedia & Expo (ICME) 2025.*
-   [arXiv](https://arxiv.org/pdf/2405.07459)
-
-
-
-## Selected Awards & Honors
-
-* **2022** Nomination for *“Golden Quality Award”*, Huawei MindSpore MindSpore Crowd Intelligence Project
-* **2023** *Meritorious Winner*, Mathematical Contest in Modeling (MCM/ICM)
-* **2023** *Outstanding Project*, IAPR/IEEE Winter School on Biometrics 2023
-* **2024** *Second Prize*, 19th “Challenge Cup” National College Student Extracurricular Academic Science and Technology Competition *(National Level)*
-* **2025** Outstanding Graduate of Sichuan Province
 
 ## Patents
 
@@ -98,10 +85,12 @@ My research interests include **resource-efficient multimodal large language mod
 - ICME 2025  
 
 ### Teaching Assistant  
-- Advanced Programming II, SCU *(Spring 2023)*  
+- **Advanced Programming II**, Sichuan University *(Spring 2023)*  
   - Instructor: [Prof. Qijun Zhao](http://www.scubrl.org/qjzhao)  
-- Database Systems, SCU *(Fall 2023)*  
+- **Database Systems**, Sichuan University *(Fall 2023)*  
   - Instructor: [Prof. Ning Yang](https://yneversky.github.io/)  
+- **Advanced Algebra I**, Renmin University of China *(Fall 2025)*  
+  - Instructor: [Prof. Mingyang Yi](https://www.x-mol.com/university/faculty/429157)
 
 ## Activities
 President of Artificial Intelligent Association, Sichuan University *(Jun. 2023 – Jul. 2024)* 
