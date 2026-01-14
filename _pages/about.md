@@ -83,6 +83,7 @@ My research interests include **resource-efficient multimodal large language mod
 ## Service 
 ### Reviewer
 - ICME 2025  
+- ICME 2026
 
 ### Teaching Assistant  
 - **Advanced Programming II**, Sichuan University *(Spring 2023)*  
