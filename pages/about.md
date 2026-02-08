@@ -9,7 +9,7 @@ redirect_from:
 ---
 
 
-Hi! I’m **Yuchuan Deng (邓钰川)**, a Ph.D. student at the [AI & Media Computing Lab (AIMC Lab)](https://ruc-aimc-lab.github.io/), [Renmin University of China (RUC)](https://www.ruc.edu.cn/), supervised by [Prof. Xirong Li](https://lixirong.net/).
+Hi! I’m **Yuchuan Deng**, a Ph.D. student at the [AI & Media Computing Lab (AIMC Lab)](https://ruc-aimc-lab.github.io/), [Renmin University of China (RUC)](https://www.ruc.edu.cn/), supervised by [Prof. Xirong Li](https://lixirong.net/).
 
 I received my **Bachelor of Engineering in Computer Science and Technology** from the [College of Computer Science](https://cs.scu.edu.cn/), [Sichuan University (SCU)](https://www.scu.edu.cn/), advised by [Prof. Qijun Zhao](http://www.scubrl.org/qjzhao).
 
@@ -35,22 +35,12 @@ My research interests include **resource-efficient multimodal large language mod
 **B.Eng. in Computer Science and Technology** *(Sep. 2021 – Jun. 2025)*
 * Sichuan University, Chengdu, China
 
-
-
-## Research Interests
-
-* **Multimodal Large Language Models (MLLMs)**
-* **Resource-Constrained Model Design**
-* **Medical (Ophthalmology) Applications of MLLMs**
-* **Multimodal Video Understanding & Retrieval**
-
-
-
 ## Publications
 
 1. [Jiazhen Liu](https://jiazhen-code.github.io/about.me/), **Yuchuan Deng**, [Long Chen](https://zjuchenlong.github.io/).  
    *Empowering Small VLMs to Think with Dynamic Memorization and Exploration.*  
-   [arXiv](https://arxiv.org/pdf/2506.23061)
+   In *International Conference on Learning Representations (ICLR) 2026.*  
+   [[arXiv](https://arxiv.org/pdf/2506.23061)]
 
 2. **Yuchuan Deng**, [Zhanpeng Hu](https://lucasqaq.github.io/), [Zijie Xin](https://xxayt.github.io/), Chuang Deng, [Qijun Zhao](http://www.scubrl.org/qjzhao).  
    *DAPL: Integration of Positive and Negative Descriptions in Text-Based Person Search.*  
@@ -85,13 +75,17 @@ My research interests include **resource-efficient multimodal large language mod
 - ICME 2025  
 - ICME 2026
 
-### Teaching Assistant  
+### Teaching Assistant
 - **Advanced Programming II**, Sichuan University *(Spring 2023)*  
-  - Instructor: [Prof. Qijun Zhao](http://www.scubrl.org/qjzhao)  
+  - Instructor: [Prof. Qijun Zhao](http://www.scubrl.org/qjzhao)
 - **Database Systems**, Sichuan University *(Fall 2023)*  
-  - Instructor: [Prof. Ning Yang](https://yneversky.github.io/)  
+  - Instructor: [Prof. Ning Yang](https://yneversky.github.io/)
 - **Advanced Algebra I**, Renmin University of China *(Fall 2025)*  
   - Instructor: [Prof. Mingyang Yi](https://www.x-mol.com/university/faculty/429157)
+- **Advanced Algebra II**, Renmin University of China *(Spring 2026)*  
+  - Instructor: [Prof. Mingyang Yi](https://www.x-mol.com/university/faculty/429157)
+
+
 
 ## Activities
 President of Artificial Intelligent Association, Sichuan University *(Jun. 2023 – Jul. 2024)* 
