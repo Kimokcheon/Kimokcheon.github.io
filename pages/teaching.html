@@ -1,12 +1,14 @@
 ---
-layout: archive
+layout: single
 title: "Teaching"
 permalink: /teaching/
 author_profile: true
 ---
 
-{% include base_path %}
+<div class="page-lead">Teaching assistant experience at Sichuan University and Renmin University of China.</div>
 
-{% for post in site.teaching reversed %}
-  {% include archive-single.html %}
-{% endfor %}
+<div class="teaching-list teaching-list--standalone">
+  {% for item in site.data.teaching %}
+    {% include teaching-item.html item=item %}
+  {% endfor %}
+</div>

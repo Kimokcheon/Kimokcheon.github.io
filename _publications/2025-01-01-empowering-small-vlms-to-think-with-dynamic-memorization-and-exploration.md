@@ -1,13 +1,15 @@
 ---
 title: "Empowering Small VLMs to Think with Dynamic Memorization and Exploration"
 collection: publications
-permalink: /publication/2025-01-01-empowering-small-vlms-to-think-with-dynamic-memorization-and-exploration
-excerpt: 'Empowering Small-scale Vision-Language Models (SVLMs) with reliable thinking capabilities remains fundamentally challenging due to their limited parameter capacity and weak instruction-following abilities. Existing training paradigms, including Supervised Fine-Tuning (SFT) and Reinforcement Learning with Verifiable Reward (RLVR), impose substantial demands on the base VLM, exceeding the capabilities of SVLMs. Consequently, directly applying these paradigms to SVLMs often suffers from severe pseudo thinking traces and advantage collapse, ultimately undermining both thinking reliability and task performance. A natural solution is to combine SFT and RLVR, leveraging their complementarity to reduce the dependence on model capacity. However, the widely adopted two-stage training paradigm still performs poorly on SVLMs, as their tendency toward sub-optimal convergence hinders the trade-off and limits the benefits of the combination. To address this, we propose DyME, a novel training paradigm that Dynamically selects between Memorization (via SFT) and Exploration (via RLVR) modes at each optimization step, ensuring that every update contributes to the trade-off. Extensive experiments across diverse domains demonstrate that DyME consistently achieves this balance, and thus delivers substantial performance improvements. These results establish DyME as a practical and effective solution for empowering SVLMs with reliable thinking capabilities. GitHub: https://github.com/HKUST-LongGroup/DyME'
-date: 2025-01-01
-venue: 'arXiv preprint arXiv:2506.23061'
-citation: 'Jiazhen Liu and Yuchuan Deng and Long Chen. Empowering Small VLMs to Think with Dynamic Memorization and Exploration. arXiv preprint arXiv:2506.23061. 2025.'
+permalink: /publication/empowering-small-vlms-dynamic-memorization-exploration
+excerpt: "Dynamic memorization and exploration for reliable reasoning in small vision-language models."
+date: 2026-01-01
+venue: "International Conference on Learning Representations (ICLR)"
+paperurl: "https://arxiv.org/pdf/2506.23061"
+citation: "Jiazhen Liu, Yuchuan Deng, and Long Chen. Empowering Small VLMs to Think with Dynamic Memorization and Exploration. ICLR, 2026."
 ---
 
-Empowering Small-scale Vision-Language Models (SVLMs) with reliable thinking capabilities remains fundamentally challenging due to their limited parameter capacity and weak instruction-following abilities. Existing training paradigms, including Supervised Fine-Tuning (SFT) and Reinforcement Learning with Verifiable Reward (RLVR), impose substantial demands on the base VLM, exceeding the capabilities of SVLMs. Consequently, directly applying these paradigms to SVLMs often suffers from severe pseudo thinking traces and advantage collapse, ultimately undermining both thinking reliability and task performance. A natural solution is to combine SFT and RLVR, leveraging their complementarity to reduce the dependence on model capacity. However, the widely adopted two-stage training paradigm still performs poorly on SVLMs, as their tendency toward sub-optimal convergence hinders the trade-off and limits the benefits of the combination. To address this, we propose DyME, a novel training paradigm that Dynamically selects between Memorization (via SFT) and Exploration (via RLVR) modes at each optimization step, ensuring that every update contributes to the trade-off. Extensive experiments across diverse domains demonstrate that DyME consistently achieves this balance, and thus delivers substantial performance improvements. These results establish DyME as a practical and effective solution for empowering SVLMs with reliable thinking capabilities. GitHub: https://github.com/HKUST-LongGroup/DyME
+Jiazhen Liu, **Yuchuan Deng**, Long Chen.
 
-Recommended citation: Jiazhen Liu and Yuchuan Deng and Long Chen. Empowering Small VLMs to Think with Dynamic Memorization and Exploration. arXiv preprint arXiv:2506.23061. 2025.
+*Empowering Small VLMs to Think with Dynamic Memorization and Exploration.*  
+International Conference on Learning Representations (ICLR), 2026.

@@ -1,13 +1,15 @@
 ---
-title: "DualFocus: Integrating Plausible Descriptions in Text-based Person Re-identification"
+title: "DAPL: Integration of Positive and Negative Descriptions in Text-Based Person Search"
 collection: publications
-permalink: /publication/2024-01-01-dualfocus-integrating-plausible-descriptions-in-text-based-person-re-identificat
-excerpt: 'Text-based Person Re-identification (TPR) aims to retrieve specific individual images from datasets based on textual descriptions. Existing TPR methods primarily focus on recognizing explicit and positive characteristics, often overlooking the role of negative descriptions. This oversight can lead to false positives-images that meet positive criteria but should be excluded based on negative descriptions. To address these limitations, we introduce DualFocus, a unified framework that integrates plausible descriptions to enhance the interpretative accuracy of vision-language models in TPR tasks. DualFocus leverages Dual (Positive/Negative) Attribute Prompt Learning (DAPL), which incorporates Dual Image-Attribute Contrastive (DIAC) Learning and Sensitive Image-Attributes Matching (SIAM) Learning, enabling the detection of non-existent attributes and reducing false positives. To achieve a balance between coarse and fine-grained alignment of visual and textual embeddings, we propose the Dynamic Tokenwise Similarity (DTS) loss, which refines the representation of both matching and non-matching descriptions, thereby improving the matching process through detailed and adaptable similarity assessments. The comprehensive experiments on CUHK-PEDES, ICFG-PEDES, and RSTPReid, DualFocus demonstrates superior performance over state-of-the-art methods, significantly enhancing both precision and robustness in TPR.'
-date: 2024-01-01
-venue: 'arXiv preprint arXiv:2405.07459'
-citation: 'Yuchuan Deng and Zhanpeng Hu and Jiakun Han and Chuang Deng and Qijun Zhao. DualFocus: Integrating Plausible Descriptions in Text-based Person Re-identification. arXiv preprint arXiv:2405.07459. 2024.'
+permalink: /publication/dapl-positive-negative-descriptions-text-based-person-search
+excerpt: "Integrating positive and negative descriptions for text-based person search."
+date: 2025-01-01
+venue: "IEEE International Conference on Multimedia & Expo (ICME)"
+paperurl: "https://ieeexplore.ieee.org/abstract/document/11210038/"
+citation: "Yuchuan Deng, Zhanpeng Hu, Zijie Xin, Chuang Deng, and Qijun Zhao. DAPL: Integration of Positive and Negative Descriptions in Text-Based Person Search. ICME, 2025."
 ---
 
-Text-based Person Re-identification (TPR) aims to retrieve specific individual images from datasets based on textual descriptions. Existing TPR methods primarily focus on recognizing explicit and positive characteristics, often overlooking the role of negative descriptions. This oversight can lead to false positives-images that meet positive criteria but should be excluded based on negative descriptions. To address these limitations, we introduce DualFocus, a unified framework that integrates plausible descriptions to enhance the interpretative accuracy of vision-language models in TPR tasks. DualFocus leverages Dual (Positive/Negative) Attribute Prompt Learning (DAPL), which incorporates Dual Image-Attribute Contrastive (DIAC) Learning and Sensitive Image-Attributes Matching (SIAM) Learning, enabling the detection of non-existent attributes and reducing false positives. To achieve a balance between coarse and fine-grained alignment of visual and textual embeddings, we propose the Dynamic Tokenwise Similarity (DTS) loss, which refines the representation of both matching and non-matching descriptions, thereby improving the matching process through detailed and adaptable similarity assessments. The comprehensive experiments on CUHK-PEDES, ICFG-PEDES, and RSTPReid, DualFocus demonstrates superior performance over state-of-the-art methods, significantly enhancing both precision and robustness in TPR.
+**Yuchuan Deng**, Zhanpeng Hu, Zijie Xin, Chuang Deng, Qijun Zhao.
 
-Recommended citation: Yuchuan Deng and Zhanpeng Hu and Jiakun Han and Chuang Deng and Qijun Zhao. DualFocus: Integrating Plausible Descriptions in Text-based Person Re-identification. arXiv preprint arXiv:2405.07459. 2024.
+*DAPL: Integration of Positive and Negative Descriptions in Text-Based Person Search.*  
+IEEE International Conference on Multimedia & Expo (ICME), 2025.

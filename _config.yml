@@ -10,7 +10,7 @@ locale                   : "en-US"
 title                    : "Yuchuan Deng"
 title_separator          : "-"
 name                     : &name "Yuchuan Deng"
-description              : &description "personal description"
+description              : &description "Yuchuan Deng — Ph.D. student at Renmin University of China working on multimodal large language models and video understanding."
 url                      : https://kimokcheon.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "Kimokcheon/Kimokcheon.github.io"
@@ -82,11 +82,11 @@ analytics:
 author:
   name             : "Yuchuan Deng"
   avatar           : "profile.jpg"
-  bio              : "Ph.D.@RUC"
+  bio              : "Ph.D. Student @ RUC"
   location         : "Beijing, China"
   employer         : "Renmin University of China (RUC)"
   pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
-  googlescholar    : "https://scholar.google.com/citations?user=hG1Gj4QAAAAJ&hl"
+  googlescholar    : "https://scholar.google.com/citations?user=hG1Gj4QAAAAJ&hl=en"
   email            : "dengyuchuan@ruc.edu.cn"
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
@@ -96,14 +96,14 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "https://github.com/Kimokcheon"
+  github           : "Kimokcheon"
   google_plus      :
   keybase          :
   instagram        :
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
   linkedin         :
-  orcid            : "https://orcid.org/my-orcid?orcid=0009-0009-0537-6801"
+  orcid            : "https://orcid.org/0009-0009-0537-6801"
   pinterest        :
   soundcloud       :
   stackoverflow    : # http://stackoverflow.com/users/123456/username

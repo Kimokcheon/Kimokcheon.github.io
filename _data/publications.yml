@@ -1,0 +1,50 @@
+- title: "Empowering Small VLMs to Think with Dynamic Memorization and Exploration"
+  authors: '[Jiazhen Liu](https://jiazhen-code.github.io/about.me/), **Yuchuan Deng**, [Long Chen](https://zjuchenlong.github.io/)'
+  venue: "International Conference on Learning Representations"
+  venue_short: "ICLR"
+  year: 2026
+  status: "Conference"
+  links:
+    - label: "arXiv"
+      url: "https://arxiv.org/pdf/2506.23061"
+
+- title: "DAPL: Integration of Positive and Negative Descriptions in Text-Based Person Search"
+  authors: '**Yuchuan Deng**, [Zhanpeng Hu](https://lucasqaq.github.io/), [Zijie Xin](https://xxayt.github.io/), Chuang Deng, [Qijun Zhao](http://www.scubrl.org/qjzhao)'
+  venue: "IEEE International Conference on Multimedia & Expo"
+  venue_short: "ICME"
+  year: 2025
+  status: "Conference"
+  links:
+    - label: "IEEE"
+      url: "https://ieeexplore.ieee.org/abstract/document/11210038/"
+
+- title: "Text-Based Face Retrieval: Methods and Challenges"
+  authors: '**Yuchuan Deng**, [Qijun Zhao](http://www.scubrl.org/qjzhao), [Zhanpeng Hu](https://lucasqaq.github.io/), [Zixiang Xu](https://xzx34.github.io/)'
+  venue: "Chinese Conference on Biometric Recognition"
+  venue_short: "CCBR"
+  year: 2023
+  status: "Oral"
+  links:
+    - label: "Springer"
+      url: "https://link.springer.com/chapter/10.1007/978-981-99-8565-4_15"
+
+- title: "Fundus-R1: Training a Fundus-Reading MLLM with Knowledge-Aware Reasoning on Public Data"
+  authors: '**Yuchuan Deng**, Qijie Wei, Kaiheng Qian, Jiazhen Liu, Zijie Xin, Bangxiang Lan, Jingyu Liu, Jianfeng Dong, Xirong Li'
+  venue: "arXiv preprint"
+  venue_short: "arXiv"
+  year: 2026
+  status: "Preprint"
+  links:
+    - label: "arXiv"
+      url: "https://arxiv.org/abs/2604.08322"
+
+- title: "Benchmarking Foundation and Large Language Models for Few-Shot Medical Image Segmentation"
+  authors: 'Jinghong Liu\*, **Yuchuan Deng\***, Fanping Liu, Meng Huang, Xirong Li'
+  venue: "arXiv preprint"
+  venue_short: "arXiv"
+  year: 2026
+  status: "Preprint"
+  note: "Equal contribution."
+  links:
+    - label: "arXiv"
+      url: "https://arxiv.org/abs/2607.27856"

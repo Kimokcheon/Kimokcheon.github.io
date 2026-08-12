@@ -1,0 +1,19 @@
+<article class="pub-card">
+  <div class="pub-card__meta">
+    <span class="pub-card__venue">{{ include.pub.venue_short }} {{ include.pub.year }}</span>
+    {% if include.pub.status == "Oral" %}<span class="pub-card__badge">Oral</span>{% endif %}
+  </div>
+  <h3 class="pub-card__title">{{ include.pub.title }}</h3>
+  <div class="pub-card__authors">{{ include.pub.authors | markdownify | remove: '<p>' | remove: '</p>' }}</div>
+  <div class="pub-card__footer">
+    <span class="pub-card__venue-full">{{ include.pub.venue }}{% if include.pub.venue_short != "arXiv" %}, {{ include.pub.year }}{% endif %}</span>
+    {% if include.pub.links %}
+      <div class="pub-card__links">
+        {% for link in include.pub.links %}
+          <a class="paper-link" href="{{ link.url }}" target="_blank" rel="noopener">{{ link.label }} <span aria-hidden="true">↗</span></a>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+  {% if include.pub.note %}<div class="pub-card__note">* {{ include.pub.note }}</div>{% endif %}
+</article>
