@@ -16,8 +16,7 @@ I am a Ph.D. student at the [AI & Media Computing Lab (AIMC Lab)](https://ruc-ai
 I received my **B.Eng. in Computer Science and Technology** from [Sichuan University](https://cs.scu.edu.cn/), where I was advised by [Prof. Qijun Zhao](http://www.scubrl.org/qjzhao).
 
 My research interests primarily include:
-- **Resource-Efficient Multimodal LLMs:** efficient inference and post-training for audio-visual and omni-modal models.
-- **Omni-Modal & Video Reasoning:** audio-visual understanding, complex audio queries, and long video reasoning.
+- **Multimodal LLMs:** efficient inference and post-training for MLLMs.
 - **Medical Multimodal AI:** multimodal reasoning and few-shot learning for medical image understanding.
 
 </div>
