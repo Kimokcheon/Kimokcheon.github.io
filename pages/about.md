@@ -39,18 +39,29 @@ My research interests include **resource-efficient multimodal large language mod
 
 1. [Jiazhen Liu](https://jiazhen-code.github.io/about.me/), **Yuchuan Deng**, [Long Chen](https://zjuchenlong.github.io/).  
    *Empowering Small VLMs to Think with Dynamic Memorization and Exploration.*  
-   In *International Conference on Learning Representations (ICLR) 2026.*  
+   In *International Conference on Learning Representations (ICLR), 2026.*  
    [[arXiv](https://arxiv.org/pdf/2506.23061)]
 
 2. **Yuchuan Deng**, [Zhanpeng Hu](https://lucasqaq.github.io/), [Zijie Xin](https://xxayt.github.io/), Chuang Deng, [Qijun Zhao](http://www.scubrl.org/qjzhao).  
    *DAPL: Integration of Positive and Negative Descriptions in Text-Based Person Search.*  
    In *IEEE International Conference on Multimedia & Expo (ICME), 2025.*  
-   [IEEE](https://ieeexplore.ieee.org/abstract/document/11210038/)
+   [[IEEE](https://ieeexplore.ieee.org/abstract/document/11210038/)]
 
 3. **Yuchuan Deng**, [Qijun Zhao](http://www.scubrl.org/qjzhao), [Zhanpeng Hu](https://lucasqaq.github.io/), [Zixiang Xu](https://xzx34.github.io/).  
    *Text-Based Face Retrieval: Methods and Challenges.*  
-   In *Chinese Conference on Biometric Recognition (CCBR), 2023 (Oral).*  
-   [Springer](https://link.springer.com/chapter/10.1007/978-981-99-8565-4_15)
+   In *Chinese Conference on Biometric Recognition (CCBR), 2023.* **Oral Presentation.**  
+   [[Springer](https://link.springer.com/chapter/10.1007/978-981-99-8565-4_15)]
+
+4. **Yuchuan Deng**, Qijie Wei, Kaiheng Qian, Jiazhen Liu, Zijie Xin, Bangxiang Lan, Jingyu Liu, Jianfeng Dong, Xirong Li.  
+   *Fundus-R1: Training a Fundus-Reading MLLM with Knowledge-Aware Reasoning on Public Data.*  
+   *arXiv preprint*, 2026.  
+   [[arXiv](https://arxiv.org/abs/2604.08322)]
+
+5. Jinghong Liu\*, **Yuchuan Deng\***, Fanping Liu, Meng Huang, Xirong Li.  
+   *Benchmarking Foundation and Large Language Models for Few-Shot Medical Image Segmentation.*  
+   *arXiv preprint*, 2026.  
+   [[arXiv](https://arxiv.org/abs/2607.27856)]  
+   \* Equal contribution.
 
 ## Patents
 
@@ -70,22 +81,22 @@ My research interests include **resource-efficient multimodal large language mod
   * Application No.: 2024209943132
 
 
-## Service 
-### Reviewer
-- ICME 2025  
-- ICME 2026
+
+
+## Service
 
 ### Teaching Assistant
-- **Advanced Programming II**, Sichuan University *(Spring 2023)*  
+
+- **Advanced Programming II**, Sichuan University *(Spring 2023)*
   - Instructor: [Prof. Qijun Zhao](http://www.scubrl.org/qjzhao)
-- **Database Systems**, Sichuan University *(Fall 2023)*  
+- **Database Systems**, Sichuan University *(Fall 2023)*
   - Instructor: [Prof. Ning Yang](https://yneversky.github.io/)
-- **Advanced Algebra I**, Renmin University of China *(Fall 2025)*  
+- **Advanced Algebra I**, Renmin University of China *(Fall 2025)*
   - Instructor: [Prof. Mingyang Yi](https://www.x-mol.com/university/faculty/429157)
-- **Advanced Algebra II**, Renmin University of China *(Spring 2026)*  
+- **Advanced Algebra II**, Renmin University of China *(Spring 2026)*
   - Instructor: [Prof. Mingyang Yi](https://www.x-mol.com/university/faculty/429157)
-
-
+- **Data Structures and Algorithms**, Renmin University of China *(Fall 2026)*
+  - Instructor: [Prof. Xirong Li](https://lixirong.net/)
 
 ## Activities
 President of Artificial Intelligent Association, Sichuan University *(Jun. 2023 – Jul. 2024)* 
