@@ -1,8 +1,8 @@
-<div class="teaching-card">
-  <div>
-    <h3 class="teaching-card__course">{{ include.item.course }}</h3>
-    <div class="teaching-card__institution">{{ include.item.institution }}</div>
-    <div class="teaching-card__instructor">Instructor: <a href="{{ include.item.instructor_url }}" target="_blank" rel="noopener">Prof. {{ include.item.instructor }}</a></div>
+<div class="teaching-row">
+  <div class="teaching-row__main">
+    <strong>{{ include.item.course }}</strong>
+    <span>{{ include.item.institution }}</span>
+    <small>Instructor: <a href="{{ include.item.instructor_url }}" target="_blank" rel="noopener">Prof. {{ include.item.instructor }}</a></small>
   </div>
-  <span class="teaching-card__term">{{ include.item.term }}</span>
+  <time>{{ include.item.term }}</time>
 </div>

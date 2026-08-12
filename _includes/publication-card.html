@@ -1,19 +1,26 @@
-<article class="pub-card">
-  <div class="pub-card__meta">
-    <span class="pub-card__venue">{{ include.pub.venue_short }} {{ include.pub.year }}</span>
-    {% if include.pub.status == "Oral" %}<span class="pub-card__badge">Oral</span>{% endif %}
+<article class="pub-entry">
+  <div class="pub-entry__marker" aria-hidden="true">
+    <span>{{ include.pub.venue_short }}</span>
+    <small>{{ include.pub.year }}</small>
   </div>
-  <h3 class="pub-card__title">{{ include.pub.title }}</h3>
-  <div class="pub-card__authors">{{ include.pub.authors | markdownify | remove: '<p>' | remove: '</p>' }}</div>
-  <div class="pub-card__footer">
-    <span class="pub-card__venue-full">{{ include.pub.venue }}{% if include.pub.venue_short != "arXiv" %}, {{ include.pub.year }}{% endif %}</span>
+  <div class="pub-entry__content">
+    <h3>{{ include.pub.title }}</h3>
+    <div class="pub-entry__authors">{{ include.pub.authors | markdownify | remove: '<p>' | remove: '</p>' }}</div>
+    <div class="pub-entry__venue">
+      {% if include.pub.venue_short == "arXiv" %}
+        {{ include.pub.venue }}, {{ include.pub.year }}.
+      {% else %}
+        In <em>{{ include.pub.venue }}</em> ({{ include.pub.venue_short }}), {{ include.pub.year }}.
+      {% endif %}
+      {% if include.pub.status == "Oral" %}<strong class="pub-entry__oral">Oral</strong>{% endif %}
+    </div>
     {% if include.pub.links %}
-      <div class="pub-card__links">
+      <div class="pub-entry__links">
         {% for link in include.pub.links %}
-          <a class="paper-link" href="{{ link.url }}" target="_blank" rel="noopener">{{ link.label }} <span aria-hidden="true">↗</span></a>
+          <a href="{{ link.url }}" target="_blank" rel="noopener">[{{ link.label }}]</a>
         {% endfor %}
       </div>
     {% endif %}
+    {% if include.pub.note %}<div class="pub-entry__note">* {{ include.pub.note }}</div>{% endif %}
   </div>
-  {% if include.pub.note %}<div class="pub-card__note">* {{ include.pub.note }}</div>{% endif %}
 </article>
