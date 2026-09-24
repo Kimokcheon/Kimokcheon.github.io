@@ -7,6 +7,8 @@
   links:
     - label: "OpenReview"
       url: "https://openreview.net/pdf?id=qFDju6ahkk"
+    - label: "Code"
+      url: "https://github.com/HKUST-LongGroup/DyME"
 
 - title: "DAPL: Integration of Positive and Negative Descriptions in Text-Based Person Search"
   authors: '**Yuchuan Deng**, [Zhanpeng Hu](https://lucasqaq.github.io/), [Zijie Xin](https://xxayt.github.io/), Chuang Deng, [Qijun Zhao](http://www.scubrl.org/qjzhao)'
@@ -37,6 +39,11 @@
   links:
     - label: "arXiv"
       url: "https://arxiv.org/abs/2604.08322"
+    - label: "Model-3B"
+      url: "https://huggingface.co/Kimokcheon/Fundus-R1-3B"
+    - label: "Model-7B"
+      url: "https://huggingface.co/Kimokcheon/Fundus-R1-7B"
+    
 
 - title: "Benchmarking Foundation and Large Language Models for Few-Shot Medical Image Segmentation"
   authors: 'Jinghong Liu\*, **Yuchuan Deng\***, Fanping Liu, Meng Huang, Xirong Li'
@@ -48,3 +55,8 @@
   links:
     - label: "arXiv"
       url: "https://arxiv.org/abs/2607.27856"
+    - label: "Code"
+      url: "https://github.com/Kimokcheon/FAME"
+    - label: "Datasets"
+      url: "https://huggingface.co/datasets/Kimokcheon/FAME_benchmark"
+
