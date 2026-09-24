@@ -5,8 +5,8 @@
   year: 2026
   status: "Conference"
   links:
-    - label: "arXiv"
-      url: "https://arxiv.org/pdf/2506.23061"
+    - label: "OpenReview"
+      url: "https://openreview.net/pdf?id=qFDju6ahkk"
 
 - title: "DAPL: Integration of Positive and Negative Descriptions in Text-Based Person Search"
   authors: '**Yuchuan Deng**, [Zhanpeng Hu](https://lucasqaq.github.io/), [Zijie Xin](https://xxayt.github.io/), Chuang Deng, [Qijun Zhao](http://www.scubrl.org/qjzhao)'
