@@ -70,21 +70,39 @@ My research interests primarily include:
 <section class="academic-section" id="patents">
   <h2>Patents</h2>
   <div class="text-entry-list">
+
     <div class="text-entry">
-      <strong>Text-Driven Pedestrian Retrieval Method and System Based on SAM.</strong>
+      <strong>
+        <a href="../assets/pdf/patent/SAM_peple.pdf" target="_blank">
+          Text-Driven Pedestrian Retrieval Method and System Based on SAM.
+        </a>
+      </strong>
       <span><strong>Yuchuan Deng</strong>, Qijun Zhao, Keran Fu, Libin Ye, Zongyong Deng.</span>
       <em>Patent No. ZL 2024 1 042542.5</em>
     </div>
+
     <div class="text-entry">
-      <strong>Adaptive Non-Contact Yak Weight Analysis Method and System Based on SAM.</strong>
+      <strong>
+        <a href="../assets/pdf/patent/SAM_weights.pdf" target="_blank">
+          Adaptive Non-Contact Yak Weight Analysis Method and System Based on SAM.
+        </a>
+      </strong>
       <span>Sonam Jianzhuo, Qijun Zhao, Nima Zhaxi, <strong>Yuchuan Deng</strong>, Xinyu Yang.</span>
       <em>Patent No. ZL 2024 1 0520466.8</em>
     </div>
+
     <div class="text-entry">
       <strong>An Intelligent Recognition Device.</strong>
       <span>Keyun Li, <strong>Yuchuan Deng</strong>, Qijun Zhao, Guoying Deng.</span>
       <em>Application No. 2024209943132</em>
     </div>
+
+    <div class="text-entry">
+      <strong>Training Method, Apparatus, Device, and Medium for a Reasoning-Enhanced Large Model for Fundus Image Interpretation.</strong>
+      <span>Xirong Li, <strong>Yuchuan Deng</strong>, Qijie Wei, Kaiheng Qian, Weihong Yu.</span>
+      <em>Application No. 202610421214.9</em>
+    </div>
+
   </div>
 </section>
 
